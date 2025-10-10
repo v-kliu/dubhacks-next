@@ -4,40 +4,34 @@ import { motion } from 'framer-motion';
 const AlumniSuccessSection: React.FC = () => {
   const companies = [
     {
-      name: 'NeuralSync',
-      description: 'AI-powered brain-computer interfaces for medical applications',
-      funding: 'Funded $2.4M',
-      badge: 'Series A'
+      name: 'vly.com',
+      description: 'The world\'s best AI web app builder.',
+      funding: 'Raised $1M+',
+      badge: 'Batch 3'
     },
     {
-      name: 'EcoFlow',
-      description: 'Sustainable supply chain optimization for enterprise',
-      funding: 'Funded $850K',
-      badge: 'YC W23'
+      name: 'Meteor',
+      description: 'A browser that can do work on your behalf.',
+      funding: 'Raised $1M+',
+      badge: 'Batch 4'
     },
     {
-      name: 'QuantumLabs',
-      description: 'Quantum computing solutions for financial modeling',
-      funding: 'Funded $1.8M',
-      badge: 'Seed'
+      name: 'Koel Labs',
+      description: 'Speech Technology for Anyone Built by Everyone.',
+      funding: 'Raised $500K+',
+      badge: 'Batch 4'
     },
     {
-      name: 'BioHarvest',
-      description: 'Precision agriculture platform using drone technology',
-      funding: 'Funded $650K',
-      badge: 'Pre-Seed'
+      name: 'Ripple',
+      description: 'The first hyperlocal marketplace built by and for college students.',
+      funding: 'Pre-seed',
+      badge: 'Batch 4'
     },
     {
-      name: 'CodeMentor AI',
-      description: 'Personalized programming education through AI tutors',
-      funding: 'Funded $1.2M',
-      badge: 'Seed'
-    },
-    {
-      name: 'HealthBridge',
-      description: 'Telemedicine platform connecting rural patients with specialists',
-      funding: 'Funded $950K',
-      badge: 'YC S24'
+      name: 'Soarin',
+      description: 'Building professional identities from preexisting data.',
+      funding: 'Pre-seed',
+      badge: 'Batch 4'
     }
   ];
 
@@ -52,7 +46,7 @@ const AlumniSuccessSection: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="overline text-pink mb-6">PORTFOLIO</div>
-          <h2 className="section-title text-black">Our Founders Are Funded</h2>
+          <h2 className="section-title text-neutral-900">Our Founders Are Funded</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -69,7 +63,7 @@ const AlumniSuccessSection: React.FC = () => {
                 <div className="w-16 h-16 bg-lightGray border border-gray-200 flex items-center justify-center mb-4 grayscale group-hover:grayscale-0 transition-all duration-300">
                   <span className="text-gray text-xs font-bold">{company.name.charAt(0)}</span>
                 </div>
-                <h3 className="text-xl font-light text-black mb-2">{company.name}</h3>
+                <h3 className="text-xl font-light text-neutral-900 mb-2">{company.name}</h3>
                 <p className="text-gray text-sm leading-relaxed mb-4">{company.description}</p>
               </div>
               

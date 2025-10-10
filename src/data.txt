@@ -1,0 +1,78 @@
+DUBHACKS NEXT - WEBSITE DATA FILE
+==================================
+
+SECTION: COMPANIES
+------------------
+
+Company 1:
+Name: vly.com
+Stage: 1M+
+One Liner: The world's best AI web app builder.
+Batch: Batch 3
+
+Company 2:
+Name: Meteor
+Stage: 1M+
+One Liner: A browser that can do work on your behalf.
+Batch: Batch 4
+
+Company 3:
+Name: Koel Labs
+Stage: 500K+
+One Liner: Speech Technology for Anyone Built by Everyone.
+Batch: Batch 4
+
+Company 4:
+Name: Ripple
+Stage: Pre-seed
+One Liner: The first hyperlocal marketplace built by and for college students.
+Batch: Batch 4
+
+Company 5:
+Name: Soarin
+Stage: Pre-seed
+One Liner: Building professional identities from preexisting data.
+Batch: Batch 4
+
+
+SECTION: TEAM
+-------------
+
+Total Members: 8
+
+Managing Directors / Advisors:
+- Anshul (MD/Advisor)
+- Sthiti (MD/Advisor)
+
+Director of Projects:
+- Meera
+- Jordan
+
+EiR (Entrepreneur in Residence) Director:
+- Aarfan
+
+Director of Community:
+- Sanjana
+
+Director of Technology:
+- Victor
+
+Advisor:
+- Ryan
+
+
+SECTION: STRUCTURE NOTES
+-------------------------
+
+Companies Display:
+- Show company name
+- Show stage
+- Show batch
+- Optional: Add logo/icon
+- Optional: Add brief description or tagline
+
+Team Display:
+- Show name and role
+- Group by function (Leadership, Projects, Technology, EiR, Community)
+- Optional: Add photos/avatars
+- Optional: Add LinkedIn or contact info

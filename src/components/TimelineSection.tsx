@@ -40,7 +40,7 @@ const TimelineSection: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className="bg-black py-section px-6 md:px-12">
+    <section ref={ref} className="bg-charcoal py-section px-6 md:px-12">
       <div className="max-w-content mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

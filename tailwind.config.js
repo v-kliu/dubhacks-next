@@ -43,11 +43,12 @@ module.exports = {
           900: '#171717',
         },
         black: '#0A0A0A',
+        darkSlate: '#1a1a1a',
         white: '#FFFFFF',
         pink: '#ec4899',
         gray: '#666666',
         lightGray: '#F5F5F5',
-        darkBlack: '#1A1A1A',
+        charcoal: '#111827',
       },
       fontFamily: {
         sans: ['-apple-system', 'SF Pro Display', 'Inter', 'system-ui', 'sans-serif'],

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const DemoDaySection: React.FC = () => {
   return (
-    <section className="bg-black py-section px-6 md:px-12">
+    <section className="bg-charcoal py-section px-6 md:px-12">
       <div className="max-w-content mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div

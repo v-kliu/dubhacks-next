@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
   const stats = [
-    { value: '$1M+', label: 'Raised' },
-    { value: '30', label: 'Founders' },
-    { value: '16', label: 'Weeks' }
+    { value: '$3M+', label: 'Raised' },
+    { value: '32', label: 'Founders' },
+    { value: '4', label: 'Batches' }
   ];
 
   return (
@@ -21,7 +21,29 @@ const HeroSection: React.FC = () => {
             className="flex flex-col justify-center min-h-screen py-20"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
+              <motion.div
+                className="grid grid-cols-1 gap-8 lg:order-2"
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 2.8, duration: 0.6 }}
+              >
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-primary-100 card-hover"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 3.0 + index * 0.1, duration: 0.6 }}
+                  >
+                    <div className="text-4xl md:text-5xl font-light text-primary-600 mb-2">
+                      {stat.value}
+                    </div>
+                    <div className="text-neutral-600 font-medium">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </motion.div>
+              
+              <div className="space-y-8 lg:order-1">
                 <motion.img
                   src="/dubhacksnext.png"
                   alt="DubHacks Next Logo"
@@ -57,28 +79,6 @@ const HeroSection: React.FC = () => {
                   </button>
                 </motion.div>
               </div>
-              
-              <motion.div
-                className="grid grid-cols-1 gap-8"
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 2.8, duration: 0.6 }}
-              >
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-primary-100 card-hover"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 3.0 + index * 0.1, duration: 0.6 }}
-                  >
-                    <div className="text-4xl md:text-5xl font-light text-primary-600 mb-2">
-                      {stat.value}
-                    </div>
-                    <div className="text-neutral-600 font-medium">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </motion.div>
             </div>
           </motion.div>
         </div>

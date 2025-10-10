@@ -19,35 +19,98 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
   return (
     <motion.div
-      className="fixed inset-0 bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 z-50 flex items-center justify-center"
+      className="fixed inset-0 bg-black z-50 flex items-center justify-center overflow-hidden"
       initial={{ opacity: 1 }}
       animate={{ opacity: isComplete ? 0 : 1 }}
       transition={{ duration: 0.3, delay: isComplete ? 0 : 0 }}
     >
-      <div className="relative flex items-center space-x-4">
-        <motion.img
-          src="/dubhacksnext.png"
-          alt="DubHacks Next"
-          className="w-16 h-16 object-contain"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        />
+      <div className="relative">
+        {/* Logo with creative square animation */}
         <motion.div
-          className="text-white text-4xl md:text-6xl font-light tracking-wider"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="relative w-24 h-24 mx-auto mb-8"
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
         >
-          DUBHACKS NEXT
+          {/* Animated border squares */}
+          <motion.div
+            className="absolute inset-0 border-2 border-primary-500"
+            initial={{ scale: 1.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          />
+          <motion.div
+            className="absolute inset-1 border border-accent-400"
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          />
+          
+          {/* Logo */}
+          <motion.img
+            src="/dubhacksnext.png"
+            alt="DubHacks Next"
+            className="absolute inset-2 w-auto h-auto object-contain"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.8 }}
+          />
+          
+          {/* Rotating accent squares */}
+          <motion.div
+            className="absolute -inset-2 border border-primary-300/30"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.div
+            className="absolute -inset-4 border border-accent-300/20"
+            animate={{ rotate: -360 }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          />
         </motion.div>
+        
+        {/* Text with staggered reveal */}
         <motion.div
-          className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-white to-primary-200"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-          style={{ transformOrigin: "left center" }}
-        />
+          className="text-center space-y-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+        >
+          <div className="overflow-hidden">
+            <motion.div
+              className="text-white text-2xl md:text-3xl font-light tracking-widest"
+              initial={{ y: 100 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4, ease: [0.4, 0, 0.2, 1] }}
+            >
+              DUBHACKS
+            </motion.div>
+          </div>
+          <div className="overflow-hidden">
+            <motion.div
+              className="text-primary-400 text-lg font-light tracking-wider"
+              initial={{ y: 100 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, delay: 1.6, ease: [0.4, 0, 0.2, 1] }}
+            >
+              NEXT
+            </motion.div>
+          </div>
+        </motion.div>
+        
+        {/* Subtle pulse indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.8 }}
+        >
+          <motion.div
+            className="w-1 h-8 bg-gradient-to-t from-primary-500 to-transparent"
+            animate={{ scaleY: [1, 0.5, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </motion.div>
       </div>
     </motion.div>
   );

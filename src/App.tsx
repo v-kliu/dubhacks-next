@@ -13,6 +13,7 @@ import DemoDaySection from './components/DemoDaySection';
 import WhyUWSection from './components/WhyUWSection';
 import FAQSection from './components/FAQSection';
 import ApplicationCTASection from './components/ApplicationCTASection';
+import PartnersSection from './components/PartnersSection';
 import Footer from './components/Footer';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <TeamSection />
           <DemoDaySection />
           <WhyUWSection />
+          <PartnersSection />
           <FAQSection />
           <ApplicationCTASection />
           <Footer />

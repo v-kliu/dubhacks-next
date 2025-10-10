@@ -32,7 +32,7 @@ const WhyUWSection: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="overline text-pink mb-6">BUILT IN SEATTLE</div>
-          <h2 className="text-5xl md:text-6xl font-light text-black mb-8">
+          <h2 className="text-5xl md:text-6xl font-light text-neutral-900 mb-8">
             Pacific Northwest's Premier
             <br />
             Student Incubator
@@ -53,7 +53,7 @@ const WhyUWSection: React.FC = () => {
                 <pillar.icon size={64} strokeWidth={1} />
               </div>
               
-              <h3 className="text-2xl font-light text-black mb-6 pink-underline-thin">
+              <h3 className="text-2xl font-light text-neutral-900 mb-6 pink-underline-thin">
                 {pillar.title}
               </h3>
               

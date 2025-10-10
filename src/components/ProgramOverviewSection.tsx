@@ -21,7 +21,7 @@ const ProgramOverviewSection: React.FC = () => {
               className="mb-8"
             >
               <div className="overline text-pink mb-6">THE PROGRAM</div>
-              <h2 className="section-title text-black mb-8">
+              <h2 className="section-title text-neutral-900 mb-8">
                 16 Weeks of
                 <br />
                 Intensive Growth

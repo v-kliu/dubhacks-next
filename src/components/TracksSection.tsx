@@ -56,7 +56,7 @@ const TracksSection: React.FC = () => {
             >
               <div className="mb-6">
                 <div className="overline text-pink mb-2">{track.title}</div>
-                <h3 className="text-3xl md:text-4xl font-light text-black mb-4">
+                <h3 className="text-3xl md:text-4xl font-light text-neutral-900 mb-4">
                   {track.subtitle}
                 </h3>
               </div>
@@ -74,7 +74,7 @@ const TracksSection: React.FC = () => {
                 ))}
               </ul>
               
-              <button className="border border-black text-black px-6 py-3 hover:bg-pink hover:border-pink hover:text-white transition-all duration-300">
+              <button className="border border-neutral-700 text-neutral-900 px-6 py-3 hover:bg-pink hover:border-pink hover:text-white transition-all duration-300">
                 {track.cta}
               </button>
             </motion.div>

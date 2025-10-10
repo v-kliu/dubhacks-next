@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-darkBlack border-t border-pink px-6 md:px-12 py-16">
+    <footer className="bg-black border-t border-pink px-6 md:px-12 py-16">
       <div className="max-w-content mx-auto">
         <div className="grid md:grid-cols-3 gap-16 mb-12">
           <motion.div

@@ -1,16 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+interface TeamMember {
+  name: string;
+  role: string;
+  image?: string;
+}
+
 const TeamSection: React.FC = () => {
-  const teamMembers = [
-    { name: 'Sarah Chen', role: 'Executive Director' },
-    { name: 'Michael Rodriguez', role: 'Program Manager' },
-    { name: 'Emily Zhang', role: 'Mentor Coordinator' },
-    { name: 'David Kim', role: 'Operations Lead' },
-    { name: 'Ashley Johnson', role: 'Community Manager' },
-    { name: 'Ryan Patel', role: 'Partnership Director' },
-    { name: 'Jessica Wu', role: 'Content Strategist' },
-    { name: 'Alex Thompson', role: 'Technical Advisor' }
+  const teamMembers: TeamMember[] = [
+    { name: 'Anshul', role: 'Managing Director' },
+    { name: 'Sthiti', role: 'Managing Director' },
+    { name: 'Ryan', role: 'Advisor' },
+    { name: 'Meera', role: 'Director of Projects' },
+    { name: 'Jordan', role: 'Director of Projects' },
+    { name: 'Victor', role: 'Director of Technology', image: '/victor-headshot.jpg' },
+    { name: 'Aarfan', role: 'EiR Director' },
+    { name: 'Sanjana', role: 'Director of Community' }
   ];
 
   return (
@@ -24,7 +30,7 @@ const TeamSection: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="overline text-pink mb-6">THE TEAM</div>
-          <h2 className="section-title text-black">Run by Students, For Students</h2>
+          <h2 className="section-title text-neutral-900">Run by Students, For Students</h2>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
@@ -39,14 +45,22 @@ const TeamSection: React.FC = () => {
             >
               <div className="relative mb-6 overflow-hidden">
                 <div className="w-full aspect-square bg-lightGray border border-gray-200 group-hover:border-pink group-hover:border-[3px] transition-all duration-300 grayscale group-hover:grayscale-0">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center relative">
-                    <span className="text-white text-xl font-light">{member.name.split(' ').map(n => n[0]).join('')}</span>
-                    <div className="absolute inset-0 bg-pink/0 group-hover:bg-pink/10 transition-all duration-300"></div>
-                  </div>
+                  {member.name === 'Victor' && member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center relative">
+                      <span className="text-white text-xl font-light">{member.name.split(' ').map(n => n[0]).join('')}</span>
+                      <div className="absolute inset-0 bg-pink/0 group-hover:bg-pink/10 transition-all duration-300"></div>
+                    </div>
+                  )}
                 </div>
               </div>
               
-              <h3 className="text-black font-light text-lg mb-2">{member.name}</h3>
+              <h3 className="text-neutral-900 font-light text-lg mb-2">{member.name}</h3>
               <p className="text-gray text-sm">{member.role}</p>
             </motion.div>
           ))}

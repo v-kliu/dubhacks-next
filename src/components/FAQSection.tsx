@@ -54,7 +54,7 @@ const FAQSection: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="section-title text-black">Frequently Asked</h2>
+          <h2 className="section-title text-neutral-900">Frequently Asked</h2>
         </motion.div>
 
         <div className="space-y-4">
@@ -71,7 +71,7 @@ const FAQSection: React.FC = () => {
                 onClick={() => toggleFAQ(index)}
                 className="w-full py-6 flex items-center justify-between text-left hover:text-pink transition-colors duration-300"
               >
-                <span className="text-lg text-black pr-8">{faq.question}</span>
+                <span className="text-lg text-neutral-900 pr-8">{faq.question}</span>
                 <div className="text-pink flex-shrink-0">
                   {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
                 </div>
