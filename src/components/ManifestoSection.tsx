@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ManifestoSection: React.FC = () => {
   return (
-    <section className="bg-black py-section px-6 md:px-12">
+    <section className="bg-charcoal py-section px-6 md:px-12">
       <div className="max-w-reading mx-auto">
         <div className="flex">
           <div className="w-1 h-24 bg-pink mr-12 flex-shrink-0"></div>

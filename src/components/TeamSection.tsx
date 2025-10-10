@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+// import victorImg from '../assets/team_headshots/victor.JPG';
 
 interface TeamMember {
   name: string;
@@ -7,16 +8,27 @@ interface TeamMember {
   image?: string;
 }
 
+const getTeamMemberImage = (name: string): string | undefined => {
+  const images: { [key: string]: string } = {
+    // 'Victor': victorImg,
+    // Add other team member images here as they become available
+    // 'Anshul': anshulImg,
+    // 'Sthiti': sthitiImg,
+    // etc.
+  };
+  return images[name];
+};
+
 const TeamSection: React.FC = () => {
   const teamMembers: TeamMember[] = [
     { name: 'Anshul', role: 'Managing Director' },
     { name: 'Sthiti', role: 'Managing Director' },
-    { name: 'Ryan', role: 'Advisor' },
     { name: 'Meera', role: 'Director of Projects' },
     { name: 'Jordan', role: 'Director of Projects' },
-    { name: 'Victor', role: 'Director of Technology', image: '/victor-headshot.jpg' },
     { name: 'Aarfan', role: 'EiR Director' },
-    { name: 'Sanjana', role: 'Director of Community' }
+    { name: 'Sanjana', role: 'Director of Community' },
+    { name: 'Victor', role: 'Director of Technology' },
+    { name: 'Ryan', role: 'Advisor' }
   ];
 
   return (
@@ -45,9 +57,9 @@ const TeamSection: React.FC = () => {
             >
               <div className="relative mb-6 overflow-hidden">
                 <div className="w-full aspect-square bg-lightGray border border-gray-200 group-hover:border-pink group-hover:border-[3px] transition-all duration-300 grayscale group-hover:grayscale-0">
-                  {member.name === 'Victor' && member.image ? (
+                  {getTeamMemberImage(member.name) ? (
                     <img
-                      src={member.image}
+                      src={getTeamMemberImage(member.name)}
                       alt={member.name}
                       className="w-full h-full object-cover"
                     />

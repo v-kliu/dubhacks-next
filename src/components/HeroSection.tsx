@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const HeroSection: React.FC = () => {
   const stats = [
     { value: '$3M+', label: 'Raised' },
-    { value: '32', label: 'Founders' },
+    { value: '5', label: 'Startups' },
     { value: '4', label: 'Batches' }
   ];
 
@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col justify-center min-h-screen py-20"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
                 className="grid grid-cols-1 gap-8 lg:order-2"
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 2.8, duration: 0.6 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
               >
                 {stats.map((stat, index) => (
                   <motion.div
@@ -33,7 +33,7 @@ const HeroSection: React.FC = () => {
                     className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-primary-100 card-hover"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 3.0 + index * 0.1, duration: 0.6 }}
+                    transition={{ delay: 0.6 + index * 0.1, duration: 0.4 }}
                   >
                     <div className="text-4xl md:text-5xl font-light text-primary-600 mb-2">
                       {stat.value}
@@ -50,7 +50,7 @@ const HeroSection: React.FC = () => {
                   className="w-24 h-24 object-contain mb-8"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 2.0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
                 />
                 
                 <div className="overline text-primary-600 mb-6">
@@ -72,7 +72,7 @@ const HeroSection: React.FC = () => {
                   className="mt-12"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 3.2, duration: 0.6 }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
                 >
                   <button className="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 transform hover:scale-105">
                     Apply for Batch 5
