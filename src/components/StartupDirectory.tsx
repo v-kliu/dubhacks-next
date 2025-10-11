@@ -111,7 +111,7 @@ const StartupDirectory: React.FC = () => {
   const stages = ['all', 'Pre-Seed', 'Seed'];
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-neutral-50 pt-20">
       {/* Header */}
       <div className="bg-white border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 py-8">
@@ -185,9 +185,9 @@ const StartupDirectory: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white border border-neutral-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
+              className="bg-white border border-neutral-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300 group cursor-pointer"
             >
-              {/* Startup Header */}
+              {/* Basic Info - Always Visible */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-accent-100 rounded-lg flex items-center justify-center">
@@ -204,20 +204,22 @@ const StartupDirectory: React.FC = () => {
                   href={startup.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-600 hover:text-primary-700 text-sm font-medium"
+                  className="text-primary-600 hover:text-primary-700 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 >
                   Visit →
                 </a>
               </div>
 
-              {/* Tagline */}
+              {/* Tagline - Always Visible */}
               <p className="text-neutral-700 font-medium mb-3">{startup.tagline}</p>
               
-              {/* Description */}
-              <p className="text-neutral-600 text-sm mb-4 line-clamp-3">{startup.description}</p>
+              {/* Description - Show on Hover */}
+              <div className="overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-20 group-hover:mb-4">
+                <p className="text-neutral-600 text-sm line-clamp-3">{startup.description}</p>
+              </div>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-4">
+              {/* Tags - Show on Hover */}
+              <div className="flex flex-wrap gap-2 mb-0 group-hover:mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 max-h-0 group-hover:max-h-10 overflow-hidden">
                 {startup.tags.slice(0, 3).map(tag => (
                   <span
                     key={tag}
@@ -233,8 +235,8 @@ const StartupDirectory: React.FC = () => {
                 )}
               </div>
 
-              {/* Metadata */}
-              <div className="grid grid-cols-2 gap-4 text-xs text-neutral-500">
+              {/* Metadata - Show on Hover */}
+              <div className="grid grid-cols-2 gap-4 text-xs text-neutral-500 opacity-0 group-hover:opacity-100 transition-all duration-300 max-h-0 group-hover:max-h-16 overflow-hidden">
                 <div className="flex items-center space-x-1">
                   <MapPin size={12} />
                   <span>{startup.location}</span>

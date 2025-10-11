@@ -4,18 +4,6 @@ import { motion } from 'framer-motion';
 const TracksSection: React.FC = () => {
   const tracks = [
     {
-      title: 'PROJECT TRACK',
-      subtitle: 'For Builders',
-      description: 'Already have a startup idea or existing project? Join our Project Track to accelerate your venture with intensive mentorship and resources.',
-      features: [
-        'Weekly founder mentorship sessions',
-        'Product development workshops',
-        'Investor pitch preparation',
-        'Go-to-market strategy development'
-      ],
-      cta: 'Apply to Project Track'
-    },
-    {
       title: 'EIR TRACK',
       subtitle: 'For Explorers',
       description: 'Passionate about entrepreneurship but need to find the right idea? Our Entrepreneur-in-Residence track helps you discover and validate your startup concept.',
@@ -26,6 +14,18 @@ const TracksSection: React.FC = () => {
         'Team formation and co-founder matching'
       ],
       cta: 'Apply to EIR Track'
+    },
+    {
+      title: 'PROJECT TRACK',
+      subtitle: 'For Builders',
+      description: 'Already have a startup idea or existing project? Join our Project Track to accelerate your venture with intensive mentorship and resources.',
+      features: [
+        'Weekly founder mentorship sessions',
+        'Product development workshops',
+        'Investor pitch preparation',
+        'Go-to-market strategy development'
+      ],
+      cta: 'Apply to Project Track'
     }
   ];
 

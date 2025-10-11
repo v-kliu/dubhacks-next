@@ -132,7 +132,7 @@ const FounderDirectory: React.FC = () => {
   const expertiseAreas = ['all', 'AI/ML', 'Product Management', 'Engineering', 'Design', 'Data Science', 'Marketing'];
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-neutral-50 pt-20">
       {/* Header */}
       <div className="bg-white border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 py-8">
@@ -206,9 +206,9 @@ const FounderDirectory: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white border border-neutral-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
+              className="bg-white border border-neutral-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300 group cursor-pointer"
             >
-              {/* Founder Header */}
+              {/* Founder Header - Always Visible */}
               <div className="flex items-start space-x-4 mb-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-primary-600 font-bold text-xl">
@@ -222,11 +222,13 @@ const FounderDirectory: React.FC = () => {
                 </div>
               </div>
 
-              {/* Bio */}
-              <p className="text-neutral-600 text-sm mb-4 line-clamp-3">{founder.bio}</p>
+              {/* Bio - Show on Hover */}
+              <div className="overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-20 group-hover:mb-4">
+                <p className="text-neutral-600 text-sm line-clamp-3">{founder.bio}</p>
+              </div>
 
-              {/* Expertise Tags */}
-              <div className="flex flex-wrap gap-2 mb-4">
+              {/* Expertise Tags - Show on Hover */}
+              <div className="flex flex-wrap gap-2 mb-0 group-hover:mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 max-h-0 group-hover:max-h-10 overflow-hidden">
                 {founder.expertise.slice(0, 3).map(skill => (
                   <span
                     key={skill}
@@ -242,8 +244,8 @@ const FounderDirectory: React.FC = () => {
                 )}
               </div>
 
-              {/* Metadata */}
-              <div className="grid grid-cols-1 gap-2 text-xs text-neutral-500 mb-4">
+              {/* Metadata - Show on Hover */}
+              <div className="grid grid-cols-1 gap-2 text-xs text-neutral-500 mb-0 group-hover:mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 max-h-0 group-hover:max-h-16 overflow-hidden">
                 <div className="flex items-center space-x-1">
                   <Building size={12} />
                   <span>{founder.batch} • {founder.major}</span>
@@ -258,8 +260,8 @@ const FounderDirectory: React.FC = () => {
                 </div>
               </div>
 
-              {/* Contact Links */}
-              <div className="flex items-center space-x-3 pt-3 border-t border-neutral-100">
+              {/* Contact Links - Show on Hover */}
+              <div className="flex items-center space-x-3 pt-0 group-hover:pt-3 border-t-0 group-hover:border-t border-neutral-100 opacity-0 group-hover:opacity-100 transition-all duration-300 max-h-0 group-hover:max-h-10 overflow-hidden">
                 {founder.linkedIn && (
                   <a
                     href={founder.linkedIn}

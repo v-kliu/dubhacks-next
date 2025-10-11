@@ -6,8 +6,8 @@ const ApplicationCTASection: React.FC = () => {
     <section id="apply" className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 py-20 overflow-hidden">
       <div className="grid-overlay opacity-20"></div>
       
-      <div className="content-grid">
-        <div className="guide-line pl-8 text-center">
+      <div className="max-w-content mx-auto px-6 md:px-12">
+        <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ const ApplicationCTASection: React.FC = () => {
               viewport={{ once: true }}
               className="text-white/80 text-sm pt-4"
             >
-              Only 20 spots available. Apply early.
+              Limited spots available. Apply early.
             </motion.p>
           </motion.div>
         </div>
