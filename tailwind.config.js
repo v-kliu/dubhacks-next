@@ -79,8 +79,8 @@ module.exports = {
         'hero': '40vw',
       },
       padding: {
-        'section': '200px',
-        'section-lg': '240px',
+        'section': '120px',
+        'section-lg': '160px',
       },
       spacing: {
         '18': '4.5rem',

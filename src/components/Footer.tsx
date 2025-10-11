@@ -19,9 +19,9 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-black border-t border-pink px-6 md:px-12 py-16">
+    <footer className="bg-black border-t border-pink px-6 md:px-12 py-12">
       <div className="max-w-content mx-auto">
-        <div className="grid md:grid-cols-3 gap-16 mb-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

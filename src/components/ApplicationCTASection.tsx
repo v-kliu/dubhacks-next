@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ApplicationCTASection: React.FC = () => {
   return (
-    <section className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 py-32 overflow-hidden">
+    <section id="apply" className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 py-20 overflow-hidden">
       <div className="grid-overlay opacity-20"></div>
       
       <div className="content-grid">

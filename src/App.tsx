@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoadingScreen from './components/LoadingScreen';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
@@ -15,8 +16,11 @@ import FAQSection from './components/FAQSection';
 import ApplicationCTASection from './components/ApplicationCTASection';
 import PartnersSection from './components/PartnersSection';
 import Footer from './components/Footer';
+import StartupDirectory from './components/StartupDirectory';
+import FounderDirectory from './components/FounderDirectory';
 
-function App() {
+// Home page component
+const HomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLoadingComplete = () => {
@@ -24,12 +28,11 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <>
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
       
       {!isLoading && (
         <>
-          <Navigation />
           <HeroSection />
           <StatsSection />
           <ManifestoSection />
@@ -46,7 +49,22 @@ function App() {
           <Footer />
         </>
       )}
-    </div>
+    </>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/startup-directory" element={<StartupDirectory />} />
+          <Route path="/founder-directory" element={<FounderDirectory />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

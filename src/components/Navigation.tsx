@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+interface NavItem {
+  name: string;
+  href?: string;
+  hasDropdown?: boolean;
+  dropdownItems?: { name: string; href: string }[];
+}
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,7 +23,20 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['About', 'Program', 'Alumni', 'Team', 'Apply'];
+  const navItems: NavItem[] = [
+    { name: 'About', href: '#program' },
+    { name: 'Tracks', href: '#tracks' },
+    { 
+      name: 'Directory', 
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Startup Directory', href: '/startup-directory' },
+        { name: 'Founder Directory', href: '/founder-directory' }
+      ]
+    },
+    { name: 'Team', href: '#team' },
+    { name: 'Apply', href: '#apply' }
+  ];
 
   return (
     <motion.nav
@@ -24,7 +47,7 @@ const Navigation: React.FC = () => {
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, delay: 2 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
     >
       <div className="content-grid">
         <div className="flex items-center justify-between h-20">
@@ -34,27 +57,78 @@ const Navigation: React.FC = () => {
               alt="DubHacks Next"
               className="w-8 h-8 object-contain"
             />
-            <div className={`font-light text-lg tracking-wide transition-colors ${
-              isScrolled ? 'text-neutral-900' : 'text-neutral-900'
-            }`}>
+            <Link 
+              to="/" 
+              className={`font-light text-lg tracking-wide transition-colors hover:text-primary-600 ${
+                isScrolled ? 'text-neutral-900' : 'text-neutral-900'
+              }`}
+            >
               DUBHACKS NEXT
-            </div>
+            </Link>
           </div>
           
           <div className="hidden md:flex items-center space-x-12">
             {navItems.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className={`transition-all duration-300 relative group pb-1 ${
-                  isScrolled 
-                    ? 'text-neutral-700 hover:text-primary-600' 
-                    : 'text-neutral-700 hover:text-primary-600'
-                }`}
+              <div
+                key={item.name}
+                className="relative"
+                onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.name)}
+                onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
               >
-                {item}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-300 group-hover:w-full" />
-              </a>
+                {item.hasDropdown ? (
+                  <button
+                    className={`transition-all duration-300 relative group pb-1 flex items-center space-x-1 ${
+                      isScrolled 
+                        ? 'text-neutral-700 hover:text-primary-600' 
+                        : 'text-neutral-700 hover:text-primary-600'
+                    }`}
+                  >
+                    <span>{item.name}</span>
+                    <ChevronDown size={16} className={`transition-transform duration-200 ${
+                      activeDropdown === item.name ? 'rotate-180' : ''
+                    }`} />
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-300 group-hover:w-full" />
+                  </button>
+                ) : (
+                  <a
+                    href={item.href}
+                    className={`transition-all duration-300 relative group pb-1 ${
+                      isScrolled 
+                        ? 'text-neutral-700 hover:text-primary-600' 
+                        : 'text-neutral-700 hover:text-primary-600'
+                    }`}
+                  >
+                    {item.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-300 group-hover:w-full" />
+                  </a>
+                )}
+                {item.hasDropdown && item.dropdownItems && activeDropdown === item.name && (
+                  <>
+                    {/* Invisible hover bridge to prevent flicker */}
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-40 h-3" />
+
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 transform -translate-x-1/2 mt-0 bg-white rounded-lg shadow-xl border border-primary-100 py-3 min-w-52 z-50"
+                      onMouseEnter={() => setActiveDropdown(item.name)}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                    >
+                      {item.dropdownItems.map((dropdownItem) => (
+                        <a
+                          key={dropdownItem.name}
+                          href={dropdownItem.href}
+                          className="block px-5 py-3 text-neutral-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 text-sm font-medium"
+                        >
+                          {dropdownItem.name}
+                        </a>
+                      ))}
+                    </motion.div>
+                  </>
+                )}
+              </div>
             ))}
           </div>
         </div>

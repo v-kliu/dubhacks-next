@@ -11,8 +11,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsComplete(true);
-      setTimeout(onComplete, 250);
-    }, 600);
+      setTimeout(onComplete, 300);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [onComplete]);

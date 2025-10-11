@@ -14,7 +14,7 @@ const PartnersSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative bg-gradient-to-r from-primary-50 to-accent-50 py-24">
+    <section className="relative bg-gradient-to-r from-primary-50 to-accent-50 py-16">
       <div className="grid-overlay opacity-20"></div>
       
       <div className="content-grid">

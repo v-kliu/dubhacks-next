@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// import victorImg from '../assets/team_headshots/victor.JPG';
 
 interface TeamMember {
   name: string;
@@ -8,15 +7,15 @@ interface TeamMember {
   image?: string;
 }
 
-const getTeamMemberImage = (name: string): string | undefined => {
+const getTeamMemberImage = (name: string): string => {
   const images: { [key: string]: string } = {
-    // 'Victor': victorImg,
+    'Victor': '/assets/team_headshots/victor.jpg',
     // Add other team member images here as they become available
-    // 'Anshul': anshulImg,
-    // 'Sthiti': sthitiImg,
+    // 'Anshul': '/assets/team_headshots/anshul.jpg',
+    // 'Sthiti': '/assets/team_headshots/sthiti.jpg',
     // etc.
   };
-  return images[name];
+  return images[name] || '/assets/team_headshots/dubs.jpg';
 };
 
 const TeamSection: React.FC = () => {
@@ -32,7 +31,7 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white py-section px-6 md:px-12">
+    <section id="team" className="bg-white py-section px-6 md:px-12">
       <div className="max-w-content mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -56,19 +55,12 @@ const TeamSection: React.FC = () => {
               className="text-center group"
             >
               <div className="relative mb-6 overflow-hidden">
-                <div className="w-full aspect-square bg-lightGray border border-gray-200 group-hover:border-pink group-hover:border-[3px] transition-all duration-300 grayscale group-hover:grayscale-0">
-                  {getTeamMemberImage(member.name) ? (
-                    <img
-                      src={getTeamMemberImage(member.name)}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center relative">
-                      <span className="text-white text-xl font-light">{member.name.split(' ').map(n => n[0]).join('')}</span>
-                      <div className="absolute inset-0 bg-pink/0 group-hover:bg-pink/10 transition-all duration-300"></div>
-                    </div>
-                  )}
+                <div className="w-full aspect-square bg-lightGray border border-gray-200 group-hover:border-pink group-hover:border-[3px] transition-all duration-300">
+                  <img
+                    src={getTeamMemberImage(member.name)}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               
