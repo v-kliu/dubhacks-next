@@ -36,9 +36,12 @@ const FAQSection: React.FC = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const leftColumnFaqs = faqs.slice(0, 3);
+  const rightColumnFaqs = faqs.slice(3, 6);
+
   return (
     <section className="bg-white py-16 px-6 md:px-12">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,41 +53,82 @@ const FAQSection: React.FC = () => {
           <p className="text-neutral-600">Quick answers to common questions</p>
         </motion.div>
 
-        <div className="space-y-2">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              viewport={{ once: true }}
-              className="border-b border-gray/20 last:border-b-0"
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full py-4 flex items-center justify-between text-left hover:text-pink transition-colors duration-300"
-              >
-                <span className="text-base font-medium text-neutral-900 pr-8">{faq.question}</span>
-                <div className="text-pink flex-shrink-0">
-                  {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
-                </div>
-              </button>
-              
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          {/* Left Column */}
+          <div className="space-y-2">
+            {leftColumnFaqs.map((faq, index) => (
               <motion.div
-                initial={false}
-                animate={{ 
-                  height: openIndex === index ? 'auto' : 0,
-                  opacity: openIndex === index ? 1 : 0
-                }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="overflow-hidden"
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="border-b border-gray/20 last:border-b-0"
               >
-                <div className="pb-4 pr-8">
-                  <p className="text-neutral-600 text-sm leading-relaxed">{faq.answer}</p>
-                </div>
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full py-4 flex items-center justify-between text-left hover:text-pink transition-colors duration-300"
+                >
+                  <span className="text-base font-medium text-neutral-900 pr-8">{faq.question}</span>
+                  <div className="text-pink flex-shrink-0">
+                    {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+                  </div>
+                </button>
+                
+                <motion.div
+                  initial={false}
+                  animate={{ 
+                    height: openIndex === index ? 'auto' : 0,
+                    opacity: openIndex === index ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="overflow-hidden"
+                >
+                  <div className="pb-4 pr-8">
+                    <p className="text-neutral-600 text-sm leading-relaxed">{faq.answer}</p>
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-2">
+            {rightColumnFaqs.map((faq, index) => (
+              <motion.div
+                key={index + 3}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: (index + 3) * 0.05 }}
+                viewport={{ once: true }}
+                className="border-b border-gray/20 last:border-b-0"
+              >
+                <button
+                  onClick={() => toggleFAQ(index + 3)}
+                  className="w-full py-4 flex items-center justify-between text-left hover:text-pink transition-colors duration-300"
+                >
+                  <span className="text-base font-medium text-neutral-900 pr-8">{faq.question}</span>
+                  <div className="text-pink flex-shrink-0">
+                    {openIndex === (index + 3) ? <Minus size={18} /> : <Plus size={18} />}
+                  </div>
+                </button>
+                
+                <motion.div
+                  initial={false}
+                  animate={{ 
+                    height: openIndex === (index + 3) ? 'auto' : 0,
+                    opacity: openIndex === (index + 3) ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="overflow-hidden"
+                >
+                  <div className="pb-4 pr-8">
+                    <p className="text-neutral-600 text-sm leading-relaxed">{faq.answer}</p>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

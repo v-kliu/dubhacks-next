@@ -77,42 +77,48 @@ const Navigation: React.FC = () => {
               >
                 {item.hasDropdown ? (
                   <button
-                    className={`transition-all duration-300 relative group pb-1 flex items-center space-x-1 ${
+                    className={`transition-all duration-300 relative group flex items-center space-x-1 px-2 py-1 -mx-2 -my-1 ${
                       isScrolled 
                         ? 'text-neutral-700 hover:text-primary-600' 
                         : 'text-neutral-700 hover:text-primary-600'
                     }`}
+                    onMouseEnter={() => setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    <span>{item.name}</span>
+                    <span className="relative">
+                      {item.name}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-300 group-hover:w-full" />
+                    </span>
                     <ChevronDown size={16} className={`transition-transform duration-200 ${
                       activeDropdown === item.name ? 'rotate-180' : ''
                     }`} />
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-300 group-hover:w-full" />
                   </button>
                 ) : (
                   <a
                     href={item.href}
-                    className={`transition-all duration-300 relative group pb-1 ${
+                    className={`transition-all duration-300 relative group ${
                       isScrolled 
                         ? 'text-neutral-700 hover:text-primary-600' 
                         : 'text-neutral-700 hover:text-primary-600'
                     }`}
                   >
-                    {item.name}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-300 group-hover:w-full" />
+                    <span className="relative">
+                      {item.name}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-300 group-hover:w-full" />
+                    </span>
                   </a>
                 )}
                 {item.hasDropdown && item.dropdownItems && activeDropdown === item.name && (
                   <>
                     {/* Invisible hover bridge to prevent flicker */}
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-40 h-3" />
+                    <div className="absolute top-full left-0 right-0 h-3" />
 
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-1/2 transform -translate-x-1/2 mt-0 bg-white rounded-lg shadow-xl border border-primary-100 py-3 min-w-52 z-50"
+                      className="absolute top-full left-0 mt-3 bg-white rounded-lg shadow-xl border border-primary-100 py-3 min-w-52 z-50"
                       onMouseEnter={() => setActiveDropdown(item.name)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >

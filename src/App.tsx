@@ -4,17 +4,16 @@ import LoadingScreen from './components/LoadingScreen';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
 import StatsSection from './components/StatsSection';
-import ManifestoSection from './components/ManifestoSection';
 import ProgramOverviewSection from './components/ProgramOverviewSection';
 import TracksSection from './components/TracksSection';
-import AlumniSuccessSection from './components/AlumniSuccessSection';
+import FounderSuccessSection from './components/FounderSuccessSection';
 import TimelineSection from './components/TimelineSection';
 import TeamSection from './components/TeamSection';
-import DemoDaySection from './components/DemoDaySection';
 import WhyUWSection from './components/WhyUWSection';
+import SpeakersSection from './components/SpeakersSection';
+import PhotoGallerySection from './components/PhotoGallerySection';
 import FAQSection from './components/FAQSection';
 import ApplicationCTASection from './components/ApplicationCTASection';
-import PartnersSection from './components/PartnersSection';
 import Footer from './components/Footer';
 import StartupDirectory from './components/StartupDirectory';
 import FounderDirectory from './components/FounderDirectory';
@@ -35,15 +34,14 @@ const HomePage: React.FC = () => {
         <>
           <HeroSection />
           <StatsSection />
-          <ManifestoSection />
           <ProgramOverviewSection />
           <TracksSection />
-          <AlumniSuccessSection />
+          <FounderSuccessSection />
           <TimelineSection />
+          <PhotoGallerySection />
           <TeamSection />
-          <DemoDaySection />
           <WhyUWSection />
-          <PartnersSection />
+          <SpeakersSection />
           <FAQSection />
           <ApplicationCTASection />
           <Footer />
