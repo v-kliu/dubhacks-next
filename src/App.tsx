@@ -13,6 +13,7 @@ import WhyUWSection from './components/WhyUWSection';
 import SpeakersSection from './components/SpeakersSection';
 import PhotoGallerySection from './components/PhotoGallerySection';
 import FAQSection from './components/FAQSection';
+import ResourcesSection from './components/ResourcesSection';
 import ApplicationCTASection from './components/ApplicationCTASection';
 import Footer from './components/Footer';
 import StartupDirectory from './components/StartupDirectory';
@@ -43,6 +44,7 @@ const HomePage: React.FC = () => {
           <WhyUWSection />
           <SpeakersSection />
           <FAQSection />
+          <ResourcesSection />
           <ApplicationCTASection />
           <Footer />
         </>

@@ -10,11 +10,24 @@ interface Founder {
   graduationYear: string;
   major: string;
   linkedIn?: string;
+  isNextTeam?: boolean;
 }
 
 const FounderDirectory: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedBatch, setSelectedBatch] = useState('all');
+
+  // Function to get batch-specific colors
+  const getBatchColor = (batch: string): string => {
+    const batchColors: { [key: string]: string } = {
+      'Batch 1': 'bg-purple-100 text-purple-700',
+      'Batch 2': 'bg-green-100 text-green-700',
+      'Batch 3': 'bg-blue-100 text-blue-700',
+      'Batch 4': 'bg-orange-100 text-orange-700',
+      'Batch 5': 'bg-pink-100 text-pink-700',
+    };
+    return batchColors[batch] || 'bg-gray-100 text-gray-700';
+  };
 
   // TO ADD/EDIT FOUNDERS:
   // See founder_directory_data.txt for easy-to-use templates and instructions
@@ -92,9 +105,15 @@ const FounderDirectory: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl font-light text-neutral-900 mb-4">Founder Directory</h1>
-            <p className="text-neutral-600 text-lg">
+            <p className="text-neutral-600 text-lg mb-3">
               Connect with founders from the DubHacks Next community. {founders.length} alumni and counting.
             </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-50 border border-yellow-200 rounded-lg">
+              <span className="text-yellow-600 text-sm">⚠️</span>
+              <p className="text-yellow-800 text-sm">
+                This directory is currently being updated and populated with our founders.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -157,9 +176,14 @@ const FounderDirectory: React.FC = () => {
                   <h3 className="font-semibold text-neutral-900">{founder.name}</h3>
                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                     <span className="text-sm text-primary-600 font-medium">{founder.company}</span>
-                    <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
+                    <span className={`px-2 py-0.5 text-xs rounded-full font-medium ${getBatchColor(founder.batch)}`}>
                       {founder.batch}
                     </span>
+                    {founder.isNextTeam && (
+                      <span className="px-2 py-0.5 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 text-xs rounded-full font-medium border border-purple-200">
+                        Next Team
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

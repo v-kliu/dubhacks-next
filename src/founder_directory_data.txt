@@ -1,31 +1,32 @@
 FOUNDER DIRECTORY DATA
 ======================
 
-HOW TO ADD A FOUNDER:
-1. Copy the template below
-2. Fill in all the fields with the founder's information
-3. Paste the completed entry at the bottom of this file
-4. Copy the data from this file into FounderDirectory.tsx in the founders array
-
 TEMPLATE:
 ---------
 {
   name: '[First Last]',
   company: '[Company Name]',
-  batch: '[Batch X]',
+  batch: '[Batch X]',          // Batch 1 = Purple, Batch 2 = Green, Batch 3 = Blue, Batch 4 = Orange, Batch 5 = Pink
   graduationYear: '[YYYY]',
   major: '[Major Name]',
-  linkedIn: 'https://linkedin.com/in/[username]'  // Optional - remove line if none
+  linkedIn: 'https://linkedin.com/in/[username]',  // Optional - remove line if none
+  isNextTeam: true             // Optional - add this line ONLY if they are on the Next team (adds special gradient badge)
 }
 
-EXISTING FOUNDERS:
-==================
+{
+  name: 'da literal goats',
+  company: 'Meteor',
+  batch: 'Batch 4',
+  graduationYear: 'N/A',
+  major: 'N/A',
+  linkedIn: 'https://linkedin.com/in/goat'
+}
 
 {
-  name: 'Alex Chen',
-  company: 'vly.com',
-  batch: 'Batch 3',
-  graduationYear: '2022',
+  name: 'Pranav Madhukar',
+  company: 'Meteor',
+  batch: 'Batch 4',
+  graduationYear: 'N/A',
   major: 'Computer Science',
   linkedIn: 'https://linkedin.com/in/alexchen'
 }
@@ -74,6 +75,3 @@ EXISTING FOUNDERS:
   major: 'Design',
   linkedIn: 'https://linkedin.com/in/lisapark'
 }
-
-ADD NEW FOUNDERS BELOW THIS LINE:
-==================================

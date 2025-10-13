@@ -11,7 +11,10 @@ const PartnersSection: React.FC = () => {
       'Techstars': '/assets/partners_and_mentors/techstars.svg',
       'Pack Ventures': '/assets/partners_and_mentors/pack.jpg',
       'University of Washington': '/assets/partners_and_mentors/uw.jpg',
-      'Amazon Web Services': '/assets/partners_and_mentors/aws.svg',
+      'Amazon Web Services': '/assets/partners_and_mentors/aws.png',
+      '1517 Fund': '/assets/partners_and_mentors/1517.png',
+      'Cascade Seed Fund': '/assets/partners_and_mentors/cascade_seed_fund.png',
+      'Pioneer Square Labs': '/assets/partners_and_mentors/psl.jpg',
     };
     return logos[name] || '';
   };
@@ -23,6 +26,9 @@ const PartnersSection: React.FC = () => {
     { name: 'Madrona Venture Group', category: 'Venture Capital' },
     { name: 'Techstars', category: 'Accelerator' },
     { name: 'Pack Ventures', category: 'Venture Capital' },
+    { name: '1517 Fund', category: 'Venture Capital' },
+    { name: 'Cascade Seed Fund', category: 'Venture Capital' },
+    { name: 'Pioneer Square Labs', category: 'Startup Studio' },
     { name: 'University of Washington', category: 'Academic Partner' },
     { name: 'Amazon Web Services', category: 'Cloud Platform' },
   ];

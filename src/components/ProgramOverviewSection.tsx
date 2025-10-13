@@ -3,9 +3,11 @@ import { motion } from 'framer-motion';
 
 const ProgramOverviewSection: React.FC = () => {
   const benefits = [
-    'Weekly 1:1 mentorship with successful founders and VCs',
-    'Access to $50K in AWS, GCP, and startup tool credits',
-    'Direct introductions to investors and industry leaders'
+    'Weekly workshops and fireside chats with seasoned founders, VCs, and inspiring builders',
+    'Weekly build nights to make consistent and meaningful progress on your startup',
+    'Community nights where you\'ll connect with your batch members and find your startup family',
+    'Exclusive access to mentors, advisors, and industry professionals',
+    'A culminating retreat celebrating your batch\'s progress and hard work'
   ];
 
   return (
@@ -36,9 +38,10 @@ const ProgramOverviewSection: React.FC = () => {
               viewport={{ once: true }}
               className="text-gray text-body leading-relaxed mb-12"
             >
-              DubHacks Next is more than an accelerator — it's a transformation. 
-              We take ambitious UW students with world-changing ideas and provide 
-              the mentorship, resources, and community needed to build fundable startups.
+              The DubHacks Next program is designed to empower student founders and aspiring entrepreneurs
+              with the tools, network, and mindset to bring their ideas to life. Through a mix of workshops,
+              build sessions, and community events, participants will grow their technical and entrepreneurial
+              abilities alongside peers who share their drive and curiosity.
             </motion.p>
             
             <div className="space-y-6">

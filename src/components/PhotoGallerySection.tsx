@@ -22,42 +22,42 @@ const PhotoGallerySection: React.FC = () => {
   const photos: Photo[] = [
     {
       filename: 'batch4.jpg',
-      caption: '✨ Batch 4 vibes at our retreat - yes, we actually met IRL',
+      caption: 'batch 4 vibes at our retreat!',
       alt: 'Batch 4 cohort group photo'
     },
     {
       filename: 'batch4_exec.jpg',
-      caption: '🎉 Demo Day = done. Sleep schedule = obliterated. Worth it? Absolutely.',
+      caption: 'our lovely Batch 4 exec team post demo-day!',
       alt: 'Batch 4 executive team'
     },
     {
       filename: 'cognito.jpg',
-      caption: '🎤 Cognito dropping fire pitches like they\'re releasing mixtapes',
+      caption: 'Cognito casually pitching for 200 million dollars at Demo Day 🤑',
       alt: 'Cognito Demo Day presentation'
     },
     {
       filename: 'hike.jpg',
-      caption: '⛰️ Plot twist: founders DO touch grass (occasionally)',
+      caption: 'turns out we CAN touch grass! (Batch 4 hike) ⛰️',
       alt: 'Team building hike'
     },
     {
       filename: 'koel_labs.jpg',
-      caption: '🗣️ Koel Labs making computers talk - because why not?',
+      caption: 'Koel Labs killing their demo at Demo Day 🗣️',
       alt: 'Koel Labs presentation'
     },
     {
       filename: 'slate.jpg',
-      caption: '💻 Slate demoing their product to actual humans with money',
+      caption: 'Slate showcasing their cute stand :))',
       alt: 'Slate product demo'
     },
     {
       filename: 'edu.jpg',
-      caption: '📚 Learning things that Google can\'t teach you (yet)',
+      caption: 'look mom it\'s me! (this could be you next 🫵)',
       alt: 'Educational workshop session'
     },
     {
       filename: 'bonding.jpg',
-      caption: '🌲 Team bonding: where "just one more mile" becomes a lifestyle',
+      caption: 'team bonding time!! (we are very tight knit)',
       alt: 'Team bonding event'
     },
   ];

@@ -1,33 +1,65 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const TracksSection: React.FC = () => {
+  const [expandedTrack, setExpandedTrack] = useState<number | null>(null);
+
   const tracks = [
     {
       title: 'EIR TRACK',
       subtitle: 'For Explorers',
-      description: 'Passionate about entrepreneurship but need to find the right idea? Our Entrepreneur-in-Residence track helps you discover and validate your startup concept.',
+      description: 'Are you a builder interested in technology entrepreneurship? Join Next as an Entrepreneur-in-Residence! This provides you a personalized pathway to guide and support your entrepreneurial journey, ensuring your success.',
       features: [
-        'Idea generation and validation workshops',
-        'Industry expert mentorship',
-        'Market research and customer discovery',
-        'Team formation and co-founder matching'
+        'Workshops, speaker events, and networking opportunities',
+        'An environment to explore, build, and break your ideas',
+        'Ad-hoc advising via the Next team and our partners and sponsors',
+        'Introduction to Seattle\'s Entrepreneurship Ecosystem through joint off-campus events',
+        'A community of fellow EiRs (potential co-Founders) and student founders at UW'
       ],
+      lookingFor: {
+        title: 'What We\'re Looking For',
+        description: 'We\'re looking for passionate individuals eager to learn and/or create their own startups in the future.',
+        criteria: [
+          'Builders with a desire to build exciting and impactful technology',
+          'Bonus points if you have engineering, business, product, and/or design skills',
+          'Endlessly curious and ready to learn',
+          'Extremely passionate about the tech startup space',
+          'Problem-solvers who take initiative',
+          'Excited to meet like-minded people at UW'
+        ]
+      },
       cta: 'Apply to EIR Track'
     },
     {
       title: 'PROJECT TRACK',
       subtitle: 'For Builders',
-      description: 'Already have a startup idea or existing project? Join our Project Track to accelerate your venture with intensive mentorship and resources.',
+      description: 'Are you someone with a promising project that you want to take to the next level? Join Next as a project in our incubator! Go through the program alongside other teams of founders.',
       features: [
-        'Weekly founder mentorship sessions',
-        'Product development workshops',
-        'Investor pitch preparation',
-        'Go-to-market strategy development'
+        'Strategic goal-setting and accountability methods',
+        'Workshops, speaker events, and networking',
+        'Ad-hoc advising via the Next team and our partners and sponsors',
+        'Hiring support',
+        'Access to our network',
+        'A community of amazing fellow founders and Entrepreneurs-in-Residence!'
       ],
+      lookingFor: {
+        title: 'What We\'re Looking For',
+        description: 'We\'re looking for teams and individuals excited to push their projects to the next level.',
+        criteria: [
+          'Passionate and insightful about the problem they\'re tackling',
+          'Familiar with the tech startup space',
+          'Deeply thinking about both their project\'s engineering and business capabilities',
+          'Excited to meet fellow founders at UW!'
+        ]
+      },
       cta: 'Apply to Project Track'
     }
   ];
+
+  const toggleExpand = (index: number) => {
+    setExpandedTrack(expandedTrack === index ? null : index);
+  };
 
   return (
     <section id="tracks" className="bg-charcoal py-12 md:py-section px-4 md:px-6 lg:px-12">
@@ -66,7 +98,7 @@ const TracksSection: React.FC = () => {
                 {track.description}
               </p>
 
-              <ul className="space-y-3 md:space-y-4 mb-8 md:mb-12">
+              <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                 {track.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start">
                     <div className="w-2 h-2 bg-pink mt-2 md:mt-3 mr-3 md:mr-4 flex-shrink-0"></div>
@@ -74,6 +106,49 @@ const TracksSection: React.FC = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* Expandable "What We're Looking For" section */}
+              <div className="mb-6 md:mb-8">
+                <button
+                  onClick={() => toggleExpand(index)}
+                  className="w-full flex items-center justify-between text-left py-3 px-4 bg-neutral-50 hover:bg-neutral-100 transition-colors duration-300 rounded-lg group"
+                >
+                  <span className="text-neutral-900 font-medium text-sm md:text-base">
+                    {track.lookingFor.title}
+                  </span>
+                  {expandedTrack === index ? (
+                    <ChevronUp size={20} className="text-pink group-hover:text-primary-600 transition-colors" />
+                  ) : (
+                    <ChevronDown size={20} className="text-pink group-hover:text-primary-600 transition-colors" />
+                  )}
+                </button>
+
+                <AnimatePresence>
+                  {expandedTrack === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-4 px-4">
+                        <p className="text-gray text-sm md:text-base mb-4 leading-relaxed italic">
+                          {track.lookingFor.description}
+                        </p>
+                        <ul className="space-y-2">
+                          {track.lookingFor.criteria.map((criterion, criterionIndex) => (
+                            <li key={criterionIndex} className="flex items-start">
+                              <div className="w-1.5 h-1.5 bg-primary-600 mt-2 mr-3 flex-shrink-0 rounded-full"></div>
+                              <span className="text-gray text-sm leading-relaxed">{criterion}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
               <button className="border border-neutral-700 text-neutral-900 px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base hover:bg-pink hover:border-pink hover:text-white transition-all duration-300 w-full sm:w-auto">
                 {track.cta}

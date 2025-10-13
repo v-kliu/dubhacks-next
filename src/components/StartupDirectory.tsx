@@ -19,6 +19,29 @@ const StartupDirectory: React.FC = () => {
   const [selectedBatch, setSelectedBatch] = useState('all');
   const [selectedStage, setSelectedStage] = useState('all');
 
+  // Function to get batch-specific colors
+  const getBatchColor = (batch: string): string => {
+    const batchColors: { [key: string]: string } = {
+      'Batch 1': 'bg-purple-100 text-purple-700 border-purple-200 hover:bg-purple-200',
+      'Batch 2': 'bg-green-100 text-green-700 border-green-200 hover:bg-green-200',
+      'Batch 3': 'bg-blue-100 text-blue-700 border-blue-200 hover:bg-blue-200',
+      'Batch 4': 'bg-orange-100 text-orange-700 border-orange-200 hover:bg-orange-200',
+      'Batch 5': 'bg-pink-100 text-pink-700 border-pink-200 hover:bg-pink-200',
+    };
+    return batchColors[batch] || 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200';
+  };
+
+  // Function to get stage-specific colors
+  const getStageColor = (stage: string): string => {
+    const stageColors: { [key: string]: string } = {
+      'Pre-Seed': 'bg-indigo-100 text-indigo-700 border-indigo-200 hover:bg-indigo-200',
+      'Seed': 'bg-emerald-100 text-emerald-700 border-emerald-200 hover:bg-emerald-200',
+      'Series A': 'bg-cyan-100 text-cyan-700 border-cyan-200 hover:bg-cyan-200',
+      'Series B+': 'bg-violet-100 text-violet-700 border-violet-200 hover:bg-violet-200',
+    };
+    return stageColors[stage] || 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200';
+  };
+
   // TO ADD/EDIT STARTUPS:
   // See startup_directory_data.txt for easy-to-use templates and instructions
   // Copy entries from that file and paste them here
@@ -99,9 +122,15 @@ const StartupDirectory: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl font-light text-neutral-900 mb-4">Startup Directory</h1>
-            <p className="text-neutral-600 text-lg">
+            <p className="text-neutral-600 text-lg mb-3">
               Discover startups built by DubHacks Next alumni. {startups.length} companies and counting.
             </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-50 border border-yellow-200 rounded-lg">
+              <span className="text-yellow-600 text-sm">⚠️</span>
+              <p className="text-yellow-800 text-sm">
+                This directory is currently being updated and populated with our startup companies.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -166,17 +195,26 @@ const StartupDirectory: React.FC = () => {
               className="bg-white border border-neutral-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300 group"
             >
               {/* Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center space-x-3">
+              <div className="mb-4">
+                <div className="flex items-center space-x-3 mb-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-accent-100 rounded-lg flex items-center justify-center">
                     <span className="text-primary-600 font-bold text-lg">
                       {startup.name.charAt(0)}
                     </span>
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="font-semibold text-neutral-900">{startup.name}</h3>
-                    <p className="text-sm text-neutral-500">{startup.batch}</p>
                   </div>
+                </div>
+
+                {/* Colorful Tags */}
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className={`px-3 py-1 text-xs rounded-full font-medium border transition-all duration-200 ${getBatchColor(startup.batch)}`}>
+                    {startup.batch}
+                  </span>
+                  <span className={`px-3 py-1 text-xs rounded-full font-medium border transition-all duration-200 ${getStageColor(startup.stage)}`}>
+                    {startup.stage}
+                  </span>
                 </div>
               </div>
 
@@ -189,12 +227,8 @@ const StartupDirectory: React.FC = () => {
               {/* Metadata */}
               <div className="space-y-2 text-sm text-neutral-600 mb-4 pt-4 border-t border-neutral-100">
                 <div className="flex items-center space-x-2">
-                  <Calendar size={14} className="text-neutral-400" />
-                  <span>Founded {startup.founded}</span>
-                </div>
-                <div className="flex items-center space-x-2">
                   <Users size={14} className="text-neutral-400" />
-                  <span>{startup.teamSize} people • {startup.stage}</span>
+                  <span>{startup.teamSize} people</span>
                 </div>
               </div>
 

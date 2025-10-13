@@ -30,6 +30,7 @@ const TeamSection: React.FC = () => {
     { name: 'Aarfan', role: 'EiR Director' },
     { name: 'Sanjana', role: 'Director of Community' },
     { name: 'Victor', role: 'Director of Technology' },
+    { name: 'TBD', role: 'Marketing Director' },
     { name: 'Ryan', role: 'Advisor' }
   ];
 
@@ -47,15 +48,16 @@ const TeamSection: React.FC = () => {
           <h2 className="section-title text-neutral-900">Run by Students, For Students</h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {teamMembers.map((member, index) => (
+        {/* First Row - 5 members */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-12">
+          {teamMembers.slice(0, 5).map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-center group"
+              className="text-center group w-[calc(50%-1rem)] md:w-[220px]"
             >
               <div className="relative mb-6 overflow-hidden">
                 <div className="w-full aspect-square bg-lightGray border border-gray-200 group-hover:border-pink group-hover:border-[3px] transition-all duration-300">
@@ -66,7 +68,34 @@ const TeamSection: React.FC = () => {
                   />
                 </div>
               </div>
-              
+
+              <h3 className="text-neutral-900 font-light text-lg mb-2">{member.name}</h3>
+              <p className="text-gray text-sm">{member.role}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Second Row - 4 members */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+          {teamMembers.slice(5, 9).map((member, index) => (
+            <motion.div
+              key={index + 5}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: (index + 5) * 0.1 }}
+              viewport={{ once: true }}
+              className="text-center group w-[calc(50%-1rem)] md:w-[220px]"
+            >
+              <div className="relative mb-6 overflow-hidden">
+                <div className="w-full aspect-square bg-lightGray border border-gray-200 group-hover:border-pink group-hover:border-[3px] transition-all duration-300">
+                  <img
+                    src={getTeamMemberImage(member.name)}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
               <h3 className="text-neutral-900 font-light text-lg mb-2">{member.name}</h3>
               <p className="text-gray text-sm">{member.role}</p>
             </motion.div>
