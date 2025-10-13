@@ -10,7 +10,7 @@ interface TeamMember {
 const getTeamMemberImage = (name: string): string => {
   const images: { [key: string]: string } = {
     'Anshul': '/assets/team_headshots/anshul.jpg',
-    'Sthiti': '/assets/team_headshots/sthiti.jpg',
+    'Sthiti': '/assets/team_headshots/sthiti.png',
     'Meera': '/assets/team_headshots/meera.jpg',
     'Jordan': '/assets/team_headshots/jordan.jpg',
     'Aarfan': '/assets/team_headshots/aarfan.png',

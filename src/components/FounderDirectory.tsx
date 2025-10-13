@@ -155,16 +155,17 @@ const FounderDirectory: React.FC = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-neutral-900">{founder.name}</h3>
-                  <p className="text-sm text-primary-600 font-medium">{founder.company}</p>
+                  <div className="flex items-center gap-2 mt-1 flex-wrap">
+                    <span className="text-sm text-primary-600 font-medium">{founder.company}</span>
+                    <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
+                      {founder.batch}
+                    </span>
+                  </div>
                 </div>
               </div>
 
               {/* Details */}
               <div className="space-y-2 text-sm text-neutral-600 mb-4">
-                <div className="flex items-center space-x-2">
-                  <Building size={14} className="text-neutral-400" />
-                  <span>{founder.batch}</span>
-                </div>
                 <div className="flex items-center space-x-2">
                   <Calendar size={14} className="text-neutral-400" />
                   <span>Graduated {founder.graduationYear}</span>

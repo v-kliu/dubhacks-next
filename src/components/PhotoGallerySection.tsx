@@ -22,42 +22,42 @@ const PhotoGallerySection: React.FC = () => {
   const photos: Photo[] = [
     {
       filename: 'batch4.jpg',
-      caption: 'Batch 4 cohort gathered together at retreat',
+      caption: '✨ Batch 4 vibes at our retreat - yes, we actually met IRL',
       alt: 'Batch 4 cohort group photo'
     },
     {
       filename: 'batch4_exec.jpg',
-      caption: 'Leadership team celebrating Demo Day success',
+      caption: '🎉 Demo Day = done. Sleep schedule = obliterated. Worth it? Absolutely.',
       alt: 'Batch 4 executive team'
     },
     {
       filename: 'cognito.jpg',
-      caption: 'Cognito founders presenting their pitch at Demo Day',
+      caption: '🎤 Cognito dropping fire pitches like they\'re releasing mixtapes',
       alt: 'Cognito Demo Day presentation'
     },
     {
       filename: 'hike.jpg',
-      caption: 'We touch grass!',
+      caption: '⛰️ Plot twist: founders DO touch grass (occasionally)',
       alt: 'Team building hike'
     },
     {
       filename: 'koel_labs.jpg',
-      caption: 'Koel Labs team showcasing their speech technology innovation',
+      caption: '🗣️ Koel Labs making computers talk - because why not?',
       alt: 'Koel Labs presentation'
     },
     {
       filename: 'slate.jpg',
-      caption: 'Slate founders demoing their product to investors and mentors',
+      caption: '💻 Slate demoing their product to actual humans with money',
       alt: 'Slate product demo'
     },
     {
       filename: 'edu.jpg',
-      caption: 'Educational workshop session with cohort members learning and collaborating',
+      caption: '📚 Learning things that Google can\'t teach you (yet)',
       alt: 'Educational workshop session'
     },
     {
       filename: 'bonding.jpg',
-      caption: 'Team bonding on our hike',
+      caption: '🌲 Team bonding: where "just one more mile" becomes a lifestyle',
       alt: 'Team bonding event'
     },
   ];
@@ -74,7 +74,7 @@ const PhotoGallerySection: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
-    }, 5000);
+    }, 8000); // Slowed down from 5s to 8s
 
     return () => clearInterval(timer);
   }, []);

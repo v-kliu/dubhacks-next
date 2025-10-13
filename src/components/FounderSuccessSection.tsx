@@ -116,8 +116,8 @@ const FounderSuccessSection: React.FC = () => {
           <h3 className="text-center text-2xl font-light text-neutral-900 mb-4">
             Our Founders Come From
           </h3>
-          <p className="text-center text-neutral-600 mb-8 max-w-2xl mx-auto">
-            Before and after DubHacks Next, our founders come with experience from companies such as:
+          <p className="text-center text-neutral-600 mb-8 max-w-4xl mx-auto">
+            Before and after DubHacks Next, our founders come with experience from companies such as
           </p>
           
           {/* Company Logos Grid */}

@@ -197,7 +197,7 @@ const SpeakersSection: React.FC = () => {
                 viewport={{ once: true }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300 group text-center"
               >
-                <div className="w-full h-16 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 p-3 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-20 h-20 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-3 p-3 group-hover:bg-white/15 transition-all duration-300 border border-white/20">
                   {getPartnerLogo(partner.name) ? (
                     <img
                       src={getPartnerLogo(partner.name)}
@@ -205,7 +205,7 @@ const SpeakersSection: React.FC = () => {
                       className="max-w-full max-h-full object-contain"
                     />
                   ) : (
-                    <span className="text-primary-600 font-bold text-sm">
+                    <span className="text-white font-bold text-sm">
                       {partner.name.split(' ').map(word => word[0]).join('').substring(0, 2)}
                     </span>
                   )}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
   const stats = [
-    { value: '$3M+', label: 'Raised' },
+    { value: '$5M+', label: 'Raised' },
     { value: '68', label: 'Startups' },
     { value: '4', label: 'Batches' }
   ];

@@ -58,7 +58,7 @@ const PartnersSection: React.FC = () => {
                 viewport={{ once: true }}
                 className="bg-white/80 backdrop-blur-sm p-5 rounded-xl border border-primary-100 card-hover text-center group"
               >
-                <div className="w-full h-16 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 p-3 group-hover:scale-105 transition-all duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-neutral-50 to-white rounded-xl flex items-center justify-center mx-auto mb-3 p-4 group-hover:scale-105 transition-all duration-300 shadow-sm">
                   {getPartnerLogo(partner.name) ? (
                     <img
                       src={getPartnerLogo(partner.name)}
