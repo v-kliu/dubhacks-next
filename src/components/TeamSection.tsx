@@ -9,14 +9,14 @@ interface TeamMember {
 
 const getTeamMemberImage = (name: string): string => {
   const images: { [key: string]: string } = {
-    // 'Anshul': '/assets/team_headshots/anshul.jpg',
-    // 'Sthiti': '/assets/team_headshots/sthiti.jpg',
-    // 'Meera': '/assets/team_headshots/meera.jpg',
-    // 'Jordan': '/assets/team_headshots/jordan.jpg',
-    // 'Aarfan': '/assets/team_headshots/aarfan.jpg',
+    'Anshul': '/assets/team_headshots/anshul.jpg',
+    'Sthiti': '/assets/team_headshots/sthiti.jpg',
+    'Meera': '/assets/team_headshots/meera.jpg',
+    'Jordan': '/assets/team_headshots/jordan.jpg',
+    'Aarfan': '/assets/team_headshots/aarfan.png',
     'Sanjana': '/assets/team_headshots/sanjana.jpg',
     'Victor': '/assets/team_headshots/victor.jpg',
-    // 'Ryan': '/assets/team_headshots/ryan.jpg',
+    'Ryan': '/assets/team_headshots/ryan.png',
   };
   return images[name] || '/assets/team_headshots/dubs.jpg';
 };

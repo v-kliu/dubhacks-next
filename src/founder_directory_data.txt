@@ -1,0 +1,79 @@
+FOUNDER DIRECTORY DATA
+======================
+
+HOW TO ADD A FOUNDER:
+1. Copy the template below
+2. Fill in all the fields with the founder's information
+3. Paste the completed entry at the bottom of this file
+4. Copy the data from this file into FounderDirectory.tsx in the founders array
+
+TEMPLATE:
+---------
+{
+  name: '[First Last]',
+  company: '[Company Name]',
+  batch: '[Batch X]',
+  graduationYear: '[YYYY]',
+  major: '[Major Name]',
+  linkedIn: 'https://linkedin.com/in/[username]'  // Optional - remove line if none
+}
+
+EXISTING FOUNDERS:
+==================
+
+{
+  name: 'Alex Chen',
+  company: 'vly.com',
+  batch: 'Batch 3',
+  graduationYear: '2022',
+  major: 'Computer Science',
+  linkedIn: 'https://linkedin.com/in/alexchen'
+}
+
+{
+  name: 'Sarah Kim',
+  company: 'Meteor',
+  batch: 'Batch 4',
+  graduationYear: '2023',
+  major: 'Human-Computer Interaction',
+  linkedIn: 'https://linkedin.com/in/sarahkim'
+}
+
+{
+  name: 'David Rodriguez',
+  company: 'Koel Labs',
+  batch: 'Batch 4',
+  graduationYear: '2023',
+  major: 'Electrical Engineering (PhD)',
+  linkedIn: 'https://linkedin.com/in/davidrodriguez'
+}
+
+{
+  name: 'Emma Thompson',
+  company: 'Ripple',
+  batch: 'Batch 4',
+  graduationYear: '2024',
+  major: 'Business Administration',
+  linkedIn: 'https://linkedin.com/in/emmathompson'
+}
+
+{
+  name: 'Michael Wang',
+  company: 'Soarin',
+  batch: 'Batch 4',
+  graduationYear: '2024',
+  major: 'Data Science',
+  linkedIn: 'https://linkedin.com/in/michaelwang'
+}
+
+{
+  name: 'Lisa Park',
+  company: 'vly.com',
+  batch: 'Batch 3',
+  graduationYear: '2022',
+  major: 'Design',
+  linkedIn: 'https://linkedin.com/in/lisapark'
+}
+
+ADD NEW FOUNDERS BELOW THIS LINE:
+==================================

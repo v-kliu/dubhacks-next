@@ -54,11 +54,13 @@ const TimelineSection: React.FC = () => {
         </motion.div>
 
         <div className="relative">
-          <div className="absolute top-0 left-0 right-0 h-px bg-white/20"></div>
-          
+          {/* Background line */}
+          <div className="absolute top-0 left-0 right-0 h-0.5 bg-white/20"></div>
+
+          {/* Animated progress line */}
           <motion.div
-            className="absolute top-0 left-0 h-px bg-pink z-10"
-            style={{ 
+            className="absolute top-0 left-0 h-0.5 bg-pink z-10"
+            style={{
               width: useTransform(lineProgress, (v) => `${v}%`)
             }}
           />
@@ -73,12 +75,9 @@ const TimelineSection: React.FC = () => {
                 viewport={{ once: true }}
                 className="relative text-center"
               >
-                <div 
-                  className={`absolute -top-12 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2 ${
-                    index === 4 
-                      ? 'bg-pink border-pink shadow-lg shadow-pink/50' 
-                      : 'bg-black border-pink'
-                  } z-20`}
+                {/* Bullet point - positioned to be centered on the line */}
+                <div
+                  className="absolute -top-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-charcoal border-pink z-20"
                 />
                 
                 <div className="pt-4">

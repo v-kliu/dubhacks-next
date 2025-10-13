@@ -43,9 +43,9 @@ const AlumniSuccessSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <div className="overline text-pink mb-6">PORTFOLIO</div>
+          <div className="overline text-pink mb-4 inline-block px-4 py-2 bg-pink/10 rounded-full">PORTFOLIO</div>
           <h2 className="section-title text-neutral-900">Our Founders Are Funded</h2>
         </motion.div>
 

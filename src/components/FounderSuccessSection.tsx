@@ -21,22 +21,16 @@ const FounderSuccessSection: React.FC = () => {
       title: 'Successful Exits',
       description: 'Companies acquired by leading tech firms',
       companies: ['Pongo', 'Minute.Land', 'Quantum Labs']
-    },
-    {
-      icon: Users,
-      title: 'Tech Giants',
-      description: 'Engineers and leaders at top companies',
-      companies: ['Google', 'Amazon', 'Microsoft', 'Meta']
     }
   ];
 
   const getCompanyLogo = (name: string): string => {
     const logos: { [key: string]: string } = {
       'Google': '/assets/company_logos/google.svg',
-      'Amazon': '/assets/company_logos/amazon.svg',
       'Microsoft': '/assets/company_logos/microsoft.svg',
       'Meta': '/assets/company_logos/meta.svg',
       'Apple': '/assets/company_logos/apple.svg',
+      'Amazon': '/assets/company_logos/amazon.svg',
       'Netflix': '/assets/company_logos/netflix.svg',
       'Uber': '/assets/company_logos/uber.svg',
       'Stripe': '/assets/company_logos/stripe.svg',
@@ -53,30 +47,31 @@ const FounderSuccessSection: React.FC = () => {
   };
 
   const companies = [
-    'Google', 'Amazon', 'Microsoft', 'Meta', 'Apple', 'Netflix', 'Uber', 'Stripe', 'LinkedIn', 'Tesla', 'SpaceX',
+    'Google', 'Microsoft', 'Meta', 'Apple', 'Amazon', 'Netflix', 'Uber', 'Stripe', 'LinkedIn', 'Tesla', 'SpaceX',
     'Figma', 'Notion', 'Adobe', 'Salesforce', 'Palantir'
   ];
 
   return (
-    <section className="bg-white py-section px-6 md:px-12">
+    <section className="bg-white py-12 md:py-section px-4 md:px-6 lg:px-12">
       <div className="max-w-content mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="overline text-pink mb-6">PROVEN SUCCESS</div>
-          <h2 className="section-title text-neutral-900 mb-6">You're in Good Hands</h2>
-          <p className="text-gray text-lg max-w-3xl mx-auto">
-            Our founders don't just build companies - they join the ranks of tech leaders at Google, Amazon, and Microsoft, 
-            get accepted to YC and top accelerators, and create lasting impact in the startup ecosystem.
-          </p>
-        </motion.div>
+        <div className="text-center mb-8 md:mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="overline text-pink mb-4 inline-block px-4 py-2 bg-pink/10 rounded-full">PROVEN SUCCESS</div>
+            <h2 className="section-title text-neutral-900 mb-4">You're in Good Hands</h2>
+            <p className="text-gray text-sm md:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed px-4">
+              Our founders don't just build companies - they join the ranks of tech leaders at Google, Amazon, and Microsoft,
+              get accepted to YC and top accelerators, and create lasting impact in the startup ecosystem.
+            </p>
+          </motion.div>
+        </div>
 
         {/* Success Categories */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
           {successStats.map((stat, index) => (
             <motion.div
               key={index}
@@ -122,11 +117,11 @@ const FounderSuccessSection: React.FC = () => {
             Our Founders Come From
           </h3>
           <p className="text-center text-neutral-600 mb-8 max-w-2xl mx-auto">
-            Before and after DubHacks Next, our founders come with experience from companies such as
+            Before and after DubHacks Next, our founders come with experience from companies such as:
           </p>
           
           {/* Company Logos Grid */}
-          <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 md:gap-8 items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-4 md:gap-6 lg:gap-8 items-center">
             {companies.map((company, index) => (
               <motion.div
                 key={index}
@@ -134,7 +129,7 @@ const FounderSuccessSection: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-16 group"
+                className="bg-white p-3 md:p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-14 md:h-16 group"
               >
                 {getCompanyLogo(company) ? (
                   <img

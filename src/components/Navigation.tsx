@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 interface NavItem {
   name: string;
@@ -13,6 +13,8 @@ interface NavItem {
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +24,46 @@ const Navigation: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      // Store the target section in sessionStorage
+      sessionStorage.setItem('scrollToSection', href);
+      navigate('/');
+    } else {
+      // If we're already on home page, just scroll
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  // Check for stored scroll target after navigation
+  useEffect(() => {
+    const scrollTarget = sessionStorage.getItem('scrollToSection');
+    if (scrollTarget && location.pathname === '/') {
+      // Clear the stored value
+      sessionStorage.removeItem('scrollToSection');
+
+      // Wait for page to fully render
+      const scrollToElement = () => {
+        const element = document.querySelector(scrollTarget);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }, 300);
+        }
+      };
+
+      // Try multiple times to ensure element is loaded
+      setTimeout(scrollToElement, 100);
+      setTimeout(scrollToElement, 500);
+    }
+  }, [location]);
 
   const navItems: NavItem[] = [
     { name: 'About', href: '#program' },
@@ -96,9 +138,10 @@ const Navigation: React.FC = () => {
                 ) : (
                   <a
                     href={item.href}
+                    onClick={(e) => item.href && handleNavClick(e, item.href)}
                     className={`transition-all duration-300 relative group ${
-                      isScrolled 
-                        ? 'text-neutral-700 hover:text-primary-600' 
+                      isScrolled
+                        ? 'text-neutral-700 hover:text-primary-600'
                         : 'text-neutral-700 hover:text-primary-600'
                     }`}
                   >
@@ -111,25 +154,30 @@ const Navigation: React.FC = () => {
                 {item.hasDropdown && item.dropdownItems && activeDropdown === item.name && (
                   <>
                     {/* Invisible hover bridge to prevent flicker */}
-                    <div className="absolute top-full left-0 right-0 h-3" />
+                    <div
+                      className="absolute top-full left-0 right-0 h-4"
+                      onMouseEnter={() => setActiveDropdown(item.name)}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                    />
 
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-3 bg-white rounded-lg shadow-xl border border-primary-100 py-3 min-w-52 z-50"
+                      className="absolute top-full left-0 mt-4 bg-white rounded-lg shadow-xl border border-primary-100 py-3 min-w-52 z-50"
                       onMouseEnter={() => setActiveDropdown(item.name)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
                       {item.dropdownItems.map((dropdownItem) => (
-                        <a
+                        <Link
                           key={dropdownItem.name}
-                          href={dropdownItem.href}
+                          to={dropdownItem.href}
                           className="block px-5 py-3 text-neutral-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 text-sm font-medium"
+                          onClick={() => setActiveDropdown(null)}
                         >
                           {dropdownItem.name}
-                        </a>
+                        </Link>
                       ))}
                     </motion.div>
                   </>

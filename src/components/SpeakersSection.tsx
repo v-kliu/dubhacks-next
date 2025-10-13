@@ -3,76 +3,106 @@ import { motion } from 'framer-motion';
 import { Award, Building, Users, Star, Handshake, Globe } from 'lucide-react';
 
 const SpeakersSection: React.FC = () => {
+  // Function to get partner logo
+  const getPartnerLogo = (name: string): string => {
+    const logos: { [key: string]: string } = {
+      'Y Combinator': '/assets/partners_and_mentors/yc.svg',
+      'Khosla Ventures': '/assets/partners_and_mentors/khosla.png',
+      'Madrona Venture Group': '/assets/partners_and_mentors/madrona.jpg',
+      'Techstars': '/assets/partners_and_mentors/techstars.svg',
+      'Pack Ventures': '/assets/partners_and_mentors/pack.jpg',
+      'University of Washington': '/assets/partners_and_mentors/uw.jpg',
+      'Amazon Web Services': '/assets/partners_and_mentors/aws.svg',
+    };
+    return logos[name] || '';
+  };
+
+  // Speakers ranked by impressiveness (achievements, company impact, credentials)
   const speakers = [
     {
-      name: 'Jensen Huang',
-      title: 'CEO & Founder, NVIDIA',
-      batch: 'Batch 3 Mentor',
-      category: 'Tech Leadership',
-      description: 'Shared insights on AI revolution and building transformative technology companies',
-      image: '/assets/speakers/jensen-huang.jpg'
+      name: 'Armon Dadgar',
+      title: 'Co-Founder & CTO, HashiCorp (IBM)',
+      batch: 'UW Alumni',
+      category: 'Infrastructure',
+      description: 'Built HashiCorp into a multi-billion dollar infrastructure company (acquired by IBM). Forbes 30 under 30. Created Terraform, Vault, and other foundational DevOps tools used by Fortune 500 companies worldwide.',
+      image: '/assets/speakers/armon-dadgar.jpg'
     },
     {
-      name: 'Reid Hoffman',
-      title: 'Co-Founder, LinkedIn',
-      batch: 'Batch 2 Speaker',
-      category: 'Network Effects', 
-      description: 'Discussed building professional networks and scaling platform businesses',
-      image: '/assets/speakers/reid-hoffman.jpg'
+      name: 'Jon Chu',
+      title: 'Partner, Khosla Ventures',
+      batch: 'Venture Capital',
+      category: 'AI & Infrastructure',
+      description: 'Early engineer at Palantir (scaled 200→1800 employees). Founded and sold KoalityCode to Docker, led Docker Enterprise. Angel investor in Figma, Ollama, StackRox. Invests in cutting-edge AI infrastructure and developer tools.',
+      image: '/assets/speakers/jon-chu.jpg'
     },
     {
-      name: 'Melinda Gates',
-      title: 'Co-Chair, Gates Foundation',
-      batch: 'Batch 4 Keynote',
-      category: 'Impact & Purpose',
-      description: 'Inspired founders to build companies that create positive social impact',
-      image: '/assets/speakers/melinda-gates.jpg'
+      name: 'Vaibhav Gupta',
+      title: 'Founder & CEO, Boundary (YC W23)',
+      batch: 'Y Combinator',
+      category: 'AI Engineering',
+      description: 'Building BAML, the programming language for AI agents (6K+ GitHub stars). Previously built AI systems at Google AR, Microsoft HoloLens, and D.E. Shaw. Pioneering structured prompt engineering that saves companies 30% on AI costs.',
+      image: '/assets/speakers/vaibhav-gupta.jpg'
     },
     {
-      name: 'Brian Chesky',
-      title: 'CEO & Co-Founder, Airbnb',
-      batch: 'Batch 1 Mentor',
-      category: 'Design Thinking',
-      description: 'Taught product design principles and customer-centric innovation',
-      image: '/assets/speakers/brian-chesky.jpg'
+      name: 'Prem Kumar',
+      title: 'Co-Founder & CEO, Humanly.io',
+      batch: 'GeekWire CEO of Year',
+      category: 'HR Tech & AI',
+      description: 'GeekWire 2023 Startup CEO of the Year. Built AI hiring platform (raised $5.5M). 10 years at Microsoft leading HR technology initiatives. PSBJ 40 under 40. Former product leader at TINYpulse.',
+      image: '/assets/speakers/prem-kumar.jpg'
     },
     {
-      name: 'Satya Nadella',
-      title: 'CEO, Microsoft',
-      batch: 'Batch 3 Speaker',
-      category: 'Growth Mindset',
-      description: 'Emphasized the importance of continuous learning and adaptation',
-      image: '/assets/speakers/satya-nadella.jpg'
+      name: 'Avi Geiger',
+      title: 'Founder & CEO, Groundlight AI',
+      batch: 'Madrona-Backed',
+      category: 'Computer Vision',
+      description: 'Building enterprise computer vision that works day one. 12 years as Principal Architect at Microsoft. Co-founder/CTO of Picobrew. Backed by Madrona and Greycroft. CB Insights Top 100 AI Company.',
+      image: '/assets/speakers/avi-geiger.jpg'
     },
     {
-      name: 'Susan Wojcicki',
-      title: 'Former CEO, YouTube',
-      batch: 'Batch 2 Mentor',
-      category: 'Content Strategy',
-      description: 'Shared strategies for building and scaling content platforms',
-      image: '/assets/speakers/susan-wojcicki.jpg'
+      name: 'Ken Horenstein',
+      title: 'Founder & Partner, Pack Ventures',
+      batch: 'UW Preferred Partner',
+      category: 'UW Ecosystem',
+      description: 'Founded Pack Ventures, UW\'s preferred venture partner. Raised $30M second fund to back Husky founders in AI, life sciences, and deep tech. Previously investing at Microsoft M12. Invested in 29 UW-connected startups.',
+      image: '/assets/speakers/ken-horenstein.jpg'
+    },
+    {
+      name: 'Sam Dore',
+      title: 'Head of Talent, Madrona Venture Labs',
+      batch: 'Startup Studio',
+      category: 'Talent & Recruiting',
+      description: 'Builds winning teams for enterprise AI startups at Madrona Venture Labs. Partners with founders from day one to scale companies. Expertise in early-stage recruitment and founder team building.',
+      image: '/assets/speakers/sam-dore.jpg'
+    },
+    {
+      name: 'Steven Green',
+      title: 'Partner, Pillsbury Law',
+      batch: 'Legal Counsel',
+      category: 'Startup Law',
+      description: 'Leading startup lawyer for life sciences and biotech companies in Silicon Valley. Advises on formation, fundraising, M&A, and IPOs. Previously partner at Goodwin Procter. University of Chicago Law.',
+      image: '/assets/speakers/steven-green.jpg'
     }
   ];
 
   const partners = [
-    { name: 'Microsoft', category: 'Technology Partner', type: 'partner' },
-    { name: 'Amazon Web Services', category: 'Cloud Partner', type: 'partner' },
-    { name: 'Techstars', category: 'Accelerator Partner', type: 'partner' },
-    { name: 'Y Combinator', category: 'Startup Partner', type: 'partner' },
-    { name: 'University of Washington', category: 'Academic Partner', type: 'partner' },
-    { name: 'Seattle Angel Fund', category: 'Investment Partner', type: 'partner' },
-    { name: 'Founders\' Co-op', category: 'Community Partner', type: 'partner' },
-    { name: 'Pioneer Square Labs', category: 'Venture Partner', type: 'partner' }
+    // Top-tier VC firms and accelerators
+    { name: 'Y Combinator', category: 'Accelerator' },
+    { name: 'Khosla Ventures', category: 'Venture Capital' },
+    { name: 'Madrona Venture Group', category: 'Venture Capital' },
+    { name: 'Techstars', category: 'Accelerator' },
+    { name: 'Pack Ventures', category: 'Venture Capital' },
+    { name: 'University of Washington', category: 'Academic Partner' },
+    { name: 'Amazon Web Services', category: 'Cloud Platform' },
   ];
 
   const categories = [
-    { icon: Building, label: 'Tech Leadership', count: '15+ Speakers' },
-    { icon: Users, label: 'Network Effects', count: '10+ Sessions' },
-    { icon: Award, label: 'Impact & Purpose', count: '8+ Workshops' },
-    { icon: Star, label: 'Design Thinking', count: '12+ Mentors' },
-    { icon: Handshake, label: 'Partners', count: '20+ Organizations' },
-    { icon: Globe, label: 'Global Network', count: '50+ Connections' }
+    { icon: Users, label: 'Venture Capital', count: '5+ VCs' },
+    { icon: Award, label: 'Founders', count: '6+ CEOs' },
+    { icon: Handshake, label: 'Partners', count: '7+ Orgs' },
+    { icon: Globe, label: 'UW Network', count: '50+ Alumni' }
   ];
+
 
   return (
     <section className="bg-charcoal py-section px-6 md:px-12">
@@ -87,13 +117,13 @@ const SpeakersSection: React.FC = () => {
           <div className="overline text-pink mb-6">OUR NETWORK</div>
           <h2 className="section-title text-white mb-6">Speakers, Mentors & Partners</h2>
           <p className="text-white/70 text-lg max-w-3xl mx-auto">
-            Learn from industry legends, partner with leading organizations, and connect with transformational leaders 
+            Learn from industry legends, partner with leading organizations, and connect with transformational leaders
             who support our community across every batch.
           </p>
         </motion.div>
 
         {/* Categories */}
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {categories.map((category, index) => (
             <motion.div
               key={index}
@@ -112,82 +142,81 @@ const SpeakersSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Combined Grid - Speakers and Partners */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {/* Speakers */}
-          {speakers.map((speaker, index) => (
-            <motion.div
-              key={`speaker-${index}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group"
-            >
-              <div className="flex items-start space-x-4 mb-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-accent-200 rounded-full flex items-center justify-center flex-shrink-0">
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="w-full h-full rounded-full object-cover"
-                    onError={(e) => {
-                      // Fallback to initials if image doesn't exist
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = `
-                          <span class="text-primary-600 font-bold text-lg">
-                            ${speaker.name.split(' ').map(n => n[0]).join('')}
-                          </span>
-                        `;
-                      }
-                    }}
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-white text-lg truncate">{speaker.name}</h3>
-                  <p className="text-white/70 text-sm truncate">{speaker.title}</p>
-                  <div className="flex items-center space-x-2 mt-1">
-                    <span className="px-2 py-1 bg-primary-500/20 text-primary-300 text-xs rounded-full">
-                      {speaker.batch}
-                    </span>
-                    <span className="px-2 py-1 bg-white/10 text-white/60 text-xs rounded-full">
-                      {speaker.category}
+        {/* Speakers Grid - 4 per row on large screens, more compact */}
+        <div className="mb-12">
+          <h3 className="text-white text-2xl font-semibold mb-6">Featured Speakers & Mentors</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {speakers.map((speaker, index) => (
+              <motion.div
+                key={`speaker-${index}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-all duration-300 group"
+              >
+                <div className="flex items-start space-x-3 mb-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-200 to-accent-200 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-primary-600 font-bold text-sm">
+                      {speaker.name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-semibold text-white text-sm leading-tight">{speaker.name}</h4>
+                    <p className="text-white/60 text-xs mt-1 leading-tight">{speaker.title}</p>
+                  </div>
                 </div>
-              </div>
-              
-              <p className="text-white/60 text-sm leading-relaxed">
-                {speaker.description}
-              </p>
-            </motion.div>
-          ))}
 
-          {/* Partners */}
-          {partners.map((partner, index) => (
-            <motion.div
-              key={`partner-${index}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: (speakers.length + index) * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group"
-            >
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-accent-200 to-primary-200 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-primary-600 font-bold text-lg">
-                    {partner.name.split(' ').map(word => word[0]).join('').substring(0, 2)}
+                <div className="flex gap-1 mb-3">
+                  <span className="px-2 py-0.5 bg-primary-500/20 text-primary-300 text-xs rounded-full">
+                    {speaker.batch}
+                  </span>
+                  <span className="px-2 py-0.5 bg-white/10 text-white/60 text-xs rounded-full">
+                    {speaker.category}
                   </span>
                 </div>
-                <h3 className="font-semibold text-white text-lg mb-2">{partner.name}</h3>
-                <span className="px-3 py-1 bg-accent-500/20 text-accent-300 text-xs rounded-full">
+
+                <p className="text-white/50 text-xs leading-relaxed">
+                  {speaker.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Partners Grid - 5 per row, more compact */}
+        <div>
+          <h3 className="text-white text-2xl font-semibold mb-6">Partners & Ecosystem</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {partners.map((partner, index) => (
+              <motion.div
+                key={`partner-${index}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300 group text-center"
+              >
+                <div className="w-full h-16 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 p-3 group-hover:scale-105 transition-transform duration-300">
+                  {getPartnerLogo(partner.name) ? (
+                    <img
+                      src={getPartnerLogo(partner.name)}
+                      alt={`${partner.name} logo`}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  ) : (
+                    <span className="text-primary-600 font-bold text-sm">
+                      {partner.name.split(' ').map(word => word[0]).join('').substring(0, 2)}
+                    </span>
+                  )}
+                </div>
+                <h4 className="font-semibold text-white text-sm mb-1 leading-tight">{partner.name}</h4>
+                <span className="px-2 py-0.5 bg-accent-500/20 text-accent-300 text-xs rounded-full inline-block">
                   {partner.category}
                 </span>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
 
       </div>

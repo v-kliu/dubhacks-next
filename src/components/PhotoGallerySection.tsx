@@ -2,36 +2,64 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+interface Photo {
+  filename: string;
+  caption: string;
+  alt: string;
+}
+
+const getGalleryImage = (filename: string): string => {
+  return `/assets/gallery_pictures/${filename}`;
+};
+
 const PhotoGallerySection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Placeholder photos - easily replaceable
-  const photos = [
+  // Gallery photos with captions
+  // TO ADD/CHANGE PHOTOS:
+  // 1. Add your image file to: /public/assets/gallery_pictures/
+  // 2. Add/edit entries below with filename, caption, and alt text
+  const photos: Photo[] = [
     {
-      src: '/assets/gallery/demo-day-1.jpg',
-      caption: 'Demo Day Batch 4 - Startup Presentations',
-      alt: 'Demo Day presentations'
+      filename: 'batch4.jpg',
+      caption: 'Batch 4 cohort gathered together at retreat',
+      alt: 'Batch 4 cohort group photo'
     },
     {
-      src: '/assets/gallery/mentorship-1.jpg', 
-      caption: 'Founder Mentorship Sessions',
-      alt: 'Mentorship session'
+      filename: 'batch4_exec.jpg',
+      caption: 'Leadership team celebrating Demo Day success',
+      alt: 'Batch 4 executive team'
     },
     {
-      src: '/assets/gallery/team-building.jpg',
-      caption: 'Team Building & Networking',
-      alt: 'Team building event'
+      filename: 'cognito.jpg',
+      caption: 'Cognito founders presenting their pitch at Demo Day',
+      alt: 'Cognito Demo Day presentation'
     },
     {
-      src: '/assets/gallery/workshop-1.jpg',
-      caption: 'Product Development Workshop', 
-      alt: 'Workshop session'
+      filename: 'hike.jpg',
+      caption: 'We touch grass!',
+      alt: 'Team building hike'
     },
     {
-      src: '/assets/gallery/demo-day-2.jpg',
-      caption: 'Demo Day Batch 3 - Final Pitches',
-      alt: 'Final pitch presentations'
-    }
+      filename: 'koel_labs.jpg',
+      caption: 'Koel Labs team showcasing their speech technology innovation',
+      alt: 'Koel Labs presentation'
+    },
+    {
+      filename: 'slate.jpg',
+      caption: 'Slate founders demoing their product to investors and mentors',
+      alt: 'Slate product demo'
+    },
+    {
+      filename: 'edu.jpg',
+      caption: 'Educational workshop session with cohort members learning and collaborating',
+      alt: 'Educational workshop session'
+    },
+    {
+      filename: 'bonding.jpg',
+      caption: 'Team bonding on our hike',
+      alt: 'Team bonding event'
+    },
   ];
 
   const nextSlide = () => {
@@ -67,7 +95,7 @@ const PhotoGallerySection: React.FC = () => {
 
         <div className="relative">
           {/* Main Gallery */}
-          <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden bg-white shadow-xl">
+          <div className="relative h-[500px] md:h-[650px] rounded-2xl overflow-hidden bg-white shadow-xl">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -78,7 +106,7 @@ const PhotoGallerySection: React.FC = () => {
                 className="absolute inset-0"
               >
                 <img
-                  src={photos[currentIndex].src}
+                  src={getGalleryImage(photos[currentIndex].filename)}
                   alt={photos[currentIndex].alt}
                   className="w-full h-full object-cover"
                   onError={(e) => {

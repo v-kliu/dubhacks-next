@@ -13,20 +13,21 @@ const ProgramOverviewSection: React.FC = () => {
       <div className="max-w-content mx-auto">
         <div className="grid md:grid-cols-5 gap-16 items-center">
           <div className="md:col-span-3">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="mb-8"
-            >
-              <div className="overline text-pink mb-6">THE PROGRAM</div>
-              <h2 className="section-title text-neutral-900 mb-8">
+            <div className="mb-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="overline text-pink mb-4 inline-block px-4 py-2 bg-pink/10 rounded-full">THE PROGRAM</div>
+                <h2 className="section-title text-neutral-900 mb-6">
                 16 Weeks of
                 <br />
                 Intensive Growth
               </h2>
-            </motion.div>
+              </motion.div>
+            </div>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -65,13 +66,15 @@ const ProgramOverviewSection: React.FC = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-lightGray aspect-[4/5] border border-pink">
-                <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center">
-                  <span className="text-gray text-sm">Program Overview Image</span>
-                </div>
+              <div className="aspect-[4/5] border border-pink rounded-lg overflow-hidden">
+                <img
+                  src="/assets/gallery_pictures/triage.jpg"
+                  alt="Program participants presenting at Demo Day"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <p className="text-gray text-sm mt-4 text-center">
-                Students working in our collaborative space
+                Demo Day: Teams presenting their startups to investors and mentors
               </p>
             </motion.div>
           </div>

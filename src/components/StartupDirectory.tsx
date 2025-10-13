@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, MapPin, Calendar, Users, DollarSign } from 'lucide-react';
+import { Search, Filter, Calendar, Users } from 'lucide-react';
 import Footer from './Footer';
 
 interface Startup {
-  id: string;
   name: string;
   tagline: string;
   description: string;
   batch: string;
   founded: string;
-  location: string;
   website: string;
-  funding: string;
   stage: string;
   teamSize: string;
-  tags: string[];
-  logo?: string;
 }
 
 const StartupDirectory: React.FC = () => {
@@ -24,86 +19,69 @@ const StartupDirectory: React.FC = () => {
   const [selectedBatch, setSelectedBatch] = useState('all');
   const [selectedStage, setSelectedStage] = useState('all');
 
+  // TO ADD/EDIT STARTUPS:
+  // See startup_directory_data.txt for easy-to-use templates and instructions
+  // Copy entries from that file and paste them here
   const startups: Startup[] = [
     {
-      id: '1',
       name: 'vly.com',
       tagline: 'The world\'s best AI web app builder',
       description: 'Building the future of web development with AI-powered tools that make creating applications accessible to everyone.',
       batch: 'Batch 3',
       founded: '2023',
-      location: 'Seattle, WA',
       website: 'https://vly.com',
-      funding: '$1M+',
       stage: 'Seed',
-      teamSize: '8',
-      tags: ['AI', 'SaaS', 'Web Development', 'B2B']
+      teamSize: '8'
     },
     {
-      id: '2',
       name: 'Meteor',
       tagline: 'A browser that can do work on your behalf',
       description: 'Revolutionary browser technology that automates workflows and handles tasks intelligently on behalf of users.',
       batch: 'Batch 4',
       founded: '2023',
-      location: 'Seattle, WA',
       website: 'https://meteor.com',
-      funding: '$1M+',
       stage: 'Seed',
-      teamSize: '12',
-      tags: ['Browser', 'Automation', 'Productivity', 'B2C']
+      teamSize: '12'
     },
     {
-      id: '3',
       name: 'Koel Labs',
       tagline: 'Speech Technology for Anyone Built by Everyone',
       description: 'Democratizing speech technology through open-source tools and accessible APIs for developers worldwide.',
       batch: 'Batch 4',
       founded: '2023',
-      location: 'Seattle, WA',
       website: 'https://koellabs.com',
-      funding: '$500K+',
       stage: 'Pre-Seed',
-      teamSize: '6',
-      tags: ['AI', 'Speech Tech', 'Open Source', 'Developer Tools']
+      teamSize: '6'
     },
     {
-      id: '4',
       name: 'Ripple',
       tagline: 'The first hyperlocal marketplace built by and for college students',
       description: 'Connecting college students with local services, goods, and opportunities in their campus communities.',
       batch: 'Batch 4',
       founded: '2024',
-      location: 'Seattle, WA',
       website: 'https://ripple.com',
-      funding: 'Pre-seed',
       stage: 'Pre-Seed',
-      teamSize: '4',
-      tags: ['Marketplace', 'Education', 'Community', 'B2C']
+      teamSize: '4'
     },
     {
-      id: '5',
       name: 'Soarin',
       tagline: 'Building professional identities from preexisting data',
       description: 'Helping professionals showcase their achievements and build compelling digital identities using their existing data.',
       batch: 'Batch 4',
       founded: '2024',
-      location: 'Seattle, WA',
       website: 'https://soarin.com',
-      funding: 'Pre-seed',
       stage: 'Pre-Seed',
-      teamSize: '3',
-      tags: ['Career', 'Data', 'Professional', 'B2B']
+      teamSize: '3'
     }
   ];
 
   const filteredStartups = startups.filter(startup => {
     const matchesSearch = startup.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          startup.tagline.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         startup.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+                         startup.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesBatch = selectedBatch === 'all' || startup.batch === selectedBatch;
     const matchesStage = selectedStage === 'all' || startup.stage === selectedStage;
-    
+
     return matchesSearch && matchesBatch && matchesStage;
   });
 
@@ -181,13 +159,13 @@ const StartupDirectory: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredStartups.map((startup, index) => (
             <motion.div
-              key={startup.id}
+              key={startup.name}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white border border-neutral-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300 group cursor-pointer"
+              className="bg-white border border-neutral-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300 group"
             >
-              {/* Basic Info - Always Visible */}
+              {/* Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-accent-100 rounded-lg flex items-center justify-center">
@@ -200,60 +178,36 @@ const StartupDirectory: React.FC = () => {
                     <p className="text-sm text-neutral-500">{startup.batch}</p>
                   </div>
                 </div>
-                <a
-                  href={startup.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-600 hover:text-primary-700 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                >
-                  Visit →
-                </a>
               </div>
 
-              {/* Tagline - Always Visible */}
+              {/* Tagline */}
               <p className="text-neutral-700 font-medium mb-3">{startup.tagline}</p>
-              
-              {/* Description - Show on Hover */}
-              <div className="overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-20 group-hover:mb-4">
-                <p className="text-neutral-600 text-sm line-clamp-3">{startup.description}</p>
-              </div>
 
-              {/* Tags - Show on Hover */}
-              <div className="flex flex-wrap gap-2 mb-0 group-hover:mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 max-h-0 group-hover:max-h-10 overflow-hidden">
-                {startup.tags.slice(0, 3).map(tag => (
-                  <span
-                    key={tag}
-                    className="px-2 py-1 bg-neutral-100 text-neutral-600 text-xs rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-                {startup.tags.length > 3 && (
-                  <span className="px-2 py-1 bg-neutral-100 text-neutral-600 text-xs rounded-full">
-                    +{startup.tags.length - 3}
-                  </span>
-                )}
-              </div>
+              {/* Description */}
+              <p className="text-neutral-600 text-sm mb-4 line-clamp-3">{startup.description}</p>
 
-              {/* Metadata - Show on Hover */}
-              <div className="grid grid-cols-2 gap-4 text-xs text-neutral-500 opacity-0 group-hover:opacity-100 transition-all duration-300 max-h-0 group-hover:max-h-16 overflow-hidden">
-                <div className="flex items-center space-x-1">
-                  <MapPin size={12} />
-                  <span>{startup.location}</span>
-                </div>
-                <div className="flex items-center space-x-1">
-                  <Calendar size={12} />
+              {/* Metadata */}
+              <div className="space-y-2 text-sm text-neutral-600 mb-4 pt-4 border-t border-neutral-100">
+                <div className="flex items-center space-x-2">
+                  <Calendar size={14} className="text-neutral-400" />
                   <span>Founded {startup.founded}</span>
                 </div>
-                <div className="flex items-center space-x-1">
-                  <DollarSign size={12} />
-                  <span>{startup.funding}</span>
-                </div>
-                <div className="flex items-center space-x-1">
-                  <Users size={12} />
-                  <span>{startup.teamSize} people</span>
+                <div className="flex items-center space-x-2">
+                  <Users size={14} className="text-neutral-400" />
+                  <span>{startup.teamSize} people • {startup.stage}</span>
                 </div>
               </div>
+
+              {/* Website Link */}
+              <a
+                href={startup.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700 text-sm font-medium inline-flex items-center space-x-1"
+              >
+                <span>Visit Website</span>
+                <span>→</span>
+              </a>
             </motion.div>
           ))}
         </div>

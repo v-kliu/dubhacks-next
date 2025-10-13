@@ -1,0 +1,82 @@
+STARTUP DIRECTORY DATA
+======================
+
+HOW TO ADD A STARTUP:
+1. Copy the template below
+2. Fill in all the fields with your startup's information
+3. Paste the completed entry at the bottom of this file
+4. Copy the data from this file into StartupDirectory.tsx in the startups array
+
+TEMPLATE:
+---------
+{
+  name: '[Startup Name]',
+  tagline: '[One-line description of what your startup does]',
+  description: '[2-3 sentence detailed description]',
+  batch: '[Batch X]',
+  founded: '[YYYY]',
+  website: 'https://[your-website.com]',
+  stage: '[Pre-Seed / Seed / Series A / etc]',
+  teamSize: '[number]'
+}
+
+EXISTING STARTUPS:
+==================
+
+{
+  name: 'vly.com',
+  tagline: 'The world\'s best AI web app builder',
+  description: 'Building the future of web development with AI-powered tools that make creating applications accessible to everyone.',
+  batch: 'Batch 3',
+  founded: '2023',
+  website: 'https://vly.com',
+  stage: 'Seed',
+  teamSize: '8'
+}
+
+{
+  name: 'Meteor',
+  tagline: 'A browser that can do work on your behalf',
+  description: 'Revolutionary browser technology that automates workflows and handles tasks intelligently on behalf of users.',
+  batch: 'Batch 4',
+  founded: '2023',
+  website: 'https://meteor.com',
+  stage: 'Seed',
+  teamSize: '12'
+}
+
+{
+  name: 'Koel Labs',
+  tagline: 'Speech Technology for Anyone Built by Everyone',
+  description: 'Democratizing speech technology through open-source tools and accessible APIs for developers worldwide.',
+  batch: 'Batch 4',
+  founded: '2023',
+  website: 'https://koellabs.com',
+  stage: 'Pre-Seed',
+  teamSize: '6'
+}
+
+{
+  name: 'Ripple',
+  tagline: 'The first hyperlocal marketplace built by and for college students',
+  description: 'Connecting college students with local services, goods, and opportunities in their campus communities.',
+  batch: 'Batch 4',
+  founded: '2024',
+  website: 'https://ripple.com',
+  stage: 'Pre-Seed',
+  teamSize: '4'
+}
+
+{
+  name: 'Soarin',
+  tagline: 'Building professional identities from preexisting data',
+  description: 'Helping professionals showcase their achievements and build compelling digital identities using their existing data.',
+  batch: 'Batch 4',
+  founded: '2024',
+  website: 'https://soarin.com',
+  stage: 'Pre-Seed',
+  teamSize: '3'
+}
+
+ADD NEW STARTUPS BELOW THIS LINE:
+==================================

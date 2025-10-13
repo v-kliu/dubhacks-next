@@ -36,10 +36,17 @@
   }
   
   .overline {
-    font-size: 11px;
-    font-weight: 400;
+    font-size: 12px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 3.5px;
+  }
+
+  @media (max-width: 768px) {
+    .overline {
+      font-size: 11px;
+      letter-spacing: 3px;
+    }
   }
   
   .grid-overlay {
@@ -102,12 +109,19 @@
   
   .content-grid {
     display: grid;
-    grid-template-columns: 1fr min(1200px, 90%) 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr min(1200px, 95%) 1fr;
+    gap: 1rem;
   }
-  
+
   .content-grid > * {
     grid-column: 2;
+  }
+
+  @media (min-width: 768px) {
+    .content-grid {
+      grid-template-columns: 1fr min(1200px, 90%) 1fr;
+      gap: 2rem;
+    }
   }
   
   .full-width {
