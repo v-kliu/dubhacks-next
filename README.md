@@ -1,6 +1,17 @@
 # DubHacks Next - Startup Incubator Website
 
-A prestigious startup incubator website for DubHacks Next, University of Washington's elite 16-week student startup program. Built with Y Combinator-level minimalism and DubHacks pink brand aesthetics.
+**DubHacks Next** is the University of Washington's premier student startup incubator - a highly selective 16-week program that transforms ambitious students into founders. This is the official website showcasing our community, program structure, and success stories.
+
+## About DubHacks Next
+
+DubHacks Next provides UW students with:
+- **Intensive 16-week program** combining mentorship, workshops, and hands-on building
+- **Two tracks**: Project Track (team-based) and Entrepreneur-in-Residence (solo founders)
+- **Access to Seattle's startup ecosystem** including investors, advisors, and industry leaders
+- **Demo Day** where founders pitch to 200+ attendees from the Pacific Northwest tech community
+- **Real results**: Alumni startups have raised $1M+ in funding and gone on to join prestigious accelerators
+
+Built with Y Combinator-level minimalism and DubHacks pink brand aesthetics, this website reflects the premium, exclusive nature of the program.
 
 ## 🚀 Features
 
@@ -52,23 +63,6 @@ A prestigious startup incubator website for DubHacks Next, University of Washing
 - **Body**: font-weight 400, 17px, line-height 1.7
 - **Labels**: uppercase, 11px, letter-spacing 3px
 
-## 🚀 Getting Started
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm start
-
-# Build for production
-npm run build
-
-# Serve production build
-npm install -g serve
-serve -s build
-```
-
 ## 📱 Responsive Design
 
 - **Mobile (<768px)**: Stack columns, reduce headlines 30-40%
@@ -93,5 +87,3 @@ serve -s build
 - **100% UW students** only
 - **16-week intensive** program
 - **Demo Day** with 200+ attendees
-
-This website achieves its goal of feeling like an "invitation-only club" through ultra-minimal design, premium typography, exclusive content, and strategic pink accent usage.

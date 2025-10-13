@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Search, Filter, Calendar, Building, Linkedin } from 'lucide-react';
 import Footer from './Footer';
@@ -16,6 +16,7 @@ interface Founder {
 const FounderDirectory: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedBatch, setSelectedBatch] = useState('all');
+  const [founders, setFounders] = useState<Founder[]>([]);
 
   // Function to get batch-specific colors
   const getBatchColor = (batch: string): string => {
@@ -24,64 +25,65 @@ const FounderDirectory: React.FC = () => {
       'Batch 2': 'bg-green-100 text-green-700',
       'Batch 3': 'bg-blue-100 text-blue-700',
       'Batch 4': 'bg-orange-100 text-orange-700',
-      'Batch 5': 'bg-pink-100 text-pink-700',
+      'Batch 5': 'bg-teal-100 text-teal-700',
     };
     return batchColors[batch] || 'bg-gray-100 text-gray-700';
   };
 
+  // Parse founders from text file
+  const parseFounders = (data: string): Founder[] => {
+    const foundersList: Founder[] = [];
+    const entries = data.split(/(?=\n\{)/);
+
+    entries.forEach(entry => {
+      if (!entry.includes('name:') || entry.includes('TEMPLATE:')) return;
+
+      try {
+        const nameMatch = entry.match(/name:\s*['"]([^'"]+)['"]/);
+        const companyMatch = entry.match(/company:\s*['"]([^'"]+)['"]/);
+        const batchMatch = entry.match(/batch:\s*['"]([^'"]+)['"]/);
+        const gradYearMatch = entry.match(/graduationYear:\s*['"]([^'"]+)['"]/);
+        const majorMatch = entry.match(/major:\s*['"]([^'"]+)['"]/);
+        const linkedInMatch = entry.match(/linkedIn:\s*['"]([^'"]+)['"]/);
+        const isNextTeamMatch = entry.match(/isNextTeam:\s*(true|false)/);
+
+        if (nameMatch && companyMatch && batchMatch && gradYearMatch && majorMatch) {
+          foundersList.push({
+            name: nameMatch[1],
+            company: companyMatch[1],
+            batch: batchMatch[1],
+            graduationYear: gradYearMatch[1],
+            major: majorMatch[1],
+            linkedIn: linkedInMatch ? linkedInMatch[1] : undefined,
+            isNextTeam: isNextTeamMatch ? isNextTeamMatch[1] === 'true' : false
+          });
+        }
+      } catch (error) {
+        console.error('Error parsing founder entry:', error);
+      }
+    });
+
+    return foundersList;
+  };
+
+  // Load data from text file
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const response = await fetch('/founder_directory_data.txt');
+        const text = await response.text();
+        setFounders(parseFounders(text));
+      } catch (error) {
+        console.error('Error loading founder data:', error);
+      }
+    };
+
+    loadData();
+  }, []);
+
   // TO ADD/EDIT FOUNDERS:
-  // See founder_directory_data.txt for easy-to-use templates and instructions
-  // Copy entries from that file and paste them here
-  const founders: Founder[] = [
-    {
-      name: 'Alex Chen',
-      company: 'vly.com',
-      batch: 'Batch 3',
-      graduationYear: '2022',
-      major: 'Computer Science',
-      linkedIn: 'https://linkedin.com/in/alexchen'
-    },
-    {
-      name: 'Sarah Kim',
-      company: 'Meteor',
-      batch: 'Batch 4',
-      graduationYear: '2023',
-      major: 'Human-Computer Interaction',
-      linkedIn: 'https://linkedin.com/in/sarahkim'
-    },
-    {
-      name: 'David Rodriguez',
-      company: 'Koel Labs',
-      batch: 'Batch 4',
-      graduationYear: '2023',
-      major: 'Electrical Engineering (PhD)',
-      linkedIn: 'https://linkedin.com/in/davidrodriguez'
-    },
-    {
-      name: 'Emma Thompson',
-      company: 'Ripple',
-      batch: 'Batch 4',
-      graduationYear: '2024',
-      major: 'Business Administration',
-      linkedIn: 'https://linkedin.com/in/emmathompson'
-    },
-    {
-      name: 'Michael Wang',
-      company: 'Soarin',
-      batch: 'Batch 4',
-      graduationYear: '2024',
-      major: 'Data Science',
-      linkedIn: 'https://linkedin.com/in/michaelwang'
-    },
-    {
-      name: 'Lisa Park',
-      company: 'vly.com',
-      batch: 'Batch 3',
-      graduationYear: '2022',
-      major: 'Design',
-      linkedIn: 'https://linkedin.com/in/lisapark'
-    }
-  ];
+  // Edit the founder_directory_data.txt file in the src folder
+  // Data is automatically loaded from that file
 
   const filteredFounders = founders.filter(founder => {
     const matchesSearch = founder.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -192,7 +194,7 @@ const FounderDirectory: React.FC = () => {
               <div className="space-y-2 text-sm text-neutral-600 mb-4">
                 <div className="flex items-center space-x-2">
                   <Calendar size={14} className="text-neutral-400" />
-                  <span>Graduated {founder.graduationYear}</span>
+                  <span>Grad Date: {founder.graduationYear}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="text-neutral-400">📚</span>
@@ -221,8 +223,20 @@ const FounderDirectory: React.FC = () => {
             <p className="text-neutral-500 text-lg">No founders found matching your criteria.</p>
           </div>
         )}
+
+        {/* Incomplete Directory Notice */}
+        <div className="mt-8 relative">
+          <div className="bg-white border border-neutral-200 rounded-lg p-8 text-center backdrop-blur-sm bg-opacity-60">
+            <div className="filter blur-[2px] select-none pointer-events-none">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-2">More Coming Soon</h3>
+              <p className="text-neutral-600">
+                We are currently in the midst of compiling our founder directory in its entirety. Check back soon to see more amazing founders from our community!
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      
+
       <Footer />
     </div>
   );

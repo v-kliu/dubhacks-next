@@ -1,25 +1,13 @@
 FOUNDER DIRECTORY DATA
 ======================
 
-TEMPLATE:
----------
 {
-  name: '[First Last]',
-  company: '[Company Name]',
-  batch: '[Batch X]',          // Batch 1 = Purple, Batch 2 = Green, Batch 3 = Blue, Batch 4 = Orange, Batch 5 = Pink
-  graduationYear: '[YYYY]',
-  major: '[Major Name]',
-  linkedIn: 'https://linkedin.com/in/[username]',  // Optional - remove line if none
-  isNextTeam: true             // Optional - add this line ONLY if they are on the Next team (adds special gradient badge)
-}
-
-{
-  name: 'da literal goats',
-  company: 'Meteor',
-  batch: 'Batch 4',
+  name: 'Victor Cheng',
+  company: 'vly.ai',
+  batch: 'Batch 3',
   graduationYear: 'N/A',
   major: 'N/A',
-  linkedIn: 'https://linkedin.com/in/goat'
+  linkedIn: 'https://www.linkedin.com/in/victor-abel/'
 }
 
 {
@@ -27,51 +15,71 @@ TEMPLATE:
   company: 'Meteor',
   batch: 'Batch 4',
   graduationYear: 'N/A',
-  major: 'Computer Science',
-  linkedIn: 'https://linkedin.com/in/alexchen'
+  major: 'N/A',
+  linkedIn: 'https://www.linkedin.com/in/pranav-madhukar-pcm/'
 }
 
 {
-  name: 'Sarah Kim',
+  name: 'Farhan Khan',
   company: 'Meteor',
   batch: 'Batch 4',
-  graduationYear: '2023',
-  major: 'Human-Computer Interaction',
-  linkedIn: 'https://linkedin.com/in/sarahkim'
+  graduationYear: 'N/A',
+  major: 'N/A',
+  linkedIn: 'https://www.linkedin.com/in/farhankhan4/'
 }
 
 {
-  name: 'David Rodriguez',
-  company: 'Koel Labs',
+  name: 'Parker Ritzmann',
+  company: 'Ripple',
   batch: 'Batch 4',
-  graduationYear: '2023',
-  major: 'Electrical Engineering (PhD)',
+  graduationYear: '2025',
+  major: 'Business Administration',
   linkedIn: 'https://linkedin.com/in/davidrodriguez'
 }
 
 {
-  name: 'Emma Thompson',
+  name: 'Will Hunt',
   company: 'Ripple',
   batch: 'Batch 4',
-  graduationYear: '2024',
-  major: 'Business Administration',
-  linkedIn: 'https://linkedin.com/in/emmathompson'
+  graduationYear: '2025',
+  major: 'Computer Science',
+  linkedIn: 'https://linkedin.com/in/willhunt'
 }
 
 {
-  name: 'Michael Wang',
+  name: 'Connor Chan',
+  company: 'Ripple',
+  batch: 'Batch 4',
+  graduationYear: '2025',
+  major: 'Business Administration',
+  linkedIn: 'https://linkedin.com/in/connorchan'
+}
+
+{
+  name: 'Angie Wu',
+  company: 'Ripple',
+  batch: 'Batch 4',
+  graduationYear: '2026',
+  major: 'Computer Science',
+  linkedIn: 'https://www.linkedin.com/in/angela-s-wu/'
+}
+
+{
+  name: 'Victor Liu',
   company: 'Soarin',
   batch: 'Batch 4',
-  graduationYear: '2024',
-  major: 'Data Science',
-  linkedIn: 'https://linkedin.com/in/michaelwang'
+  graduationYear: '2026',
+  major: 'Computer Science',
+  linkedIn: 'https://www.linkedin.com/in/vkliu/',
+  isNextTeam: true
 }
 
 {
-  name: 'Lisa Park',
-  company: 'vly.com',
-  batch: 'Batch 3',
-  graduationYear: '2022',
-  major: 'Design',
-  linkedIn: 'https://linkedin.com/in/lisapark'
+  name: 'Aarfan Hussain',
+  company: 'Soarin',
+  batch: 'Batch 4',
+  graduationYear: '2026',
+  major: 'Informatics',
+  linkedIn: 'https://www.linkedin.com/in/aarfan-hussain/',
+  isNextTeam: true
 }

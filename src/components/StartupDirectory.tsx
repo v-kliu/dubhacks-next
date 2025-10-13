@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Search, Filter, Calendar, Users } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 
 interface Startup {
@@ -11,13 +12,22 @@ interface Startup {
   founded: string;
   website: string;
   stage: string;
-  teamSize: string;
+  founders: string[];
+}
+
+interface Founder {
+  name: string;
+  company: string;
+  isNextTeam?: boolean;
 }
 
 const StartupDirectory: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedBatch, setSelectedBatch] = useState('all');
   const [selectedStage, setSelectedStage] = useState('all');
+  const [startups, setStartups] = useState<Startup[]>([]);
+  const [founders, setFounders] = useState<Founder[]>([]);
+  const navigate = useNavigate();
 
   // Function to get batch-specific colors
   const getBatchColor = (batch: string): string => {
@@ -26,7 +36,7 @@ const StartupDirectory: React.FC = () => {
       'Batch 2': 'bg-green-100 text-green-700 border-green-200 hover:bg-green-200',
       'Batch 3': 'bg-blue-100 text-blue-700 border-blue-200 hover:bg-blue-200',
       'Batch 4': 'bg-orange-100 text-orange-700 border-orange-200 hover:bg-orange-200',
-      'Batch 5': 'bg-pink-100 text-pink-700 border-pink-200 hover:bg-pink-200',
+      'Batch 5': 'bg-teal-100 text-teal-700 border-teal-200 hover:bg-teal-200',
     };
     return batchColors[batch] || 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200';
   };
@@ -42,61 +52,117 @@ const StartupDirectory: React.FC = () => {
     return stageColors[stage] || 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200';
   };
 
+  // Parse founders from text file
+  const parseFounders = (data: string): Founder[] => {
+    const foundersList: Founder[] = [];
+    const entries = data.split(/(?=\n\{)/);
+
+    entries.forEach(entry => {
+      if (!entry.includes('name:') || entry.includes('TEMPLATE:')) return;
+
+      try {
+        const nameMatch = entry.match(/name:\s*['"]([^'"]+)['"]/);
+        const companyMatch = entry.match(/company:\s*['"]([^'"]+)['"]/);
+        const isNextTeamMatch = entry.match(/isNextTeam:\s*(true|false)/);
+
+        if (nameMatch && companyMatch) {
+          foundersList.push({
+            name: nameMatch[1],
+            company: companyMatch[1],
+            isNextTeam: isNextTeamMatch ? isNextTeamMatch[1] === 'true' : false
+          });
+        }
+      } catch (error) {
+        console.error('Error parsing founder entry:', error);
+      }
+    });
+
+    return foundersList;
+  };
+
+  // Parse startups from text file
+  const parseStartups = (data: string): Startup[] => {
+    const startupsList: Startup[] = [];
+    const entries = data.split(/(?=\n\{)/);
+
+    entries.forEach(entry => {
+      if (!entry.includes('name:') || entry.includes('TEMPLATE:')) return;
+
+      try {
+        const nameMatch = entry.match(/name:\s*['"]([^'"]+)['"]/);
+        const taglineMatch = entry.match(/tagline:\s*['"]([^'"\\]*(?:\\.[^'"\\]*)*)['"]/);
+        const descriptionMatch = entry.match(/description:\s*['"]([^'"]+)['"]/);
+        const batchMatch = entry.match(/batch:\s*['"]([^'"]+)['"]/);
+        const foundedMatch = entry.match(/founded:\s*['"]([^'"]+)['"]/);
+        const websiteMatch = entry.match(/website:\s*['"]([^'"]+)['"]/);
+        const stageMatch = entry.match(/stage:\s*['"]([^'"]+)['"]/);
+        const foundersMatch = entry.match(/founders:\s*\[([^\]]+)\]/);
+
+        if (nameMatch && taglineMatch && descriptionMatch && batchMatch && websiteMatch && stageMatch) {
+          let foundersList: string[] = [];
+
+          if (foundersMatch) {
+            foundersList = foundersMatch[1]
+              .split(',')
+              .map(f => f.trim().replace(/['"]/g, ''))
+              .filter(f => f.length > 0);
+          }
+
+          startupsList.push({
+            name: nameMatch[1],
+            tagline: taglineMatch[1],
+            description: descriptionMatch[1],
+            batch: batchMatch[1],
+            founded: foundedMatch ? foundedMatch[1] : '',
+            website: websiteMatch[1],
+            stage: stageMatch[1],
+            founders: foundersList
+          });
+        }
+      } catch (error) {
+        console.error('Error parsing startup entry:', error);
+      }
+    });
+
+    return startupsList;
+  };
+
+  // Load data from text files
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const [startupResponse, founderResponse] = await Promise.all([
+          fetch('/startup_directory_data.txt'),
+          fetch('/founder_directory_data.txt')
+        ]);
+
+        const startupText = await startupResponse.text();
+        const founderText = await founderResponse.text();
+
+        setStartups(parseStartups(startupText));
+        setFounders(parseFounders(founderText));
+      } catch (error) {
+        console.error('Error loading directory data:', error);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  // Check if founder is in directory
+  const isFounderInDirectory = (founderName: string): boolean => {
+    return founders.some(f => f.name === founderName);
+  };
+
+  // Check if founder is on Next Team
+  const isFounderNextTeam = (founderName: string): boolean => {
+    const founder = founders.find(f => f.name === founderName);
+    return founder?.isNextTeam === true;
+  };
+
   // TO ADD/EDIT STARTUPS:
-  // See startup_directory_data.txt for easy-to-use templates and instructions
-  // Copy entries from that file and paste them here
-  const startups: Startup[] = [
-    {
-      name: 'vly.com',
-      tagline: 'The world\'s best AI web app builder',
-      description: 'Building the future of web development with AI-powered tools that make creating applications accessible to everyone.',
-      batch: 'Batch 3',
-      founded: '2023',
-      website: 'https://vly.com',
-      stage: 'Seed',
-      teamSize: '8'
-    },
-    {
-      name: 'Meteor',
-      tagline: 'A browser that can do work on your behalf',
-      description: 'Revolutionary browser technology that automates workflows and handles tasks intelligently on behalf of users.',
-      batch: 'Batch 4',
-      founded: '2023',
-      website: 'https://meteor.com',
-      stage: 'Seed',
-      teamSize: '12'
-    },
-    {
-      name: 'Koel Labs',
-      tagline: 'Speech Technology for Anyone Built by Everyone',
-      description: 'Democratizing speech technology through open-source tools and accessible APIs for developers worldwide.',
-      batch: 'Batch 4',
-      founded: '2023',
-      website: 'https://koellabs.com',
-      stage: 'Pre-Seed',
-      teamSize: '6'
-    },
-    {
-      name: 'Ripple',
-      tagline: 'The first hyperlocal marketplace built by and for college students',
-      description: 'Connecting college students with local services, goods, and opportunities in their campus communities.',
-      batch: 'Batch 4',
-      founded: '2024',
-      website: 'https://ripple.com',
-      stage: 'Pre-Seed',
-      teamSize: '4'
-    },
-    {
-      name: 'Soarin',
-      tagline: 'Building professional identities from preexisting data',
-      description: 'Helping professionals showcase their achievements and build compelling digital identities using their existing data.',
-      batch: 'Batch 4',
-      founded: '2024',
-      website: 'https://soarin.com',
-      stage: 'Pre-Seed',
-      teamSize: '3'
-    }
-  ];
+  // Edit the startup_directory_data.txt file in the src folder
+  // Data is automatically loaded from that file
 
   const filteredStartups = startups.filter(startup => {
     const matchesSearch = startup.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -224,13 +290,43 @@ const StartupDirectory: React.FC = () => {
               {/* Description */}
               <p className="text-neutral-600 text-sm mb-4 line-clamp-3">{startup.description}</p>
 
-              {/* Metadata */}
-              <div className="space-y-2 text-sm text-neutral-600 mb-4 pt-4 border-t border-neutral-100">
-                <div className="flex items-center space-x-2">
-                  <Users size={14} className="text-neutral-400" />
-                  <span>{startup.teamSize} people</span>
+              {/* Founders */}
+              {startup.founders && startup.founders.length > 0 && (
+                <div className="mb-4 pt-4 border-t border-neutral-100">
+                  <div className="flex items-start space-x-2 mb-2">
+                    <Users size={14} className="text-neutral-400 mt-1" />
+                    <div>
+                      <span className="text-sm text-neutral-600 font-medium">Founders:</span>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {startup.founders.map((founder, idx) => {
+                          const inDirectory = isFounderInDirectory(founder);
+
+                          if (inDirectory) {
+                            return (
+                              <button
+                                key={idx}
+                                onClick={() => navigate('/founder-directory')}
+                                className="px-3 py-1 text-xs rounded-full font-medium border border-neutral-900 text-neutral-900 bg-white hover:bg-neutral-50 transition-all duration-200 cursor-pointer"
+                              >
+                                {founder}
+                              </button>
+                            );
+                          } else {
+                            return (
+                              <span
+                                key={idx}
+                                className="px-3 py-1 text-xs rounded-full font-medium border border-neutral-900 text-neutral-900 bg-white"
+                              >
+                                {founder}
+                              </span>
+                            );
+                          }
+                        })}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Website Link */}
               <a
@@ -251,8 +347,20 @@ const StartupDirectory: React.FC = () => {
             <p className="text-neutral-500 text-lg">No startups found matching your criteria.</p>
           </div>
         )}
+
+        {/* Incomplete Directory Notice */}
+        <div className="mt-8 relative">
+          <div className="bg-white border border-neutral-200 rounded-lg p-8 text-center backdrop-blur-sm bg-opacity-60">
+            <div className="filter blur-[2px] select-none pointer-events-none">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-2">More Coming Soon</h3>
+              <p className="text-neutral-600">
+                We are currently in the midst of compiling our startup directory in its entirety. Check back soon to see more incredible companies from our community!
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      
+
       <Footer />
     </div>
   );

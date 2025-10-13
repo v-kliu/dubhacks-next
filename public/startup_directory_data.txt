@@ -1,0 +1,57 @@
+STARTUP DIRECTORY DATA
+======================
+
+{
+  name: 'vly.com',
+  tagline: 'The world\'s best AI web app builder',
+  description: 'Building the future of web development with AI-powered tools that make creating applications accessible to everyone.',
+  batch: 'Batch 3',
+  founded: '2023',
+  website: 'https://vly.ai/',
+  stage: 'Seed',
+  founders: ['Victor Cheng', 'Manav Bokinala']
+}
+
+{
+  name: 'Meteor',
+  tagline: 'A browser that can do work on your behalf',
+  description: 'Revolutionary browser technology that automates workflows and handles tasks intelligently on behalf of users.',
+  batch: 'Batch 4',
+  founded: '2023',
+  website: 'https://www.browse.dev/',
+  stage: 'Seed',
+  founders: ['Pranav Madhukar', 'Farhan Khan']
+}
+
+{
+  name: 'Koel Labs',
+  tagline: 'Speech Technology for Anyone Built by Everyone',
+  description: 'Democratizing speech technology through open-source tools and accessible APIs for developers worldwide.',
+  batch: 'Batch 4',
+  founded: '2023',
+  website: 'https://koellabs.com',
+  stage: 'Pre-Seed',
+  founders: ['Alexander Metzger', 'Aruna Srivastava', 'Ruslan Mukhamedvaleev']
+}
+
+{
+  name: 'Ripple',
+  tagline: 'The first hyperlocal marketplace built by and for college students',
+  description: 'Connecting college students with local services, goods, and opportunities in their campus communities.',
+  batch: 'Batch 4',
+  founded: '2024',
+  website: 'https://www.rippleu.net/',
+  stage: 'Pre-Seed',
+  founders: ['Parker Ritzmann', 'Will Hunt', 'Angie Wu', 'Connor Chan']
+}
+
+{
+  name: 'Soarin',
+  tagline: 'Building professional identities from preexisting data',
+  description: 'Helping professionals showcase their achievements and build compelling digital identities using their existing data.',
+  batch: 'Batch 4',
+  founded: '2024',
+  website: 'https://soarin.dev/',
+  stage: 'Pre-Seed',
+  founders: ['Victor Liu', 'Aarfan Hussain']
+}

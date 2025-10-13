@@ -1,27 +1,15 @@
 STARTUP DIRECTORY DATA
 ======================
 
-TEMPLATE:
----------
-{
-  name: '[Startup Name]',
-  tagline: '[One-line description of what your startup does]',
-  description: '[2-3 sentence detailed description]',
-  batch: '[Batch X]',          // Batch 1 = Purple, Batch 2 = Green, Batch 3 = Blue, Batch 4 = Orange, Batch 5 = Pink
-  website: 'https://[your-website.com]',
-  stage: '[Pre-Seed / Seed / Series A / Series B+]',  // Pre-Seed = Indigo, Seed = Emerald, Series A = Cyan, Series B+ = Violet
-  teamSize: '[number]'
-}
-
 {
   name: 'vly.com',
   tagline: 'The world\'s best AI web app builder',
   description: 'Building the future of web development with AI-powered tools that make creating applications accessible to everyone.',
   batch: 'Batch 3',
   founded: '2023',
-  website: 'https://vly.com',
+  website: 'https://vly.ai/',
   stage: 'Seed',
-  teamSize: '2'
+  founders: ['Victor Cheng', 'Manav Bokinala']
 }
 
 {
@@ -30,9 +18,9 @@ TEMPLATE:
   description: 'Revolutionary browser technology that automates workflows and handles tasks intelligently on behalf of users.',
   batch: 'Batch 4',
   founded: '2023',
-  website: 'https://meteor.com',
+  website: 'https://www.browse.dev/',
   stage: 'Seed',
-  teamSize: '2'
+  founders: ['Pranav Madhukar', 'Farhan Khan']
 }
 
 {
@@ -43,7 +31,7 @@ TEMPLATE:
   founded: '2023',
   website: 'https://koellabs.com',
   stage: 'Pre-Seed',
-  teamSize: '3'
+  founders: ['Alexander Metzger', 'Aruna Srivastava', 'Ruslan Mukhamedvaleev']
 }
 
 {
@@ -52,9 +40,9 @@ TEMPLATE:
   description: 'Connecting college students with local services, goods, and opportunities in their campus communities.',
   batch: 'Batch 4',
   founded: '2024',
-  website: 'https://ripple.com',
+  website: 'https://www.rippleu.net/',
   stage: 'Pre-Seed',
-  teamSize: '4'
+  founders: ['Parker Ritzmann', 'Will Hunt', 'Angie Wu', 'Connor Chan']
 }
 
 {
@@ -63,7 +51,7 @@ TEMPLATE:
   description: 'Helping professionals showcase their achievements and build compelling digital identities using their existing data.',
   batch: 'Batch 4',
   founded: '2024',
-  website: 'https://soarin.com',
+  website: 'https://soarin.dev/',
   stage: 'Pre-Seed',
-  teamSize: '2'
+  founders: ['Victor Liu', 'Aarfan Hussain']
 }

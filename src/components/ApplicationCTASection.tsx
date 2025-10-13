@@ -18,15 +18,31 @@ const ApplicationCTASection: React.FC = () => {
             <h2 className="text-6xl md:text-8xl font-light text-white leading-tight">
               Apply to Batch 5
             </h2>
-            
-            <p className="text-white/90 text-subhead max-w-2xl mx-auto leading-relaxed">
-              Applications close November 1st, 2025
-            </p>
-            
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto mt-6"
+            >
+              <div className="flex items-baseline gap-2">
+                <span className="text-white/60 text-sm font-light">Priority Deadline:</span>
+                <span className="text-white text-lg font-medium">Oct 24</span>
+              </div>
+
+              <span className="hidden sm:inline text-white/40">•</span>
+
+              <div className="flex items-baseline gap-2">
+                <span className="text-white/60 text-sm font-light">Regular Deadline:</span>
+                <span className="text-white text-lg font-medium">Nov 1</span>
+              </div>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
               className="pt-8"
             >
@@ -34,7 +50,7 @@ const ApplicationCTASection: React.FC = () => {
                 Start Your Application
               </button>
             </motion.div>
-            
+
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -42,7 +58,7 @@ const ApplicationCTASection: React.FC = () => {
               viewport={{ once: true }}
               className="text-white/80 text-sm pt-4"
             >
-              Limited spots available. Apply early.
+              Limited spots available. Apply early for priority consideration.
             </motion.p>
           </motion.div>
         </div>
