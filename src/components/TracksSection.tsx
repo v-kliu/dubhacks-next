@@ -15,7 +15,8 @@ const TracksSection: React.FC = () => {
         'An environment to explore, build, and break your ideas',
         'Ad-hoc advising via the Next team and our partners and sponsors',
         'Introduction to Seattle\'s Entrepreneurship Ecosystem through joint off-campus events',
-        'A community of fellow EiRs (potential co-Founders) and student founders at UW'
+        'A community of fellow EiRs (potential co-Founders) and student founders at UW',
+        'Present at Demo Day'
       ],
       lookingFor: {
         title: 'What We\'re Looking For',
@@ -41,7 +42,8 @@ const TracksSection: React.FC = () => {
         'Ad-hoc advising via the Next team and our partners and sponsors',
         'Hiring support',
         'Access to our network',
-        'A community of amazing fellow founders and Entrepreneurs-in-Residence!'
+        'A community of amazing fellow founders and Entrepreneurs-in-Residence!',
+        'Present at Demo Day'
       ],
       lookingFor: {
         title: 'What We\'re Looking For',

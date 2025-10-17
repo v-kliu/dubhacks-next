@@ -99,7 +99,7 @@ const HeroSection: React.FC = () => {
               </motion.div>
               
               <div className="space-y-6 md:space-y-8 lg:order-1">
-                <div className="overline text-primary-600 mb-4 inline-block px-4 py-2 bg-primary-100/50 rounded-full">
+                <div className="overline text-primary-600 mb-2 inline-block px-4 py-2 bg-primary-100/50 rounded-full">
                   UNIVERSITY OF WASHINGTON
                 </div>
 
@@ -110,8 +110,8 @@ const HeroSection: React.FC = () => {
                 </h1>
 
                 <p className="text-neutral-600 text-base md:text-lg lg:text-subhead max-w-xl leading-relaxed">
-                  A 16-week program transforming exceptional UW students
-                  into funded startup founders through intensive mentorship, resources, and community.
+                  A 16-week program transforming exceptional UW students into funded startup founders 
+                  through intensive mentorship, resources, and community at UW's Top Startup Incubator.
                 </p>
 
                 {/* Countdown Timer */}
