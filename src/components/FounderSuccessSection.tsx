@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building, Users, Award, TrendingUp } from 'lucide-react';
+import { Building, Award, TrendingUp } from 'lucide-react';
 
 const FounderSuccessSection: React.FC = () => {
   const successStats = [
