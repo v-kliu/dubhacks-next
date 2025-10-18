@@ -99,8 +99,14 @@ const Navigation: React.FC = () => {
               alt="DubHacks Next"
               className="w-8 h-8 object-contain"
             />
-            <Link 
-              to="/" 
+            <Link
+              to="/"
+              onClick={(e) => {
+                if (location.pathname === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
               className={`font-light text-lg tracking-wide transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-neutral-900' : 'text-neutral-900'
               }`}
