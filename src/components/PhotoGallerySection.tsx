@@ -54,12 +54,7 @@ const PhotoGallerySection: React.FC = () => {
       filename: 'edu.jpg',
       caption: 'look mom it\'s me! (this could be you next 🫵)',
       alt: 'Educational workshop session'
-    },
-    {
-      filename: 'bonding.jpg',
-      caption: 'team bonding time!! (we are very tight knit)',
-      alt: 'Team bonding event'
-    },
+    }
   ];
 
   const nextSlide = () => {

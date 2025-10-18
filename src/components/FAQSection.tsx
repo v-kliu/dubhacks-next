@@ -56,7 +56,7 @@ const FAQSection: React.FC = () => {
   const rightColumnFaqs = faqs.slice(5, 10);
 
   return (
-    <section className="bg-white py-16 px-6 md:px-12">
+    <section id="faq" className="bg-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -113,9 +113,6 @@ const FounderSuccessSection: React.FC = () => {
           viewport={{ once: true }}
           className="bg-gradient-to-br from-primary-50 to-accent-50 p-8 md:p-12 rounded-2xl border border-primary-100"
         >
-          <h3 className="text-center text-2xl font-light text-neutral-900 mb-4">
-            Our Founders Come From
-          </h3>
           <p className="text-center text-neutral-600 mb-8 max-w-4xl mx-auto">
             Before and after DubHacks Next, our founders come with experience from companies such as
           </p>

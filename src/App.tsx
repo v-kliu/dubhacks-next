@@ -6,6 +6,7 @@ import HeroSection from './components/HeroSection';
 import StatsSection from './components/StatsSection';
 import ProgramOverviewSection from './components/ProgramOverviewSection';
 import TracksSection from './components/TracksSection';
+import UpcomingEventsSection from './components/UpcomingEventsSection';
 import FounderSuccessSection from './components/FounderSuccessSection';
 import TimelineSection from './components/TimelineSection';
 import TeamSection from './components/TeamSection';
@@ -37,6 +38,7 @@ const HomePage: React.FC = () => {
           <StatsSection />
           <ProgramOverviewSection />
           <TracksSection />
+          <UpcomingEventsSection />
           <FounderSuccessSection />
           <TimelineSection />
           <PhotoGallerySection />

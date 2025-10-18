@@ -152,14 +152,27 @@ const TracksSection: React.FC = () => {
                 </AnimatePresence>
               </div>
 
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfRb7MkZ8gdDJxxamaDNbfa2YfsZtAvrAiyXWe_AZHSR8_kLw/viewform?usp=header"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-center border border-neutral-700 text-neutral-900 px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base hover:bg-pink hover:border-pink hover:text-white transition-all duration-300 w-full sm:w-auto"
-              >
-                {track.cta}
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfRb7MkZ8gdDJxxamaDNbfa2YfsZtAvrAiyXWe_AZHSR8_kLw/viewform?usp=header"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-center border border-neutral-700 text-neutral-900 px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base hover:bg-pink hover:border-pink hover:text-white transition-all duration-300 w-full sm:w-auto"
+                >
+                  {track.cta}
+                </a>
+                <button
+                  onClick={() => {
+                    const faqSection = document.getElementById('faq');
+                    if (faqSection) {
+                      faqSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="inline-block text-center border border-neutral-300 text-neutral-700 px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base hover:bg-neutral-100 hover:border-neutral-400 transition-all duration-300 w-full sm:w-auto"
+                >
+                  More Questions?
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>
