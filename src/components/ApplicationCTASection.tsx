@@ -46,14 +46,17 @@ const ApplicationCTASection: React.FC = () => {
               viewport={{ once: true }}
               className="pt-8"
             >
-              <a
-                href="https://forms.gle/tz2FPrjwDtHCB2ke8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-white text-primary-600 px-12 py-6 text-xl rounded-xl hover:shadow-2xl hover:shadow-white/20 hover:scale-105 transition-all duration-300 font-semibold"
+              <button
+                onClick={() => {
+                  const tracksSection = document.getElementById('tracks');
+                  if (tracksSection) {
+                    tracksSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="bg-white text-primary-600 px-12 py-6 text-xl rounded-xl hover:shadow-2xl hover:shadow-white/20 hover:scale-105 transition-all duration-300 font-semibold"
               >
                 Start Your Application
-              </a>
+              </button>
             </motion.div>
 
             <motion.p
