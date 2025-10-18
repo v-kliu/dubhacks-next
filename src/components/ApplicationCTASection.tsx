@@ -46,9 +46,14 @@ const ApplicationCTASection: React.FC = () => {
               viewport={{ once: true }}
               className="pt-8"
             >
-              <button className="bg-white text-primary-600 px-12 py-6 text-xl rounded-xl hover:shadow-2xl hover:shadow-white/20 hover:scale-105 transition-all duration-300 font-semibold">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfRb7MkZ8gdDJxxamaDNbfa2YfsZtAvrAiyXWe_AZHSR8_kLw/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-primary-600 px-12 py-6 text-xl rounded-xl hover:shadow-2xl hover:shadow-white/20 hover:scale-105 transition-all duration-300 font-semibold"
+              >
                 Start Your Application
-              </button>
+              </a>
             </motion.div>
 
             <motion.p

@@ -165,17 +165,14 @@ const HeroSection: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.5 }}
                 >
-                  <button
-                    onClick={() => {
-                      const tracksSection = document.getElementById('tracks');
-                      if (tracksSection) {
-                        tracksSection.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="bg-primary-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-primary-600 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 transform hover:scale-105 w-full sm:w-auto text-sm md:text-base"
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfRb7MkZ8gdDJxxamaDNbfa2YfsZtAvrAiyXWe_AZHSR8_kLw/viewform?usp=header"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-primary-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-primary-600 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 transform hover:scale-105 w-full sm:w-auto text-sm md:text-base text-center"
                   >
                     Apply for Batch 5
-                  </button>
+                  </a>
                 </motion.div>
               </div>
             </div>

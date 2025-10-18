@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm run dev:*)",
-      "Bash(PORT=8000 npm start:*)"
+      "Bash(PORT=8000 npm start:*)",
+      "Bash(npm start)"
     ],
     "deny": [],
     "ask": []

@@ -152,9 +152,14 @@ const TracksSection: React.FC = () => {
                 </AnimatePresence>
               </div>
 
-              <button className="border border-neutral-700 text-neutral-900 px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base hover:bg-pink hover:border-pink hover:text-white transition-all duration-300 w-full sm:w-auto">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfRb7MkZ8gdDJxxamaDNbfa2YfsZtAvrAiyXWe_AZHSR8_kLw/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-center border border-neutral-700 text-neutral-900 px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base hover:bg-pink hover:border-pink hover:text-white transition-all duration-300 w-full sm:w-auto"
+              >
                 {track.cta}
-              </button>
+              </a>
             </motion.div>
           ))}
         </div>
