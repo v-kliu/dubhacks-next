@@ -16,11 +16,11 @@ const HeroSection: React.FC = () => {
     const calculateTimeLeft = () => {
       const now = new Date();
 
-      // Convert PST deadlines to UTC (PST is UTC-7 during PDT, UTC-8 during PST standard time)
+      // Convert PST/PDT deadlines to UTC (PDT is UTC-7, PST is UTC-8)
       // October is during PDT (UTC-7)
-      const applicationsOpen = new Date('2025-10-18T07:00:00Z'); // 12:00 AM PST = 7:00 AM UTC
-      const priorityDeadline = new Date('2025-10-26T06:59:00Z'); // 11:59 PM PST = 6:59 AM UTC next day
-      const regularDeadline = new Date('2025-11-03T07:59:00Z'); // 11:59 PM PST = 7:59 AM UTC next day
+      const applicationsOpen = new Date('2025-10-18T07:00:00Z'); // 12:00 AM PDT = 7:00 AM UTC
+      const priorityDeadline = new Date('2025-10-25T06:59:59Z'); // Oct 25 11:59:59 PM PDT = Oct 26 6:59:59 AM UTC
+      const regularDeadline = new Date('2025-11-02T07:59:59Z'); // 11:59:59 PM PST = 7:59:59 AM UTC next day
 
       let targetDate;
       let deadlineLabel;

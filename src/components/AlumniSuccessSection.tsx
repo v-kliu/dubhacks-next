@@ -4,12 +4,6 @@ import { motion } from 'framer-motion';
 const AlumniSuccessSection: React.FC = () => {
   const companies = [
     {
-      name: 'vly.com',
-      description: 'The world\'s best AI web app builder.',
-      funding: 'Raised $1M+',
-      badge: 'Batch 3'
-    },
-    {
       name: 'Meteor',
       description: 'A browser that can do work on your behalf.',
       funding: 'Raised $1M+',

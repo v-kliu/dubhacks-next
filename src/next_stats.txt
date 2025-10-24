@@ -1,7 +1,6 @@
 Accelerators:
 YC
 Million (batch 3)
-Vly (batch 3)
 Terrakotta (batch 3)
 Meteor (batch 4)
 TechStars
@@ -30,7 +29,6 @@ Ascend VC
 
 Active Companies:
 Million
-Vly
 Terrakotta
 Data Wall
 Napkin

@@ -16,6 +16,8 @@ const getTeamMemberImage = (name: string): string => {
     'Aarfan': '/assets/team_headshots/aarfan.jpg',
     'Sanjana': '/assets/team_headshots/sanjana.jpg',
     'Victor': '/assets/team_headshots/victor.jpg',
+    'Areej': '/assets/team_headshots/areej.jpeg',
+    'Danielle': '/assets/team_headshots/danielle.jpeg',
     'Ryan': '/assets/team_headshots/ryan.png',
   };
   return images[name] || '/assets/team_headshots/dubs.jpg';
@@ -30,7 +32,8 @@ const TeamSection: React.FC = () => {
     { name: 'Aarfan', role: 'EiR Director' },
     { name: 'Sanjana', role: 'Director of Community' },
     { name: 'Victor', role: 'Director of Technology' },
-    { name: 'TBD', role: 'Marketing Director' },
+    { name: 'Areej', role: 'Director of Marketing' },
+    { name: 'Danielle', role: 'Director of Marketing' },
     { name: 'Ryan', role: 'Advisor' }
   ];
 
@@ -75,9 +78,9 @@ const TeamSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Second Row - 4 members */}
+        {/* Second Row - 5 members */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-          {teamMembers.slice(5, 9).map((member, index) => (
+          {teamMembers.slice(5, 10).map((member, index) => (
             <motion.div
               key={index + 5}
               initial={{ opacity: 0, y: 30 }}

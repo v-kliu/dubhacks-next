@@ -2,15 +2,6 @@ FOUNDER DIRECTORY DATA
 ======================
 
 {
-  name: 'Victor Cheng',
-  company: 'vly.ai',
-  batch: 'Batch 3',
-  graduationYear: 'N/A',
-  major: 'N/A',
-  linkedIn: 'https://www.linkedin.com/in/victor-abel/'
-}
-
-{
   name: 'Pranav Madhukar',
   company: 'Meteor',
   batch: 'Batch 4',

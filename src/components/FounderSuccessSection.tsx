@@ -8,7 +8,7 @@ const FounderSuccessSection: React.FC = () => {
       icon: Building,
       title: 'YC Alumni',
       description: 'Our founders have been accepted to Y Combinator',
-      companies: ['Million', 'Vly', 'Terrakotta', 'Meteor']
+      companies: ['Million', 'Terrakotta', 'Meteor']
     },
     {
       icon: Award,

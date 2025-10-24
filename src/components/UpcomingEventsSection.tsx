@@ -14,18 +14,11 @@ interface Event {
 const UpcomingEventsSection: React.FC = () => {
   const events: Event[] = [
     {
-      date: '2025-10-22',
-      displayDate: 'Oct 22',
-      title: 'Shark Tank Event',
-      location: 'DEN 303',
-      description: 'Come for the fun, stay for the chance to network, learn more about NEXT, and unleash your inner entrepreneur! Winners get an automatic first round interview.',
-      highlight: true
-    },
-    {
       date: '2025-10-27',
       displayDate: 'Oct 27',
       title: 'Sweec × NEXT Event',
-      description: 'More information coming soon!'
+      description: 'More information coming soon!',
+      highlight: true
     },
     {
       date: '2025-10-28',
