@@ -1,30 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Info } from 'lucide-react';
+import { Calendar, MapPin, Info, Clock, ExternalLink } from 'lucide-react';
 
 interface Event {
   date: string;
   displayDate: string;
   title: string;
+  time?: string;
   location?: string;
   description: string;
+  signUpLink?: string;
   highlight?: boolean;
 }
 
 const UpcomingEventsSection: React.FC = () => {
   const events: Event[] = [
     {
-      date: '2025-10-27',
-      displayDate: 'Oct 27',
-      title: 'Sweec × NEXT Event',
-      description: 'More information coming soon!',
-      highlight: true
+      date: '2024-10-28',
+      displayDate: 'Oct 28',
+      title: 'Women × NEXT',
+      time: '5:00 PM',
+      location: 'HUB 337',
+      description: 'Join us for Women × NEXT, an event focused on supporting women in entrepreneurship.',
+      highlight: false
     },
     {
-      date: '2025-10-28',
-      displayDate: 'Oct 28',
-      title: 'Women in Entrepreneurship Event',
-      description: 'More information coming soon!'
+      date: '2024-10-29',
+      displayDate: 'Oct 29',
+      title: 'SWECC × NEXT × Amazon',
+      time: '5:30 - 7:00 PM',
+      location: 'LOEW 216',
+      description: 'Join us for an exciting collaboration event with SWECC and Amazon!',
+      signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfgIcExr8lG9lvdcMnH5ceVN35xaEGexWrOiLyVaN_E05UCyg/viewform?usp=send_form',
+      highlight: true
     }
   ];
 
@@ -89,6 +97,13 @@ const UpcomingEventsSection: React.FC = () => {
                         {event.title}
                       </h3>
 
+                      {event.time && (
+                        <div className="flex items-center text-neutral-600 mb-2">
+                          <Clock size={16} className="mr-2 text-primary-500" />
+                          <span className="text-sm">{event.time}</span>
+                        </div>
+                      )}
+
                       {event.location && (
                         <div className="flex items-center text-neutral-600 mb-2">
                           <MapPin size={16} className="mr-2 text-primary-500" />
@@ -96,12 +111,24 @@ const UpcomingEventsSection: React.FC = () => {
                         </div>
                       )}
 
-                      <div className="flex items-start text-neutral-700">
+                      <div className="flex items-start text-neutral-700 mb-3">
                         <Info size={16} className="mr-2 mt-1 text-primary-500 flex-shrink-0" />
                         <p className="text-sm leading-relaxed">
                           {event.description}
                         </p>
                       </div>
+
+                      {event.signUpLink && (
+                        <a
+                          href={event.signUpLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                        >
+                          Sign Up Here
+                          <ExternalLink size={16} />
+                        </a>
+                      )}
 
                       {event.highlight && (
                         <div className="mt-3 pt-3 border-t border-primary-200">
