@@ -16,15 +16,6 @@ interface Event {
 const UpcomingEventsSection: React.FC = () => {
   const events: Event[] = [
     {
-      date: '2024-10-28',
-      displayDate: 'Oct 28',
-      title: 'Women × NEXT',
-      time: '5:00 PM',
-      location: 'HUB 337',
-      description: 'Join us for Women × NEXT, an event focused on supporting women in entrepreneurship.',
-      highlight: false
-    },
-    {
       date: '2024-10-29',
       displayDate: 'Oct 29',
       title: 'SWECC × NEXT × Amazon',
