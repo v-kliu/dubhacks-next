@@ -40,7 +40,7 @@ const FAQSection: React.FC = () => {
     },
     {
       question: 'When are the application deadlines for Batch 5?',
-      answer: 'We will be opening applications for EiRs and Projects to join Batch 5 starting October 18th. Priority applications are due October 24th. Regular applications are due November 1st.'
+      answer: 'We will be opening applications for EiRs and Projects to join Batch 5 starting October 18th. Priority applications are due October 24th. Regular applications are due November 2nd.'
     },
     {
       question: '404: Question Not Found',

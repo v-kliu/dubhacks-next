@@ -35,7 +35,7 @@ const ApplicationCTASection: React.FC = () => {
 
               <div className="flex items-baseline gap-2">
                 <span className="text-white/60 text-sm font-light">Regular Deadline:</span>
-                <span className="text-white text-lg font-medium">Nov 1</span>
+                <span className="text-white text-lg font-medium">Nov 2</span>
               </div>
             </motion.div>
 
