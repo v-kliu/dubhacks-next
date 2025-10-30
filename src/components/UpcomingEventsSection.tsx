@@ -14,18 +14,7 @@ interface Event {
 }
 
 const UpcomingEventsSection: React.FC = () => {
-  const events: Event[] = [
-    {
-      date: '2024-10-29',
-      displayDate: 'Oct 29',
-      title: 'SWECC × NEXT × Amazon',
-      time: '5:30 - 7:00 PM',
-      location: 'LOEW 216',
-      description: 'Join us for an exciting collaboration event with SWECC and Amazon!',
-      signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfgIcExr8lG9lvdcMnH5ceVN35xaEGexWrOiLyVaN_E05UCyg/viewform?usp=send_form',
-      highlight: true
-    }
-  ];
+  const events: Event[] = [];
 
   return (
     <section id="events" className="bg-white py-8 md:py-16 px-4 md:px-6 lg:px-12">
@@ -47,13 +36,28 @@ const UpcomingEventsSection: React.FC = () => {
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="hidden md:block absolute left-[80px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-200 via-primary-300 to-primary-200"></div>
+          {events.length === 0 ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center py-2"
+            >
+              <div className="inline-block px-8 py-4 bg-gradient-to-br from-primary-50 to-accent-50 border-2 border-primary-200 rounded-xl">
+                <p className="text-neutral-700 font-light text-base md:text-lg">
+                  Stay tuned for upcoming events and opportunities to come!
+                </p>
+              </div>
+            </motion.div>
+          ) : (
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="hidden md:block absolute left-[80px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-200 via-primary-300 to-primary-200"></div>
 
-            {/* Events */}
-            <div className="space-y-6 md:space-y-8">
-              {events.map((event, index) => (
+              {/* Events */}
+              <div className="space-y-6 md:space-y-8">
+                {events.map((event, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -30 }}
@@ -132,8 +136,9 @@ const UpcomingEventsSection: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

@@ -65,14 +65,14 @@ const PhotoGallerySection: React.FC = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + photos.length) % photos.length);
   };
 
-  // Auto-advance slides
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 8000); // Slowed down from 5s to 8s
+  // Auto-advance slides disabled
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     nextSlide();
+  //   }, 8000); // Slowed down from 5s to 8s
 
-    return () => clearInterval(timer);
-  }, []);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   return (
     <section className="bg-neutral-50 py-section px-6 md:px-12">
