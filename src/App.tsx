@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import LoadingScreen from './components/LoadingScreen';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
@@ -19,19 +19,21 @@ import ApplicationCTASection from './components/ApplicationCTASection';
 import Footer from './components/Footer';
 import StartupDirectory from './components/StartupDirectory';
 import FounderDirectory from './components/FounderDirectory';
+import MoneyMode from './components/MoneyMode';
 
 // Home page component
-const HomePage: React.FC = () => {
+const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
+    onLoadComplete?.();
   };
 
   return (
     <>
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
-      
+
       {!isLoading && (
         <>
           <HeroSection />
@@ -48,24 +50,46 @@ const HomePage: React.FC = () => {
           <FAQSection />
           <ResourcesSection />
           <ApplicationCTASection />
-          <Footer />
         </>
       )}
     </>
   );
 };
 
+const AppContent: React.FC = () => {
+  const [isMoneyMode, setIsMoneyMode] = useState(false);
+  const [isHomePageLoaded, setIsHomePageLoaded] = useState(false);
+  const location = useLocation();
+
+  const toggleMoneyMode = () => {
+    setIsMoneyMode((prev) => !prev);
+  };
+
+  const handleHomePageLoadComplete = () => {
+    setIsHomePageLoaded(true);
+  };
+
+  const isHomePage = location.pathname === '/';
+  const shouldShowFooter = !isHomePage || isHomePageLoaded;
+
+  return (
+    <div className="App">
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<HomePage onLoadComplete={handleHomePageLoadComplete} />} />
+        <Route path="/startup-directory" element={<StartupDirectory />} />
+        <Route path="/founder-directory" element={<FounderDirectory />} />
+      </Routes>
+      {shouldShowFooter && <Footer onHeartClick={toggleMoneyMode} />}
+      <MoneyMode isActive={isMoneyMode} />
+    </div>
+  );
+};
+
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/startup-directory" element={<StartupDirectory />} />
-          <Route path="/founder-directory" element={<FounderDirectory />} />
-        </Routes>
-      </div>
+      <AppContent />
     </Router>
   );
 }

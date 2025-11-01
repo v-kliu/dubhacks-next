@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onHeartClick?: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onHeartClick }) => {
+
   return (
     <footer className="bg-black border-t border-pink px-6 md:px-12 py-12">
       <div className="max-w-content mx-auto">
@@ -16,12 +21,22 @@ const Footer: React.FC = () => {
             DUBHACKS NEXT
           </div>
           <p className="text-white/70 text-sm leading-relaxed mb-8 max-w-2xl mx-auto">
-            Transforming exceptional UW students into exceptional founders 
+            Transforming exceptional UW students into exceptional founders
             through intensive mentorship and community.
           </p>
-          
+
           <div className="text-pink text-sm mb-4">
-            Made with ❤️ by the DubHacks Next Team
+            Made with{' '}
+            <motion.span
+              onClick={onHeartClick}
+              className="inline-block cursor-pointer"
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            >
+              ❤️
+            </motion.span>
+            {' '}by the DubHacks Next Team
           </div>
           
           <div className="text-white/60 text-sm mb-4">
