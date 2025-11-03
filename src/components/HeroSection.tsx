@@ -16,11 +16,10 @@ const HeroSection: React.FC = () => {
     const calculateTimeLeft = () => {
       const now = new Date();
 
-      // Convert PST/PDT deadlines to UTC (PDT is UTC-7, PST is UTC-8)
-      // October is during PDT (UTC-7)
-      const applicationsOpen = new Date('2025-10-18T07:00:00Z'); // 12:00 AM PDT = 7:00 AM UTC
-      const priorityDeadline = new Date('2025-10-25T06:59:59Z'); // Oct 25 11:59:59 PM PDT = Oct 26 6:59:59 AM UTC
-      const regularDeadline = new Date('2025-11-03T07:59:59Z'); // 11:59:59 PM PST (Seattle Time) on Nov 2 = 6:59:59 AM UTC on Nov 3
+      // HELLO NEW EXEC OF BATCH 6!!! go kill it this year :)) - victor
+      const applicationsOpen = new Date('2025-10-18T07:00:00Z'); 
+      const priorityDeadline = new Date('2025-10-25T06:59:59Z');
+      const regularDeadline = new Date('2025-11-03T07:59:59Z'); 
 
       let targetDate;
       let deadlineLabel;
@@ -110,72 +109,21 @@ const HeroSection: React.FC = () => {
                 </h1>
 
                 <p className="text-neutral-600 text-base md:text-lg lg:text-subhead max-w-xl leading-relaxed">
-                  A 16-week program transforming exceptional UW students into funded startup founders 
+                  A 16-week program transforming exceptional UW students into funded startup founders
                   through intensive mentorship, resources, and community at UW's Top Startup Incubator.
                 </p>
 
-                {/* Countdown Timer */}
-                {currentDeadline && currentDeadline !== 'Applications Closed' && (
-                  <motion.div
-                    className="mt-6 md:mt-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7, duration: 0.5 }}
-                  >
-                    <div className="inline-block bg-white/90 backdrop-blur-md border-2 border-primary-200 rounded-xl p-4 md:p-6 shadow-lg shadow-primary-500/10">
-                      <div className="text-xs md:text-sm text-primary-600 font-medium mb-2 md:mb-3 text-center">
-                        {currentDeadline}
-                      </div>
-                      <div className="flex gap-2 md:gap-4">
-                        <div className="flex flex-col items-center min-w-[3rem] md:min-w-[4rem]">
-                          <div className="text-2xl md:text-3xl lg:text-4xl font-light text-primary-600 mb-1">
-                            {timeLeft.days}
-                          </div>
-                          <div className="text-xs md:text-sm text-neutral-600 font-medium">Days</div>
-                        </div>
-                        <div className="text-2xl md:text-3xl lg:text-4xl text-primary-600 font-light self-start">:</div>
-                        <div className="flex flex-col items-center min-w-[3rem] md:min-w-[4rem]">
-                          <div className="text-2xl md:text-3xl lg:text-4xl font-light text-primary-600 mb-1">
-                            {String(timeLeft.hours).padStart(2, '0')}
-                          </div>
-                          <div className="text-xs md:text-sm text-neutral-600 font-medium">Hours</div>
-                        </div>
-                        <div className="text-2xl md:text-3xl lg:text-4xl text-primary-600 font-light self-start">:</div>
-                        <div className="flex flex-col items-center min-w-[3rem] md:min-w-[4rem]">
-                          <div className="text-2xl md:text-3xl lg:text-4xl font-light text-primary-600 mb-1">
-                            {String(timeLeft.minutes).padStart(2, '0')}
-                          </div>
-                          <div className="text-xs md:text-sm text-neutral-600 font-medium">Mins</div>
-                        </div>
-                        <div className="text-2xl md:text-3xl lg:text-4xl text-primary-600 font-light self-start">:</div>
-                        <div className="flex flex-col items-center min-w-[3rem] md:min-w-[4rem]">
-                          <div className="text-2xl md:text-3xl lg:text-4xl font-light text-primary-600 mb-1">
-                            {String(timeLeft.seconds).padStart(2, '0')}
-                          </div>
-                          <div className="text-xs md:text-sm text-neutral-600 font-medium">Secs</div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-
                 <motion.div
-                  className="mt-8 md:mt-12"
+                  className="mt-6 md:mt-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8, duration: 0.5 }}
+                  transition={{ delay: 0.7, duration: 0.5 }}
                 >
-                  <button
-                    onClick={() => {
-                      const tracksSection = document.getElementById('tracks');
-                      if (tracksSection) {
-                        tracksSection.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="bg-primary-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-primary-600 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 transform hover:scale-105 w-full sm:w-auto text-sm md:text-base"
-                  >
-                    Apply for Batch 5
-                  </button>
+                  <div className="inline-block bg-white/90 backdrop-blur-md border-2 border-primary-200 rounded-xl p-4 md:p-6 shadow-lg shadow-primary-500/10">
+                    <div className="text-sm md:text-base text-primary-600 font-medium text-center">
+                      Applications for Batch 6 will open Autumn 2026!
+                    </div>
+                  </div>
                 </motion.div>
               </div>
             </div>

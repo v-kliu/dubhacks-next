@@ -52,7 +52,7 @@ const FounderSuccessSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white py-12 md:py-section px-4 md:px-6 lg:px-12">
+    <section className="bg-white pt-4 md:pt-8 pb-12 md:pb-section px-4 md:px-6 lg:px-12">
       <div className="max-w-content mx-auto">
         <div className="text-center mb-8 md:mb-12">
           <motion.div
