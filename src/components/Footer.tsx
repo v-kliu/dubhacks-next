@@ -3,9 +3,14 @@ import { motion } from 'framer-motion';
 
 interface FooterProps {
   onHeartClick?: () => void;
+  onFounderModeClick?: () => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ onHeartClick }) => {
+const Footer: React.FC<FooterProps> = ({ onHeartClick, onFounderModeClick }) => {
+  const handleHeartClick = () => {
+    // Single-click activates Founder Mode
+    onFounderModeClick?.();
+  };
 
   return (
     <footer className="bg-black border-t border-pink px-6 md:px-12 py-12">
@@ -28,7 +33,7 @@ const Footer: React.FC<FooterProps> = ({ onHeartClick }) => {
           <div className="text-pink text-sm mb-4">
             Made with{' '}
             <motion.span
-              onClick={onHeartClick}
+              onClick={handleHeartClick}
               className="inline-block cursor-pointer"
               whileHover={{ scale: 1.3 }}
               whileTap={{ scale: 0.9 }}

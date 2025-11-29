@@ -20,6 +20,7 @@ import Footer from './components/Footer';
 import StartupDirectory from './components/StartupDirectory';
 import FounderDirectory from './components/FounderDirectory';
 import MoneyMode from './components/MoneyMode';
+import FounderMode from './components/FounderMode';
 
 // Home page component
 const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete }) => {
@@ -58,11 +59,20 @@ const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete })
 
 const AppContent: React.FC = () => {
   const [isMoneyMode, setIsMoneyMode] = useState(false);
+  const [isFounderMode, setIsFounderMode] = useState(false);
   const [isHomePageLoaded, setIsHomePageLoaded] = useState(false);
   const location = useLocation();
 
   const toggleMoneyMode = () => {
     setIsMoneyMode((prev) => !prev);
+  };
+
+  const toggleFounderMode = () => {
+    setIsFounderMode((prev) => !prev);
+  };
+
+  const exitFounderMode = () => {
+    setIsFounderMode(false);
   };
 
   const handleHomePageLoadComplete = () => {
@@ -80,8 +90,9 @@ const AppContent: React.FC = () => {
         <Route path="/startup-directory" element={<StartupDirectory />} />
         <Route path="/founder-directory" element={<FounderDirectory />} />
       </Routes>
-      {shouldShowFooter && <Footer onHeartClick={toggleMoneyMode} />}
+      {shouldShowFooter && <Footer onHeartClick={toggleMoneyMode} onFounderModeClick={toggleFounderMode} />}
       <MoneyMode isActive={isMoneyMode} />
+      <FounderMode isActive={isFounderMode} onExit={exitFounderMode} />
     </div>
   );
 };
