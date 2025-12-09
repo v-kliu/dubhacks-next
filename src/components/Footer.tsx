@@ -2,16 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 interface FooterProps {
-  onHeartClick?: () => void;
-  onFounderModeClick?: () => void;
+  onEasterEggClick?: () => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ onHeartClick, onFounderModeClick }) => {
-  const handleHeartClick = () => {
-    // Single-click activates Founder Mode
-    onFounderModeClick?.();
-  };
-
+const Footer: React.FC<FooterProps> = ({ onEasterEggClick }) => {
   return (
     <footer className="bg-black border-t border-pink px-6 md:px-12 py-12">
       <div className="max-w-content mx-auto">
@@ -33,8 +27,8 @@ const Footer: React.FC<FooterProps> = ({ onHeartClick, onFounderModeClick }) => 
           <div className="text-pink text-sm mb-4">
             Made with{' '}
             <motion.span
-              onClick={handleHeartClick}
-              className="inline-block cursor-pointer"
+              onClick={onEasterEggClick}
+              className="inline-block cursor-pointer heart-emoji"
               whileHover={{ scale: 1.3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400 }}
