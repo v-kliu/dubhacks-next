@@ -5,6 +5,7 @@ interface TeamMember {
   name: string;
   role: string;
   image?: string;
+  linkedin?: string;
 }
 
 const getTeamMemberImage = (name: string): string => {
@@ -25,17 +26,60 @@ const getTeamMemberImage = (name: string): string => {
 
 const TeamSection: React.FC = () => {
   const teamMembers: TeamMember[] = [
-    { name: 'Anshul', role: 'Managing Director' },
-    { name: 'Sthiti', role: 'Managing Director' },
-    { name: 'Meera', role: 'Director of Projects' },
-    { name: 'Jordan', role: 'Director of Projects' },
-    { name: 'Aarfan', role: 'EiR Director' },
-    { name: 'Sanjana', role: 'Director of Community' },
-    { name: 'Victor', role: 'Director of Technology' },
-    { name: 'Areej', role: 'Director of Marketing' },
+    { name: 'Anshul', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/anshul-shah1/' },
+    { name: 'Sthiti', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/sthiti-patnaik/' },
+    { name: 'Meera', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/meera-patel-92704b207/' },
+    { name: 'Jordan', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/airjlee/' },
+    { name: 'Aarfan', role: 'EiR Director', linkedin: 'https://www.linkedin.com/in/aarfan-hussain/' },
+    { name: 'Sanjana', role: 'Director of Community', linkedin: 'https://www.linkedin.com/in/sanjanasatagopan/' },
+    { name: 'Victor', role: 'Director of Technology', linkedin: 'https://www.linkedin.com/in/vkliu/' },
+    { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/' },
     { name: 'Danielle', role: 'Director of Marketing' },
-    { name: 'Ryan', role: 'Advisor' }
+    { name: 'Ryan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/ryanahsu/' }
   ];
+
+  const renderTeamMember = (member: TeamMember, index: number) => {
+    const content = (
+      <>
+        <div className="relative mb-6 overflow-hidden">
+          <div className="w-full aspect-square bg-lightGray border border-gray-200 group-hover:border-pink group-hover:border-[3px] transition-all duration-300">
+            <img
+              src={getTeamMemberImage(member.name)}
+              alt={member.name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <h3 className="text-neutral-900 font-light text-lg mb-2">{member.name}</h3>
+        <p className="text-gray text-sm">{member.role}</p>
+      </>
+    );
+
+    return (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+        viewport={{ once: true }}
+        className="text-center group w-[calc(50%-1rem)] md:w-[220px]"
+      >
+        {member.linkedin ? (
+          <a
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block cursor-pointer"
+          >
+            {content}
+          </a>
+        ) : (
+          <div>{content}</div>
+        )}
+      </motion.div>
+    );
+  };
 
   return (
     <section id="team" className="bg-white py-section px-6 md:px-12">
@@ -53,56 +97,12 @@ const TeamSection: React.FC = () => {
 
         {/* First Row - 5 members */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-12">
-          {teamMembers.slice(0, 5).map((member, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center group w-[calc(50%-1rem)] md:w-[220px]"
-            >
-              <div className="relative mb-6 overflow-hidden">
-                <div className="w-full aspect-square bg-lightGray border border-gray-200 group-hover:border-pink group-hover:border-[3px] transition-all duration-300">
-                  <img
-                    src={getTeamMemberImage(member.name)}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <h3 className="text-neutral-900 font-light text-lg mb-2">{member.name}</h3>
-              <p className="text-gray text-sm">{member.role}</p>
-            </motion.div>
-          ))}
+          {teamMembers.slice(0, 5).map((member, index) => renderTeamMember(member, index))}
         </div>
 
         {/* Second Row - 5 members */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-          {teamMembers.slice(5, 10).map((member, index) => (
-            <motion.div
-              key={index + 5}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: (index + 5) * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center group w-[calc(50%-1rem)] md:w-[220px]"
-            >
-              <div className="relative mb-6 overflow-hidden">
-                <div className="w-full aspect-square bg-lightGray border border-gray-200 group-hover:border-pink group-hover:border-[3px] transition-all duration-300">
-                  <img
-                    src={getTeamMemberImage(member.name)}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <h3 className="text-neutral-900 font-light text-lg mb-2">{member.name}</h3>
-              <p className="text-gray text-sm">{member.role}</p>
-            </motion.div>
-          ))}
+          {teamMembers.slice(5, 10).map((member, index) => renderTeamMember(member, index + 5))}
         </div>
       </div>
     </section>

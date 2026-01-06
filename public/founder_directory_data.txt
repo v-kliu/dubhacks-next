@@ -3,74 +3,173 @@ FOUNDER DIRECTORY DATA
 
 {
   name: 'Pranav Madhukar',
-  company: 'Meteor',
   batch: 'Batch 4',
-  graduationYear: 'N/A',
-  major: 'N/A',
-  linkedIn: 'https://www.linkedin.com/in/pranav-madhukar-pcm/'
+  company: 'Meteor',
+  currentOccupation: 'Building Meteor @ Y Combinator'
 }
 
 {
   name: 'Farhan Khan',
-  company: 'Meteor',
   batch: 'Batch 4',
-  graduationYear: 'N/A',
-  major: 'N/A',
-  linkedIn: 'https://www.linkedin.com/in/farhankhan4/'
+  company: 'Meteor',
+  currentOccupation: 'Building Meteor @ Y Combinator'
 }
 
 {
   name: 'Parker Ritzmann',
-  company: 'Ripple',
   batch: 'Batch 4',
-  graduationYear: '2025',
-  major: 'Business Administration',
-  linkedIn: 'https://linkedin.com/in/davidrodriguez'
+  company: 'Ripple',
+  projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
+  currentOccupation: 'Consultant @ Bain & Company'
 }
 
 {
   name: 'Will Hunt',
-  company: 'Ripple',
   batch: 'Batch 4',
-  graduationYear: '2025',
-  major: 'Computer Science',
-  linkedIn: 'https://linkedin.com/in/willhunt'
+  company: 'Ripple',
+  projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
+  currentOccupation: 'N/A'
 }
 
 {
   name: 'Connor Chan',
-  company: 'Ripple',
   batch: 'Batch 4',
-  graduationYear: '2025',
-  major: 'Business Administration',
-  linkedIn: 'https://linkedin.com/in/connorchan'
+  company: 'Ripple',
+  projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
+  currentOccupation: 'N/A'
 }
 
 {
   name: 'Angie Wu',
-  company: 'Ripple',
   batch: 'Batch 4',
-  graduationYear: '2026',
-  major: 'Computer Science',
-  linkedIn: 'https://www.linkedin.com/in/angela-s-wu/'
+  company: 'Ripple',
+  projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
+  currentOccupation: 'N/A'
 }
 
 {
   name: 'Victor Liu',
-  company: 'Soarin',
   batch: 'Batch 4',
-  graduationYear: '2026',
-  major: 'Computer Science',
-  linkedIn: 'https://www.linkedin.com/in/vkliu/',
-  isNextTeam: true
+  company: 'Soarin',
+  projectLink: 'https://soarin.dev/',
+  currentOccupation: 'N/A'
 }
 
 {
   name: 'Aarfan Hussain',
-  company: 'Soarin',
   batch: 'Batch 4',
-  graduationYear: '2026',
-  major: 'Informatics',
-  linkedIn: 'https://www.linkedin.com/in/aarfan-hussain/',
-  isNextTeam: true
+  company: 'Soarin',
+  projectLink: 'https://soarin.dev/',
+  currentOccupation: 'N/A'
+}
+
+{
+  name: 'Sthiti Patnaik',
+  batch: 'Batch 3',
+  company: 'N/A',
+  currentOccupation: 'N/A'
+}
+
+{
+  name: 'Sanjana Satagopan',
+  batch: 'Batch 4',
+  company: 'UR Verdure',
+  projectLink: 'https://www.urverdure.app',
+  currentOccupation: 'N/A'
+}
+
+{
+  name: 'Erik Vank',
+  batch: 'Batch 3',
+  company: 'Oversea',
+  projectLink: 'https://narrative.video',
+  currentOccupation: 'Building Narrative @ Y Combinator'
+}
+
+{
+  name: 'Grace Yim',
+  batch: 'Batch 4',
+  company: 'In Your World',
+  projectLink: 'https://inyourworld.vercel.app/',
+  currentOccupation: 'Point72 Ventures'
+}
+
+{
+  name: 'Michael Li',
+  batch: 'Batch 2',
+  company: 'Dabble',
+  currentOccupation: 'Masters @ Carnegie Mellon University'
+}
+
+{
+  name: 'Andrey Risukhin',
+  batch: 'Batch 0',
+  company: 'Utility/ranked choice exploration',
+  currentOccupation: 'Data @ Perceptron'
+}
+
+{
+  name: 'Ian Yang',
+  batch: 'Batch 3',
+  company: 'ChatNest',
+  currentOccupation: 'SWE @ SoFi'
+}
+
+{
+  name: 'Tyler Gee',
+  batch: 'Batch 4',
+  company: 'Cabin',
+  projectLink: 'https://cabinaudio.com',
+  currentOccupation: 'SDE @ Amazon'
+}
+
+{
+  name: 'Nick Khormaei',
+  batch: 'Batch 2',
+  company: 'Neuramill',
+  currentOccupation: 'Founder - Neuramill'
+}
+
+{
+  name: 'Gunn Chun',
+  batch: 'Batch 2',
+  company: 'N/A',
+  currentOccupation: 'MLE @ BioSyft'
+}
+
+{
+  name: 'Eric Xiao',
+  batch: 'Batch 2',
+  company: 'Eat Together',
+  projectLink: 'https://www.eat-together.org/',
+  currentOccupation: 'SDE @ Amazon'
+}
+
+{
+  name: 'Caleb John',
+  batch: 'Batch 1',
+  company: 'Pongo',
+  currentOccupation: 'Pioneer Square Labs'
+}
+
+{
+  name: 'Evan Siu',
+  batch: 'Batch 1',
+  company: 'Future Cities and Urbanism Project',
+  currentOccupation: 'Schwarzman Scholar'
+}
+
+{
+  name: 'Kenneth Chen',
+  batch: 'Batch 3',
+  company: 'Datawall',
+  projectLink: 'https://datawall.ai/',
+  currentOccupation: 'Datawall'
+}
+
+{
+  name: 'Parsa Khazaeepoul',
+  batch: 'Batch 2',
+  company: 'Aristotle',
+  currentOccupation: 'N/A'
 }

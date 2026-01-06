@@ -19,7 +19,6 @@ import ApplicationCTASection from './components/ApplicationCTASection';
 import Footer from './components/Footer';
 import StartupDirectory from './components/StartupDirectory';
 import FounderDirectory from './components/FounderDirectory';
-import EasterEgg, { useEasterEggCursor } from './components/EasterEgg';
 
 // Home page component
 const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete }) => {
@@ -57,16 +56,8 @@ const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete })
 };
 
 const AppContent: React.FC = () => {
-  const [isEasterEgg, setIsEasterEgg] = useState(false);
   const [isHomePageLoaded, setIsHomePageLoaded] = useState(false);
   const location = useLocation();
-
-  // Use the custom hook for party blob cursor
-  useEasterEggCursor(isEasterEgg);
-
-  const toggleEasterEgg = () => {
-    setIsEasterEgg((prev) => !prev);
-  };
 
   const handleHomePageLoadComplete = () => {
     setIsHomePageLoaded(true);
@@ -83,8 +74,7 @@ const AppContent: React.FC = () => {
         <Route path="/startup-directory" element={<StartupDirectory />} />
         <Route path="/founder-directory" element={<FounderDirectory />} />
       </Routes>
-      {shouldShowFooter && <Footer onEasterEggClick={toggleEasterEgg} />}
-      <EasterEgg isActive={isEasterEgg} />
+      {shouldShowFooter && <Footer />}
     </div>
   );
 };

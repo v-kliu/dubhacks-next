@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
@@ -7,60 +7,6 @@ const HeroSection: React.FC = () => {
     { value: '68', label: 'Startups' },
     { value: '4', label: 'Batches' }
   ];
-
-  // Countdown timer state
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [currentDeadline, setCurrentDeadline] = useState('');
-
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const now = new Date();
-
-      // HELLO NEW EXEC OF BATCH 6!!! go kill it this year :)) - victor
-      const applicationsOpen = new Date('2025-10-18T07:00:00Z'); 
-      const priorityDeadline = new Date('2025-10-25T06:59:59Z');
-      const regularDeadline = new Date('2025-11-03T07:59:59Z'); 
-
-      let targetDate;
-      let deadlineLabel;
-
-      if (now < applicationsOpen) {
-        targetDate = applicationsOpen;
-        deadlineLabel = 'Applications Open';
-      } else if (now < priorityDeadline) {
-        targetDate = priorityDeadline;
-        deadlineLabel = 'Priority Deadline';
-      } else if (now < regularDeadline) {
-        targetDate = regularDeadline;
-        deadlineLabel = 'Regular Deadline';
-      } else {
-        setCurrentDeadline('Applications Closed');
-        return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-      }
-
-      setCurrentDeadline(deadlineLabel);
-
-      const difference = targetDate.getTime() - now.getTime();
-
-      if (difference > 0) {
-        return {
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
-        };
-      }
-
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    };
-
-    setTimeLeft(calculateTimeLeft());
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50 overflow-hidden">
