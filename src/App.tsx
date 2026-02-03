@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import LoadingScreen from './components/LoadingScreen';
 import Navigation from './components/Navigation';
@@ -58,19 +58,34 @@ const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete })
 const AppContent: React.FC = () => {
   const [isHomePageLoaded, setIsHomePageLoaded] = useState(false);
   const location = useLocation();
+  const prevPathRef = useRef(location.pathname);
+
+  // Reset isHomePageLoaded when navigating TO home page from another page
+  useEffect(() => {
+    const prevPath = prevPathRef.current;
+    const currentPath = location.pathname;
+
+    // If we're navigating TO home from a different page, reset the loaded state
+    if (currentPath === '/' && prevPath !== '/') {
+      setIsHomePageLoaded(false);
+    }
+
+    prevPathRef.current = currentPath;
+  }, [location.pathname]);
 
   const handleHomePageLoadComplete = () => {
     setIsHomePageLoaded(true);
   };
 
   const isHomePage = location.pathname === '/';
+  // Only show footer on home page after loading completes, always show on other pages
   const shouldShowFooter = !isHomePage || isHomePageLoaded;
 
   return (
     <div className="App">
       <Navigation />
       <Routes>
-        <Route path="/" element={<HomePage onLoadComplete={handleHomePageLoadComplete} />} />
+        <Route path="/" element={<HomePage key={location.key} onLoadComplete={handleHomePageLoadComplete} />} />
         <Route path="/startup-directory" element={<StartupDirectory />} />
         <Route path="/founder-directory" element={<FounderDirectory />} />
       </Routes>

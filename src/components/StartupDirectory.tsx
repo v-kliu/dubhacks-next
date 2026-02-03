@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Users, Calendar } from 'lucide-react';
+import { Users, Calendar, ArrowUpRight } from 'lucide-react';
 
 interface Startup {
   name: string;
@@ -15,28 +15,13 @@ interface Startup {
 
 const StartupDirectory: React.FC = () => {
   const [startups, setStartups] = useState<Startup[]>([]);
+  const [selectedBatch, setSelectedBatch] = useState<string>('All');
 
-  // Function to get batch-specific gradient colors
-  const getBatchGradient = (batch: string): string => {
-    const batchGradients: { [key: string]: string } = {
-      'Batch 1': 'from-purple-400 to-purple-600',
-      'Batch 2': 'from-green-400 to-green-600',
-      'Batch 3': 'from-blue-400 to-blue-600',
-      'Batch 4': 'from-orange-400 to-orange-600',
-    };
-    return batchGradients[batch] || 'from-neutral-400 to-neutral-600';
-  };
+  const batches = ['All', 'Batch 4', 'Batch 3', 'Batch 2', 'Batch 1'];
 
-  // Function to get stage-specific colors
-  const getStageColor = (stage: string): string => {
-    const stageColors: { [key: string]: string } = {
-      'Pre-Seed': 'bg-indigo-50 text-indigo-700 border-indigo-200',
-      'Seed': 'bg-emerald-50 text-emerald-700 border-emerald-200',
-      'Series A': 'bg-cyan-50 text-cyan-700 border-cyan-200',
-      'Series B+': 'bg-violet-50 text-violet-700 border-violet-200',
-    };
-    return stageColors[stage] || 'bg-gray-50 text-gray-700 border-gray-200';
-  };
+  const filteredStartups = selectedBatch === 'All'
+    ? startups
+    : startups.filter(s => s.batch === selectedBatch);
 
   // Parse startups from text file
   const parseStartups = (data: string): Startup[] => {
@@ -102,124 +87,130 @@ const StartupDirectory: React.FC = () => {
 
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50">
-      <div className="grid-overlay absolute inset-0 w-full h-full" style={{ minHeight: '100%', height: 'auto' }}></div>
-
+    <div className="min-h-screen bg-neutral-50">
       {/* Header */}
-      <div className="relative pt-28 pb-12 px-6 z-10">
-        <div className="max-w-7xl mx-auto">
+      <div className="bg-black text-white">
+        <div className="max-w-6xl mx-auto px-6 pt-32 pb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
+            transition={{ duration: 0.5 }}
           >
-            <h1 className="text-5xl md:text-6xl font-light text-neutral-900 mb-6">
+            <p className="text-primary-400 text-sm font-medium tracking-wider uppercase mb-4">
+              Portfolio
+            </p>
+            <h1 className="text-4xl md:text-5xl font-semibold mb-4">
               Startup Directory
             </h1>
-            <p className="text-neutral-600 text-lg md:text-xl max-w-2xl mx-auto">
-              Discover innovative startups built by DubHacks Next alumni. 
+            <p className="text-neutral-400 text-lg max-w-xl">
+              Companies built by founders in the DubHacks Next program.
             </p>
           </motion.div>
         </div>
       </div>
 
+      {/* Filter Bar */}
+      <div className="sticky top-16 z-20 bg-white border-b border-neutral-200">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex items-center gap-2 overflow-x-auto">
+            {batches.map((batch) => (
+              <button
+                key={batch}
+                onClick={() => setSelectedBatch(batch)}
+                className={`px-4 py-2 text-sm font-medium rounded-full whitespace-nowrap transition-colors ${
+                  selectedBatch === batch
+                    ? 'bg-black text-white'
+                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+                }`}
+              >
+                {batch}
+              </button>
+            ))}
+            <div className="ml-auto text-sm text-neutral-500">
+              {filteredStartups.length} {filteredStartups.length === 1 ? 'company' : 'companies'}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Results */}
-      <div className="relative max-w-7xl mx-auto px-6 py-12 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {startups.map((startup, index) => (
-            <motion.div
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {filteredStartups.map((startup, index) => (
+            <motion.article
               key={startup.name}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               className="group"
             >
-              <div className="bg-white rounded-2xl border-2 border-primary-200 shadow-lg shadow-primary-500/10 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/20 hover:-translate-y-1 h-full flex flex-col">
-                {/* Gradient Header */}
-                <div className={`h-2 bg-gradient-to-r ${getBatchGradient(startup.batch)}`}></div>
-
-                <div className="p-8 flex-1 flex flex-col">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${getBatchGradient(startup.batch)} flex items-center justify-center shadow-md`}>
-                          <span className="text-white font-bold text-xl">
-                            {startup.name.charAt(0)}
-                          </span>
-                        </div>
-                        <h3 className="text-2xl font-semibold text-neutral-900">
-                          {startup.name}
-                        </h3>
-                      </div>
-
-                      {/* Badges */}
-                      <div className="flex items-center gap-2 flex-wrap mb-4">
-                        <span className="px-3 py-1 text-xs rounded-full font-medium bg-primary-50 text-primary-700 border border-primary-200">
-                          {startup.batch}
-                        </span>
-                        <span className={`px-3 py-1 text-xs rounded-full font-medium border ${getStageColor(startup.stage)}`}>
-                          {startup.stage}
-                        </span>
-                        {startup.founded && (
-                          <span className="px-3 py-1 text-xs rounded-full font-medium bg-neutral-50 text-neutral-600 border border-neutral-200 flex items-center gap-1">
-                            <Calendar size={12} />
-                            {startup.founded}
-                          </span>
-                        )}
-                      </div>
+              <a
+                href={startup.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-white border border-neutral-200 rounded-xl p-6 h-full transition-all duration-200 hover:border-neutral-300 hover:shadow-lg"
+              >
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h2 className="text-xl font-semibold text-neutral-900 truncate">
+                        {startup.name}
+                      </h2>
+                      <ArrowUpRight
+                        size={18}
+                        className="text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"
+                      />
                     </div>
-                  </div>
-
-                  {/* Tagline */}
-                  <p className="text-lg font-semibold text-primary-600 mb-3">
-                    {startup.tagline}
-                  </p>
-
-                  {/* Description */}
-                  <p className="text-neutral-600 mb-6 flex-1">
-                    {startup.description}
-                  </p>
-
-                  {/* Founders */}
-                  {startup.founders && startup.founders.length > 0 && (
-                    <div className="mb-6 pb-6 border-b border-neutral-100">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Users size={16} className="text-neutral-400" />
-                        <span className="text-sm text-neutral-600 font-medium">Founders</span>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {startup.founders.map((founder, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1.5 text-sm rounded-lg font-medium bg-neutral-50 text-neutral-700 border border-neutral-200"
-                          >
-                            {founder}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Website Link */}
-                  <div className="mt-auto">
-                    <a
-                      href={startup.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-xl font-medium hover:bg-primary-700 transition-all duration-200 shadow-md hover:shadow-lg group-hover:scale-105"
-                    >
-                      <span>Visit Website</span>
-                      <ExternalLink size={16} />
-                    </a>
+                    <p className="text-primary-600 font-medium text-sm">
+                      {startup.tagline}
+                    </p>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+
+                {/* Description */}
+                <p className="text-neutral-600 text-sm leading-relaxed mb-5 line-clamp-3">
+                  {startup.description}
+                </p>
+
+                {/* Founders */}
+                {startup.founders && startup.founders.length > 0 && (
+                  <div className="mb-5">
+                    <div className="flex items-center gap-1.5 text-xs text-neutral-500 mb-2">
+                      <Users size={12} />
+                      <span>Founded by</span>
+                    </div>
+                    <p className="text-sm text-neutral-700">
+                      {startup.founders.join(', ')}
+                    </p>
+                  </div>
+                )}
+
+                {/* Meta */}
+                <div className="flex items-center gap-3 pt-4 border-t border-neutral-100">
+                  <span className="text-xs font-medium text-neutral-500 bg-neutral-100 px-2.5 py-1 rounded">
+                    {startup.batch}
+                  </span>
+                  <span className="text-xs font-medium text-neutral-500 bg-neutral-100 px-2.5 py-1 rounded">
+                    {startup.stage}
+                  </span>
+                  {startup.founded && (
+                    <span className="text-xs text-neutral-400 flex items-center gap-1 ml-auto">
+                      <Calendar size={12} />
+                      {startup.founded}
+                    </span>
+                  )}
+                </div>
+              </a>
+            </motion.article>
           ))}
         </div>
 
+        {filteredStartups.length === 0 && (
+          <div className="text-center py-16">
+            <p className="text-neutral-500">No startups found for this filter.</p>
+          </div>
+        )}
       </div>
     </div>
   );
