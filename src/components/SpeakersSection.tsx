@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Building, Users, Star, Handshake, Globe } from 'lucide-react';
+import { Award, Users, Handshake, Globe } from 'lucide-react';
 
 const SpeakersSection: React.FC = () => {
   // Function to get partner logo

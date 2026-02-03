@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ArrowUpRight, Briefcase } from 'lucide-react';
 
 interface Founder {
   name: string;
@@ -12,29 +12,24 @@ interface Founder {
 
 const FounderDirectory: React.FC = () => {
   const [founders, setFounders] = useState<Founder[]>([]);
+  const [selectedBatch, setSelectedBatch] = useState<string>('All');
 
-  // Function to get batch-specific colors
-  const getBatchColor = (batch: string): string => {
-    const batchColors: { [key: string]: string } = {
-      'Batch 0': 'border-gray-400',
-      'Batch 1': 'border-purple-400',
-      'Batch 2': 'border-green-400',
-      'Batch 3': 'border-blue-400',
-      'Batch 4': 'border-orange-400',
-    };
-    return batchColors[batch] || 'border-neutral-400';
-  };
+  const batches = ['All', 'Batch 4', 'Batch 3', 'Batch 2', 'Batch 1', 'Batch 0'];
 
-  const getBatchTextColor = (batch: string): string => {
-    const batchTextColors: { [key: string]: string } = {
-      'Batch 0': 'text-gray-700',
-      'Batch 1': 'text-purple-700',
-      'Batch 2': 'text-green-700',
-      'Batch 3': 'text-blue-700',
-      'Batch 4': 'text-orange-700',
-    };
-    return batchTextColors[batch] || 'text-neutral-700';
-  };
+  const filteredFounders = selectedBatch === 'All'
+    ? founders
+    : founders.filter(f => f.batch === selectedBatch);
+
+  // Group founders by batch for display
+  const groupedFounders = filteredFounders.reduce((acc, founder) => {
+    if (!acc[founder.batch]) {
+      acc[founder.batch] = [];
+    }
+    acc[founder.batch].push(founder);
+    return acc;
+  }, {} as Record<string, Founder[]>);
+
+  const batchOrder = ['Batch 4', 'Batch 3', 'Batch 2', 'Batch 1', 'Batch 0'];
 
   // Parse founders from text file
   const parseFounders = (data: string): Founder[] => {
@@ -83,105 +78,145 @@ const FounderDirectory: React.FC = () => {
     loadData();
   }, []);
 
-  // Group founders by batch
-  const groupedFounders = founders.reduce((acc, founder) => {
-    if (!acc[founder.batch]) {
-      acc[founder.batch] = [];
-    }
-    acc[founder.batch].push(founder);
-    return acc;
-  }, {} as Record<string, Founder[]>);
-
-  const batchOrder = ['Batch 4', 'Batch 3', 'Batch 2', 'Batch 1', 'Batch 0'];
-
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50">
-      <div className="grid-overlay absolute inset-0 w-full h-full" style={{ minHeight: '100%', height: 'auto' }}></div>
-
+    <div className="min-h-screen bg-neutral-50">
       {/* Header */}
-      <div className="relative pt-28 pb-12 px-6 z-10">
-        <div className="max-w-7xl mx-auto">
+      <div className="bg-black text-white">
+        <div className="max-w-6xl mx-auto px-6 pt-32 pb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
+            transition={{ duration: 0.5 }}
           >
-            <h1 className="text-5xl md:text-6xl font-light text-neutral-900 mb-6">
+            <p className="text-primary-400 text-sm font-medium tracking-wider uppercase mb-4">
+              Community
+            </p>
+            <h1 className="text-4xl md:text-5xl font-semibold mb-4">
               Founder Directory
             </h1>
-            <p className="text-neutral-600 text-lg md:text-xl max-w-2xl mx-auto">
-              Meet the talented founders building the future.
+            <p className="text-neutral-400 text-lg max-w-xl">
+              The talented founders who have been part of DubHacks Next.
             </p>
           </motion.div>
         </div>
       </div>
 
+      {/* Filter Bar */}
+      <div className="sticky top-16 z-20 bg-white border-b border-neutral-200">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex items-center gap-2 overflow-x-auto">
+            {batches.map((batch) => (
+              <button
+                key={batch}
+                onClick={() => setSelectedBatch(batch)}
+                className={`px-4 py-2 text-sm font-medium rounded-full whitespace-nowrap transition-colors ${
+                  selectedBatch === batch
+                    ? 'bg-black text-white'
+                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+                }`}
+              >
+                {batch}
+              </button>
+            ))}
+            <div className="ml-auto text-sm text-neutral-500">
+              {filteredFounders.length} {filteredFounders.length === 1 ? 'founder' : 'founders'}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Results - Grouped by Batch */}
-      <div className="relative max-w-7xl mx-auto px-6 py-12 z-10">
+      <div className="max-w-6xl mx-auto px-6 py-12">
         {batchOrder.map(batch => {
           const batchFounders = groupedFounders[batch];
           if (!batchFounders || batchFounders.length === 0) return null;
 
           return (
-            <div key={batch} className="mb-12">
+            <motion.section
+              key={batch}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-16 last:mb-0"
+            >
               {/* Batch Header */}
-              <div className="mb-6">
-                <h2 className={`text-3xl font-light ${getBatchTextColor(batch)} inline-block pb-2 border-b-4 ${getBatchColor(batch)}`}>
+              <div className="flex items-center gap-4 mb-6">
+                <h2 className="text-2xl font-semibold text-neutral-900">
                   {batch}
                 </h2>
+                <div className="flex-1 h-px bg-neutral-200"></div>
+                <span className="text-sm text-neutral-500">
+                  {batchFounders.length} {batchFounders.length === 1 ? 'founder' : 'founders'}
+                </span>
               </div>
 
               {/* Founders Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {batchFounders.map((founder, index) => (
-                  <motion.div
-                    key={`${founder.name}-${index}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.05 }}
-                    className="group"
-                  >
-                    <div className={`bg-white rounded-lg border-l-4 ${getBatchColor(batch)} shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col p-4`}>
-                      {/* Name - Smaller */}
-                      <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                        {founder.name}
-                      </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {batchFounders.map((founder, index) => {
+                  const hasLink = founder.projectLink && founder.projectLink !== 'N/A';
+                  const CardWrapper = hasLink ? 'a' : 'div';
+                  const cardProps = hasLink ? {
+                    href: founder.projectLink,
+                    target: "_blank",
+                    rel: "noopener noreferrer"
+                  } : {};
 
-                      {/* Project with Link */}
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="text-primary-600 font-medium text-sm">
-                          {founder.company}
-                        </span>
-                        {founder.projectLink && founder.projectLink !== 'N/A' && (
-                          <a
-                            href={founder.projectLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary-600 hover:text-primary-700 transition-colors"
-                            title="View Project"
-                          >
-                            <ExternalLink size={14} />
-                          </a>
-                        )}
-                      </div>
-
-                      {/* Current Occupation */}
-                      {founder.currentOccupation && founder.currentOccupation !== 'N/A' && (
-                        <div className={`mt-auto pt-3 border-t border-neutral-100`}>
-                          <p className="text-xs text-neutral-600">
-                            <span className="font-medium">Currently:</span> {founder.currentOccupation}
-                          </p>
+                  return (
+                    <motion.div
+                      key={`${founder.name}-${index}`}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.03 }}
+                    >
+                      <CardWrapper
+                        {...cardProps}
+                        className={`block bg-white border border-neutral-200 rounded-xl p-5 h-full transition-all duration-200 ${
+                          hasLink ? 'hover:border-neutral-300 hover:shadow-md group cursor-pointer' : ''
+                        }`}
+                      >
+                        {/* Name & Link */}
+                        <div className="flex items-start justify-between mb-2">
+                          <h3 className="text-base font-semibold text-neutral-900">
+                            {founder.name}
+                          </h3>
+                          {hasLink && (
+                            <ArrowUpRight
+                              size={16}
+                              className="text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-0.5"
+                            />
+                          )}
                         </div>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
+
+                        {/* Company/Project */}
+                        <p className="text-sm font-medium text-primary-600 mb-3">
+                          {founder.company}
+                        </p>
+
+                        {/* Current Occupation */}
+                        {founder.currentOccupation && founder.currentOccupation !== 'N/A' && (
+                          <div className="pt-3 border-t border-neutral-100">
+                            <div className="flex items-start gap-2">
+                              <Briefcase size={12} className="text-neutral-400 mt-0.5 flex-shrink-0" />
+                              <p className="text-xs text-neutral-500 leading-relaxed">
+                                {founder.currentOccupation}
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                      </CardWrapper>
+                    </motion.div>
+                  );
+                })}
               </div>
-            </div>
+            </motion.section>
           );
         })}
 
+        {filteredFounders.length === 0 && (
+          <div className="text-center py-16">
+            <p className="text-neutral-500">No founders found for this filter.</p>
+          </div>
+        )}
       </div>
     </div>
   );

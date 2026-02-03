@@ -68,8 +68,8 @@ const Navigation: React.FC = () => {
   const navItems: NavItem[] = [
     { name: 'About', href: '#program' },
     { name: 'Tracks', href: '#tracks' },
-    { 
-      name: 'Directory', 
+    {
+      name: 'Directory',
       hasDropdown: true,
       dropdownItems: [
         { name: 'Startup Directory', href: '/startup-directory' },
@@ -79,6 +79,9 @@ const Navigation: React.FC = () => {
     { name: 'Team', href: '#team' },
     { name: 'Apply', href: '#apply' }
   ];
+
+  // Check if we're on a directory page (which has black header)
+  const isDirectoryPage = location.pathname === '/startup-directory' || location.pathname === '/founder-directory';
 
   return (
     <motion.nav
@@ -107,8 +110,8 @@ const Navigation: React.FC = () => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
               }}
-              className={`font-light text-lg tracking-wide transition-colors hover:text-primary-600 ${
-                isScrolled ? 'text-neutral-900' : 'text-neutral-900'
+              className={`font-light text-lg tracking-wide transition-colors hover:text-primary-400 ${
+                isScrolled ? 'text-neutral-900' : isDirectoryPage ? 'text-white' : 'text-neutral-900'
               }`}
             >
               DUBHACKS NEXT
@@ -126,9 +129,11 @@ const Navigation: React.FC = () => {
                 {item.hasDropdown ? (
                   <button
                     className={`transition-all duration-300 relative group flex items-center space-x-1 px-2 py-1 -mx-2 -my-1 ${
-                      isScrolled 
-                        ? 'text-neutral-700 hover:text-primary-600' 
-                        : 'text-neutral-700 hover:text-primary-600'
+                      isScrolled
+                        ? 'text-neutral-700 hover:text-primary-600'
+                        : isDirectoryPage
+                          ? 'text-white hover:text-primary-400'
+                          : 'text-neutral-700 hover:text-primary-600'
                     }`}
                     onMouseEnter={() => setActiveDropdown(item.name)}
                     onMouseLeave={() => setActiveDropdown(null)}
@@ -148,7 +153,9 @@ const Navigation: React.FC = () => {
                     className={`transition-all duration-300 relative group ${
                       isScrolled
                         ? 'text-neutral-700 hover:text-primary-600'
-                        : 'text-neutral-700 hover:text-primary-600'
+                        : isDirectoryPage
+                          ? 'text-white hover:text-primary-400'
+                          : 'text-neutral-700 hover:text-primary-600'
                     }`}
                   >
                     <span className="relative">
