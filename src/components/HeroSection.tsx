@@ -5,7 +5,7 @@ const HeroSection: React.FC = () => {
   const stats = [
     { value: '$5M+', label: 'Raised' },
     { value: '68', label: 'Startups' },
-    { value: '4', label: 'Batches' }
+    { value: '5', label: 'Batches' }
   ];
 
   return (

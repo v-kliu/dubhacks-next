@@ -11,8 +11,8 @@ const SpeakersSection: React.FC = () => {
       'Madrona Venture Group': '/assets/partners_and_mentors/madrona.jpg',
       'Techstars': '/assets/partners_and_mentors/techstars.svg',
       'Pack Ventures': '/assets/partners_and_mentors/pack.jpg',
+      'Pillsbury Winthrop Shaw Pittman': '/assets/partners_and_mentors/pillsbury.png',
       'University of Washington': '/assets/partners_and_mentors/uw.jpg',
-      'Amazon Web Services': '/assets/partners_and_mentors/aws.png',
       '1517 Fund': '/assets/partners_and_mentors/1517.png',
       'Cascade Seed Fund': '/assets/partners_and_mentors/cascade_seed_fund.png',
       'Pioneer Square Labs': '/assets/partners_and_mentors/psl.jpg',
@@ -98,8 +98,8 @@ const SpeakersSection: React.FC = () => {
     { name: '1517 Fund', category: 'Venture Capital' },
     { name: 'Cascade Seed Fund', category: 'Venture Capital' },
     { name: 'Pioneer Square Labs', category: 'Startup Studio' },
+    { name: 'Pillsbury Winthrop Shaw Pittman', category: 'Legal Partner' },
     { name: 'University of Washington', category: 'Academic Partner' },
-    { name: 'Amazon Web Services', category: 'Cloud Platform' },
   ];
 
   const categories = [
