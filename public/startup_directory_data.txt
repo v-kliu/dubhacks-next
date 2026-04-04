@@ -430,12 +430,6 @@ BATCH 5
 }
 
 {
-  name: 'Theo',
-  batch: 'Batch 5',
-  founders: ['Ojas Kandhare']
-}
-
-{
   name: 'Wallzy',
   batch: 'Batch 5',
   founders: ['George Evans Daenuwy', 'Kezia Joesoef', 'Patrick Wijaya', 'Calista Vidianto']
