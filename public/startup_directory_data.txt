@@ -1,5 +1,266 @@
-STARTUP DIRECTORY DATA
-======================
+STARTUP DIRECTORY — DUBHACKS NEXT
+===================================
+Last updated: April 2026
+===================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BATCH 1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{
+  name: 'Gleam',
+  tagline: 'Elevating mood and productivity through accessible phototherapy',
+  description: 'A mobile and desktop application redefining how to elevate the mood and productivity of people living in areas with less sunlight, by providing convenient trackable phototherapy through their devices.',
+  batch: 'Batch 1',
+  website: 'http://gogleam.co/',
+  stage: 'MVP / Beta',
+  founders: ['Stanley Susanto', 'Britney Sugiarto']
+}
+
+{
+  name: 'Mezzo',
+  tagline: 'The easiest way to plan meetups',
+  description: 'Mezzo takes the pain out of planning meetups by helping you figure out when to meet, where to meet, and what to do — in a matter of seconds.',
+  batch: 'Batch 1',
+  website: 'www.meetmezzo.com',
+  stage: 'Waitlist',
+  founders: ['Grace Brigham', 'Austin Lee', 'Krishna Panchap']
+}
+
+{
+  name: 'Micropay',
+  tagline: 'Cheaper transactions on Ethereum',
+  description: 'Transactions on layer-1 Ethereum are expensive. Micropay is building a cheaper alternative.',
+  batch: 'Batch 1',
+  website: 'https://micropay.gg/',
+  founders: ['Justin Shaw', 'Soren Rood']
+}
+
+{
+  name: 'Nolio',
+  tagline: 'No-code digital portfolio builder for educational institutions',
+  description: 'Nolio is a no-code website builder that enables educational institutions and their students to quickly create stunning digital portfolios of project work through automating personalizations around the website building process.',
+  batch: 'Batch 1',
+  website: 'www.nolio.so',
+  stage: 'Early Access',
+  founders: ['Alexander Dumitriu Carcoana', 'Joseph Choi']
+}
+
+{
+  name: 'Pongo',
+  tagline: 'The easiest way to launch, operate, and scale an e-commerce business',
+  description: 'Pongo is the easiest way to launch, operate, and scale an e-commerce business.',
+  batch: 'Batch 1',
+  website: 'https://joinpongo.com',
+  founders: ['Caleb John', 'Tesfa Shenkute', 'Caleb Zearing', 'Jamari Morrison']
+}
+
+{
+  name: 'Surgemoon',
+  tagline: 'Crypto-based subscription infrastructure for companies',
+  description: 'Interface for companies to integrate crypto-based subscriptions. Paid by the second, discounts using NFTs, developer-first with intuitive, beautiful design.',
+  batch: 'Batch 1',
+  website: 'surgemoon.com',
+  founders: ['Philip Vu']
+}
+
+{
+  name: 'VerbalEyes',
+  tagline: 'Fast, affordable audio description for greater internet accessibility',
+  description: 'Fast, affordable, and hassle-free audio description for greater internet accessibility.',
+  batch: 'Batch 1',
+  website: 'verbaleyes.co',
+  founders: ['Prithvi Ranjan', 'Lucy Jiang']
+}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BATCH 2
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{
+  name: 'Connect',
+  tagline: 'Match into teams with compatible skills and aligned passions',
+  description: 'An interface for competition participants to match into teams with compatible skill sets and aligning passions to build impact-driven projects.',
+  batch: 'Batch 2',
+  founders: ['Sahana Sasikumar', 'Manasa Lingireddy', 'Pranati Dani']
+}
+
+{
+  name: 'Dabble',
+  tagline: 'Expediting engagement and progress updates',
+  description: 'A platform built to expedite engagement and progress updates.',
+  batch: 'Batch 2',
+  founders: ['Shivang Raisurana', 'Ryan Huang', 'Michael Li']
+}
+
+{
+  name: 'Eat Together',
+  tagline: 'Helping college students seamlessly organize food meetups',
+  description: 'A human-centered app to help college students seamlessly organize food meetups.',
+  batch: 'Batch 2',
+  website: 'https://www.eat-together.tech/',
+  founders: ['Eric Xiao']
+}
+
+{
+  name: 'Matchbox',
+  tagline: 'Connect with like-minded developers to build projects together',
+  description: 'A platform for developers to connect with like-minded individuals and teams to work on projects with.',
+  batch: 'Batch 2',
+  founders: ['Abhimanyu Kumar', 'Mohammad Zahid', 'Hayden Lauritzen']
+}
+
+{
+  name: 'myXP',
+  tagline: 'Central profile for aspiring professional esports players',
+  description: 'A platform for aspiring professional esports players to create a central profile for all of their history and information that can be easily found by talent scouts.',
+  batch: 'Batch 2',
+  founders: ['Kyle Zeng', 'Justin Tham', 'Joshua Tan', 'Ayata Bernhardt']
+}
+
+{
+  name: 'SleeveAI',
+  tagline: 'Wearable smart sleeve to measure joint and muscle health dynamically',
+  description: 'A wearable smart sleeve to measure joint and muscle health dynamically.',
+  batch: 'Batch 2',
+  website: 'https://sleeveai.godaddysites.com/',
+  founders: ['Shivesh Ummat', 'Nick Khormaei']
+}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BATCH 3
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{
+  name: 'AgentLess',
+  tagline: 'Real estate AI assistant',
+  description: 'Real Estate AI Assistant/Agent.',
+  batch: 'Batch 3',
+  founders: ['Ateeq Ahmed Ramlan']
+}
+
+{
+  name: 'ChatNest',
+  tagline: 'GPT-based chatbot for real estate buying and selling',
+  description: 'A GPT-based chatbot that simplifies the buying and selling of various real estate by interpreting information extracted from national MLSs in an intuitive way for people not versed in the industry.',
+  batch: 'Batch 3',
+  founders: ['Ran Iarovich', 'Ian Yang', 'Benjamin Moskalensky', 'Barath A. Saravanan']
+}
+
+{
+  name: 'DataWall',
+  tagline: 'AI-driven platform revolutionizing insurance brokerage',
+  description: 'DataWall is an AI-driven platform that revolutionizes insurance brokerage by slashing hold times from 32 minutes to 5 and streamlining client communication. Like having a smart assistant who manages calls efficiently and matches the right policies to clients, enhancing productivity for every broker.',
+  batch: 'Batch 3',
+  projectLink: 'https://datawall.ai/',
+  founders: ['Kenneth Chen', 'Sam Ng']
+}
+
+{
+  name: 'Finquire',
+  tagline: 'AI portal for financial research and expert access',
+  description: 'Finquire offers a portal of AI tools for users to perform research, talk with experts, and find everything in one place — so they can understand finance with ease and perform research faster than ever before.',
+  batch: 'Batch 3',
+  founders: ['Jordan Kauffman', 'Daniel Tameishi', 'Ethan Kinnan']
+}
+
+{
+  name: 'Inpuri',
+  tagline: 'Captcha-less ML-powered bot detection for web apps',
+  description: 'Malicious bots pose a threat to web apps everywhere. Inpuri uses sensor data and ML to create a captcha-less solution to block unwanted traffic.',
+  batch: 'Batch 3',
+  founders: ['Adam Ketefian', 'Sathvik Kanuri', 'Ethan Tieu']
+}
+
+{
+  name: 'MyOfficeTrainer',
+  tagline: 'Conveniently timed office-friendly exercises at work',
+  description: 'Service to send you conveniently timed office-friendly exercises, stretches, and yoga at work. Integrates with work tools and tech.',
+  batch: 'Batch 3',
+  founders: ['Aatish Parson']
+}
+
+{
+  name: 'Planet',
+  tagline: 'Discover places and plan events with friends through AI recommendations',
+  description: 'Planet streamlines the event planning process by distributing planning across all members through an intuitive interface, while also surfacing AI-powered recommendations to connect people and enable easier hangouts.',
+  batch: 'Batch 3',
+  founders: ['Lavindu Devadithya', 'Naoto Uemura', 'Kevin Wang']
+}
+
+{
+  name: 'Roomie',
+  tagline: 'Roommate synchronization',
+  description: 'Roommate synchronization platform.',
+  batch: 'Batch 3',
+  founders: ['Varun Vijayababu', 'Garison Julius', 'Farhan Khan']
+}
+
+{
+  name: 'Spot',
+  tagline: 'Cloud-agnostic automated deployment with cost optimization',
+  description: 'Automated cloud-agnostic deployment system with a cost optimizer and resource recommendation system.',
+  batch: 'Batch 3',
+  founders: ['Soham Raut', 'Rituraj Sohoni', 'Shridhar Sinha', 'Aryaman Chakravarty']
+}
+
+{
+  name: 'TaskMasterAI',
+  tagline: 'Calendar-integrated AI task scheduler that adapts to your study style',
+  description: 'An app that seamlessly integrates with your calendar to auto-schedule tasks, and optimizes productivity by adapting to your study style.',
+  batch: 'Batch 3',
+  founders: ['Harshitha Rebala', 'Sai Sunku', 'Salma Hajian']
+}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BATCH 4
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{
+  name: 'AdWise',
+  batch: 'Batch 4',
+  founders: ['Carolyn Chen', 'Udayan Sharma']
+}
+
+{
+  name: 'AstralCode',
+  batch: 'Batch 4',
+  founders: ['Elvin Fu']
+}
+
+{
+  name: 'CabinEQ',
+  batch: 'Batch 4',
+  website: 'https://cabinaudio.com',
+  founders: ['Tyler Gee', 'Julian McOmie']
+}
+
+{
+  name: 'HUNI',
+  batch: 'Batch 4',
+  founders: ['Agnes Bisma']
+}
+
+{
+  name: 'In Your World',
+  batch: 'Batch 4',
+  website: 'https://inyourworld.vercel.app/',
+  founders: ['Grace Yim', 'Grace Shin', 'Medha Rawat']
+}
+
+{
+  name: 'Koel Labs',
+  tagline: 'Speech Technology for Anyone Built by Everyone',
+  description: 'Democratizing speech technology through open-source tools and accessible APIs for developers worldwide.',
+  batch: 'Batch 4',
+  website: 'https://koellabs.com',
+  stage: 'Pre-Seed',
+  founders: ['Alex Metzger', 'Aruna Srivastava', 'Ruslan Mukhamedvaleev']
+}
 
 {
   name: 'Meteor',
@@ -13,17 +274,6 @@ STARTUP DIRECTORY DATA
 }
 
 {
-  name: 'Koel Labs',
-  tagline: 'Speech Technology for Anyone Built by Everyone',
-  description: 'Democratizing speech technology through open-source tools and accessible APIs for developers worldwide.',
-  batch: 'Batch 4',
-  founded: '2023',
-  website: 'https://koellabs.com',
-  stage: 'Pre-Seed',
-  founders: ['Alexander Metzger', 'Aruna Srivastava', 'Ruslan Mukhamedvaleev']
-}
-
-{
   name: 'Ripple',
   tagline: 'The first hyperlocal marketplace built by and for college students',
   description: 'Connecting college students with local services, goods, and opportunities in their campus communities.',
@@ -31,7 +281,19 @@ STARTUP DIRECTORY DATA
   founded: '2024',
   website: 'https://www.rippleu.net/',
   stage: 'Pre-Seed',
-  founders: ['Parker Ritzmann', 'Will Hunt', 'Angie Wu', 'Connor Chan']
+  founders: ['Parker Ritzmann', 'Will Hunt', 'Angela Wu', 'Connor Chan']
+}
+
+{
+  name: 'Serenity',
+  batch: 'Batch 4',
+  founders: ['Daniel Le']
+}
+
+{
+  name: 'Slate',
+  batch: 'Batch 4',
+  founders: ['Aditya Khowal', 'Nikhil Devisetty']
 }
 
 {
@@ -43,4 +305,157 @@ STARTUP DIRECTORY DATA
   website: 'https://soarin.dev/',
   stage: 'Pre-Seed',
   founders: ['Victor Liu', 'Aarfan Hussain']
+}
+
+{
+  name: 'Triage',
+  batch: 'Batch 4',
+  founders: ['Arya Gummadi', 'Ian Chiu', 'Kevin Xiao', 'Tim Kaltenbach']
+}
+
+{
+  name: 'UR Verdure',
+  batch: 'Batch 4',
+  website: 'https://www.urverdure.app',
+  founders: ['Sanjana Satagopan']
+}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BATCH 5
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{
+  name: 'BeamBell',
+  tagline: 'AI salon and phone receptionist',
+  description: 'AI-powered salon and phone receptionist.',
+  batch: 'Batch 5',
+  website: 'https://www.beambell.com/',
+  stage: 'MVP / Scaling',
+  founders: ['Arvin Hakakian', 'Anant Dhokia', 'Aur Shalev Merin']
+}
+
+{
+  name: 'catalvst',
+  tagline: 'Create original audio plugins by describing your idea in plain English',
+  description: 'Creates original audio plugins by describing your idea in plain English.',
+  batch: 'Batch 5',
+  website: 'https://catalvst.com/',
+  stage: 'MVP',
+  founders: ['Aaron Li', 'William Pantel']
+}
+
+{
+  name: 'Chameleon',
+  tagline: 'Transforms web UI to make it more accessible',
+  description: 'Transforms web UI to make it more accessible.',
+  batch: 'Batch 5',
+  stage: 'Prototype',
+  founders: ['Aditya Shirodkar', 'Ronald Luong', 'Ajit (last name unknown — please verify)']
+}
+
+{
+  name: 'Healr',
+  tagline: 'Helping people with unhealthy attachment take control of their lives',
+  description: 'Tool to help people with unhealthy attachment take control of their lives.',
+  batch: 'Batch 5',
+  website: 'https://healr.site/',
+  stage: 'MVP',
+  founders: ['Advait Raman']
+}
+
+{
+  name: 'HeartBeats',
+  tagline: 'Making music move with you for your exercise',
+  description: 'Making music move with you for your exercise.',
+  batch: 'Batch 5',
+  stage: 'MVP',
+  founders: ['Hriesha Popat']
+}
+
+{
+  name: 'Iris',
+  tagline: 'Member aggregation and connection platform for alumni',
+  description: 'Member aggregation and connection platform for alumni.',
+  batch: 'Batch 5',
+  stage: 'Prototype',
+  founders: ['Saachi Dhamija', 'Sthiti Patnaik']
+}
+
+{
+  name: 'Leasee',
+  tagline: 'Student-to-student subleasing for short-term flexible leases',
+  description: 'Platform for student-to-student subleasing specifically built for student apartments and short-term, flexible leases.',
+  batch: 'Batch 5',
+  website: 'http://joinleasee.com/',
+  stage: 'MVP',
+  founders: ['Sanjana Satagopan']
+}
+
+{
+  name: 'nomad',
+  tagline: 'One stop shop for travel social media',
+  description: 'nomad is the one stop shop for travel social media — a platform where people can visually log their travels, connect with friends, and find real travel content itineraries all in one place.',
+  batch: 'Batch 5',
+  founders: ['Shreyank Gupta', 'Rahul Bonthu']
+}
+
+{
+  name: 'Nomi',
+  tagline: 'Simplifying shared living for roommates',
+  description: 'Nomi simplifies shared living for roommates by helping with expense splitting, chore tracking, and more.',
+  batch: 'Batch 5',
+  stage: 'MVP / Beta',
+  founders: ['Anika Rao', 'Taj Khandekar', 'Nandini Sinha', 'Tharika Jayaraj', 'Aditi Agarwal', 'Sophia Zhang']
+}
+
+{
+  name: 'Qualty',
+  tagline: 'E2E agentic testing platform for frontend user workflows',
+  description: 'Qualty is an end-to-end agentic testing platform for frontend user workflows, automating maintenance and scheduling tests for 24/7 QA upkeep.',
+  batch: 'Batch 5',
+  website: 'https://qualty.co/',
+  stage: 'Beta',
+  founders: ['Jove Pendapotan', 'Reuben Santoso', 'Samuel Purnama']
+}
+
+{
+  name: 'Sparks',
+  tagline: 'Helping modest fashion shoppers find clothing that reflects their style and values',
+  description: 'Helps modest fashion shoppers find clothing that reflects their style and values.',
+  batch: 'Batch 5',
+  website: 'https://shopsparks.co/',
+  stage: 'Prototype',
+  founders: ['Aleeza Bhatti', 'Zahra Taher']
+}
+
+{
+  name: 'Theo',
+  batch: 'Batch 5',
+  founders: ['Ojas Kandhare']
+}
+
+{
+  name: 'Wallzy',
+  batch: 'Batch 5',
+  founders: ['George Evans Daenuwy', 'Kezia Joesoef', 'Patrick Wijaya', 'Calista Vidianto']
+}
+
+{
+  name: 'Yomi Sensei',
+  tagline: 'Learn new languages through daily reading lessons',
+  description: 'Yomi Sensei teaches learners new languages through daily reading lessons.',
+  batch: 'Batch 5',
+  website: 'https://yomisensei.net',
+  stage: 'MVP',
+  founders: ['Keanu Thakalath']
+}
+
+{
+  name: 'Zither',
+  tagline: 'A spatial web and file browser built for the next era of computing',
+  description: 'Zither is a spatial web and file browser — imagine if your desktop was an infinite 2D grid, built with the elegance of Apple, the best lessons from game design, and powered by an in-house engine based on 10 years of Figma engineering.',
+  batch: 'Batch 5',
+  stage: 'Prototype',
+  founders: ['Alexander Zhu', 'Regina Lin']
 }

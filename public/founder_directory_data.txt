@@ -1,34 +1,965 @@
-FOUNDER DIRECTORY DATA
-======================
+FOUNDER DIRECTORY — DUBHACKS NEXT
+==================================
+Last updated: April 2026
+==================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BATCH 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 {
-  name: 'Pranav Madhukar',
-  batch: 'Batch 4',
-  company: 'Meteor',
-  currentOccupation: 'Building Meteor @ Y Combinator'
+  name: 'Andrey Risukhin',
+  batch: 'Batch 0',
+  company: 'Utility/ranked choice exploration',
+  currentOccupation: 'Data @ Perceptron'
+}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BATCH 1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+— EIRs (no project) —
+
+{
+  name: 'Abas S Hersi',
+  batch: 'Batch 1',
+  role: 'EiR'
+}
+
+{
+  name: 'Aisha Magsi',
+  batch: 'Batch 1',
+  role: 'EiR'
+}
+
+{
+  name: 'Albert Zhong',
+  batch: 'Batch 1',
+  role: 'EiR'
+}
+
+{
+  name: 'Andrew Wu',
+  batch: 'Batch 1',
+  role: 'EiR'
+}
+
+{
+  name: 'Aryan Mahindra',
+  batch: 'Batch 1',
+  role: 'EiR'
+}
+
+{
+  name: 'Ishaan Puri',
+  batch: 'Batch 1',
+  role: 'EiR'
+}
+
+{
+  name: 'Jordan Kauffman',
+  batch: 'Batch 1',
+  role: 'EiR'
+}
+
+{
+  name: 'Layla Airola',
+  batch: 'Batch 1',
+  role: 'EiR'
+}
+
+{
+  name: 'Manasa Lingireddy',
+  batch: 'Batch 1',
+  role: 'EiR'
+}
+
+{
+  name: 'Yash Savla',
+  batch: 'Batch 1',
+  role: 'EiR'
+}
+
+— Projects —
+
+{
+  name: 'Alexander Dumitriu Carcoana',
+  batch: 'Batch 1',
+  company: 'Nolio'
+}
+
+{
+  name: 'Austin Lee',
+  batch: 'Batch 1',
+  company: 'Mezzo'
+}
+
+{
+  name: 'Britney Sugiarto',
+  batch: 'Batch 1',
+  company: 'PhotoMed'
+}
+
+{
+  name: 'Caleb John',
+  batch: 'Batch 1',
+  company: 'PongoAI',
+  currentOccupation: 'Pioneer Square Labs'
+}
+
+{
+  name: 'Caleb Zearing',
+  batch: 'Batch 1',
+  company: 'PongoAI'
+}
+
+{
+  name: 'Evan Siu',
+  batch: 'Batch 1',
+  company: 'Future Cities and Urbanism Project',
+  currentOccupation: 'Schwarzman Scholar'
+}
+
+{
+  name: 'Grace Brigham',
+  batch: 'Batch 1',
+  company: 'Mezzo'
+}
+
+{
+  name: 'Jamari Morrison',
+  batch: 'Batch 1',
+  company: 'PongoAI'
+}
+
+{
+  name: 'Joseph Choi',
+  batch: 'Batch 1',
+  company: 'Nolio'
+}
+
+{
+  name: 'Justin Shaw',
+  batch: 'Batch 1',
+  company: 'Micropay'
+}
+
+{
+  name: 'Krishna Panchap',
+  batch: 'Batch 1',
+  company: 'Mezzo'
+}
+
+{
+  name: 'Lucy Jiang',
+  batch: 'Batch 1',
+  company: 'VerbalEyes'
+}
+
+{
+  name: 'Philip Vu',
+  batch: 'Batch 1',
+  company: 'Surgemoon'
+}
+
+{
+  name: 'Prithvi Ranjan',
+  batch: 'Batch 1',
+  company: 'VerbalEyes'
+}
+
+{
+  name: 'Soren Rood',
+  batch: 'Batch 1',
+  company: 'Micropay'
+}
+
+{
+  name: 'Stanley Susanto',
+  batch: 'Batch 1',
+  company: 'PhotoMed'
+}
+
+{
+  name: 'Tesfa Shenkute',
+  batch: 'Batch 1',
+  company: 'PongoAI'
+}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BATCH 2
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+— EIRs —
+
+{
+  name: 'Brandon Jakobson',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/brandon-jakobson-406a9518a'
+}
+
+{
+  name: 'Brian Cao',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/bcao'
+}
+
+{
+  name: 'Camden Kaminsky',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/camdenkaminsky'
+}
+
+{
+  name: 'Connor White',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/cwhite116'
+}
+
+{
+  name: 'Daphne He',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/daphne-he-a7b4a0207'
+}
+
+{
+  name: 'Edwin Nino Delgado',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/edwinnino'
+}
+
+{
+  name: 'Gunn Kim',
+  batch: 'Batch 2',
+  role: 'EiR'
+}
+
+{
+  name: 'Kate Povey',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/katepovey'
+}
+
+{
+  name: 'Luka Sherman',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/lukasherman'
+}
+
+{
+  name: 'Martin Johnson',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/martin-johnson-4655181b1'
+}
+
+{
+  name: 'Niyati Trivedi',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/ntriv04'
+}
+
+{
+  name: 'Paulo Nascimento',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/paulonasc'
+}
+
+{
+  name: 'Rosie Shen',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/rosieshen/'
+}
+
+{
+  name: 'Ryan Chern',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/ryan-chern-348b50167'
+}
+
+{
+  name: 'Sahil Kancherla',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/sahil-kancherla-a0a62118b'
+}
+
+{
+  name: 'Srikar Chava',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/srikarchava'
+}
+
+{
+  name: 'Victor Cheng',
+  batch: 'Batch 2',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/victor-cheng-89a161180/'
+}
+
+— Projects —
+
+{
+  name: 'Abhimanyu Kumar',
+  batch: 'Batch 2',
+  company: 'Matchbox',
+  linkedin: 'https://www.linkedin.com/in/k-abhi/'
+}
+
+{
+  name: 'Ayata Bernhardt',
+  batch: 'Batch 2',
+  company: 'myXP'
+}
+
+{
+  name: 'Gunn Chun',
+  batch: 'Batch 2',
+  company: 'N/A',
+  currentOccupation: 'MLE @ BioSyft',
+  linkedin: 'https://www.linkedin.com/in/gunn-k-chun/'
+}
+
+{
+  name: 'Hayden Lauritzen',
+  batch: 'Batch 2',
+  company: 'Matchbox',
+  linkedin: 'https://www.linkedin.com/in/haydenlauritzen/'
+}
+
+{
+  name: 'Joshua Tan',
+  batch: 'Batch 2',
+  company: 'myXP',
+  linkedin: 'https://www.linkedin.com/in/joshtan2/'
+}
+
+{
+  name: 'Justin Tham',
+  batch: 'Batch 2',
+  company: 'myXP',
+  linkedin: 'https://www.linkedin.com/in/justin-tham-933837211/'
+}
+
+{
+  name: 'Kyle Zeng',
+  batch: 'Batch 2',
+  company: 'myXP',
+  linkedin: 'https://www.linkedin.com/in/kyle-zeng-b669ab212/'
+}
+
+{
+  name: 'Manasa Lingireddy',
+  batch: 'Batch 2',
+  company: 'Connect',
+  linkedin: 'https://www.linkedin.com/in/manasa-lingireddy/'
+}
+
+{
+  name: 'Michael Li',
+  batch: 'Batch 2',
+  company: 'Dabble',
+  currentOccupation: 'Masters @ Carnegie Mellon University',
+  linkedin: 'https://www.linkedin.com/in/michaelli11233'
+}
+
+{
+  name: 'Mohammad Zahid',
+  batch: 'Batch 2',
+  company: 'Matchbox',
+  linkedin: 'https://www.linkedin.com/in/mohammadazahid/'
+}
+
+{
+  name: 'Nick Khormaei',
+  batch: 'Batch 2',
+  company: 'SleeveAI',
+  currentOccupation: 'Founder - Neuramill',
+  linkedin: 'https://www.linkedin.com/in/nick-khormaei-98933116a/'
+}
+
+{
+  name: 'Parsa Khazaeepoul',
+  batch: 'Batch 2',
+  company: 'Aristotle',
+  currentOccupation: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/parsas'
+}
+
+{
+  name: 'Pranati Dani',
+  batch: 'Batch 2',
+  company: 'Connect',
+  linkedin: 'https://www.linkedin.com/in/pranati-dani/'
+}
+
+{
+  name: 'Ryan Huang',
+  batch: 'Batch 2',
+  company: 'Dabble'
+}
+
+{
+  name: 'Sahana Sasikumar',
+  batch: 'Batch 2',
+  company: 'Connect'
+}
+
+{
+  name: 'Shivang Raisurana',
+  batch: 'Batch 2',
+  company: 'Dabble',
+  linkedin: 'https://www.linkedin.com/in/shivang-raisurana-87823519b/'
+}
+
+{
+  name: 'Shivesh Ummat',
+  batch: 'Batch 2',
+  company: 'SleeveAI',
+  linkedin: 'https://www.linkedin.com/in/shivesh-ummat/'
+}
+
+{
+  name: 'Eric Xiao',
+  batch: 'Batch 2',
+  company: 'Eat Together',
+  projectLink: 'https://www.eat-together.org/',
+  currentOccupation: 'SDE @ Amazon',
+  linkedin: 'https://www.linkedin.com/in/xiaoe5800/'
+}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BATCH 3
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+— EIRs —
+
+{
+  name: 'Ahmed Ghaddah',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/ahmed-ghaddah/'
+}
+
+{
+  name: 'Anshul Shah',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/anshul-shah1/'
+}
+
+{
+  name: 'Arhan Jain',
+  batch: 'Batch 3',
+  role: 'EiR',
+  company: 'Unisearch',
+  linkedin: 'https://www.linkedin.com/in/arhanjain/'
+}
+
+{
+  name: 'Arushi Jeloka',
+  batch: 'Batch 3',
+  role: 'EiR'
+}
+
+{
+  name: 'Atheesh Durairaj',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/asuras/'
+}
+
+{
+  name: 'Aung Kaung Myat',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/akmyat14/'
+}
+
+{
+  name: 'Druhin Bhowal',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/druhinb'
+}
+
+{
+  name: 'Erik Vank',
+  batch: 'Batch 3',
+  role: 'EiR',
+  currentOccupation: 'Building Narrative @ Y Combinator',
+  projectLink: 'https://narrative.video',
+  linkedin: 'https://www.linkedin.com/in/erik-vank'
+}
+
+{
+  name: 'Hawa Ali Drammeh',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/hawadrammeh/'
+}
+
+{
+  name: 'Jake Harper',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/jake--harper/'
+}
+
+{
+  name: 'Jessica Kuo',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/jkuokuo'
+}
+
+{
+  name: 'Jonathan Shi',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/jonathanshiuw/'
+}
+
+{
+  name: 'Jordan Lee',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/airjlee/'
+}
+
+{
+  name: 'Keira Wong',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/keira-w'
+}
+
+{
+  name: 'Krish Desai',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/desaikrish/'
+}
+
+{
+  name: 'Phil Bedford',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/philbed/'
+}
+
+{
+  name: 'Shreshth Kharbanda',
+  batch: 'Batch 3',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/skharbanda/'
+}
+
+{
+  name: 'Theophila Abigail Setiawan',
+  batch: 'Batch 3',
+  role: 'EiR',
+  company: 'Grocerify / TutorBridge',
+  linkedin: 'https://www.linkedin.com/in/theophila-abigail-setiawan/'
+}
+
+{
+  name: 'Martin Johnson',
+  batch: 'Batch 3',
+  company: 'Balancing Robots / Green Concrete',
+  linkedin: 'https://www.linkedin.com/in/martin-johnson-4655181b1/'
+}
+
+{
+  name: 'Ran Iarovich',
+  batch: 'Batch 3',
+  company: 'ChatNest'
+}
+
+— Projects / Founders —
+
+{
+  name: 'Aatish Parson',
+  batch: 'Batch 3',
+  role: 'Founder',
+  company: 'MyOfficeTrainer',
+  linkedin: 'https://www.linkedin.com/in/aatish-parson-7481a9214'
+}
+
+{
+  name: 'Adam Ketefian',
+  batch: 'Batch 3',
+  role: 'Founder',
+  company: 'Inpuri',
+  linkedin: 'https://www.linkedin.com/in/adam-ketefian-372287255/'
+}
+
+{
+  name: 'Aryaman Chakravarty',
+  batch: 'Batch 3',
+  company: 'Spot',
+  linkedin: 'https://www.linkedin.com/in/aryaman-chakravarty-904a36216'
+}
+
+{
+  name: 'Ateeq Ahmed Ramlan',
+  batch: 'Batch 3',
+  company: 'AgentLess'
+}
+
+{
+  name: 'Barath A. Saravanan',
+  batch: 'Batch 3',
+  company: 'ChatNest',
+  linkedin: 'https://www.linkedin.com/in/barath-saravanan'
+}
+
+{
+  name: 'Benjamin Moskalensky',
+  batch: 'Batch 3',
+  company: 'ChatNest',
+  linkedin: 'https://www.linkedin.com/in/benjamin-moskalensky-98615122a/'
+}
+
+{
+  name: 'Daniel Tameishi',
+  batch: 'Batch 3',
+  role: 'Founder',
+  company: 'Finquire',
+  linkedin: 'https://www.linkedin.com/in/danieltameishi/'
+}
+
+{
+  name: 'Ethan Kinnan',
+  batch: 'Batch 3',
+  role: 'Founder',
+  company: 'Finquire',
+  linkedin: 'https://www.linkedin.com/in/ethan-kinnan-59ba471bb/'
+}
+
+{
+  name: 'Ethan Tieu',
+  batch: 'Batch 3',
+  company: 'Inpuri',
+  linkedin: 'https://www.linkedin.com/in/ethan-tieu-377447214/'
 }
 
 {
   name: 'Farhan Khan',
-  batch: 'Batch 4',
-  company: 'Meteor',
-  currentOccupation: 'Building Meteor @ Y Combinator'
+  batch: 'Batch 3',
+  company: 'Roomie',
+  linkedin: 'https://www.linkedin.com/in/farhankhan4/'
 }
 
 {
-  name: 'Parker Ritzmann',
-  batch: 'Batch 4',
-  company: 'Ripple',
-  projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
-  currentOccupation: 'Consultant @ Bain & Company'
+  name: 'Garison Julius',
+  batch: 'Batch 3',
+  role: 'Founder',
+  company: 'Roomie',
+  linkedin: 'https://www.linkedin.com/in/garison-julius/'
 }
 
 {
-  name: 'Will Hunt',
+  name: 'Harshitha Rebala',
+  batch: 'Batch 3',
+  company: 'TaskMasterAI',
+  linkedin: 'https://www.linkedin.com/in/harshitha-rebala/'
+}
+
+{
+  name: 'Ian Yang',
+  batch: 'Batch 3',
+  company: 'ChatNest',
+  currentOccupation: 'SWE @ SoFi',
+  linkedin: 'https://www.linkedin.com/in/ian-lee-yang'
+}
+
+{
+  name: 'Jordan Kauffman',
+  batch: 'Batch 3',
+  role: 'Founder',
+  company: 'Finquire',
+  linkedin: 'https://www.linkedin.com/in/jbkauffman/'
+}
+
+{
+  name: 'Kenneth Chen',
+  batch: 'Batch 3',
+  role: 'Founder',
+  company: 'DataWall',
+  projectLink: 'https://datawall.ai/',
+  currentOccupation: 'Datawall',
+  linkedin: 'https://www.linkedin.com/in/kennethchen2001'
+}
+
+{
+  name: 'Kevin Wang',
+  batch: 'Batch 3',
+  company: 'Planet',
+  linkedin: 'https://www.linkedin.com/in/kvnwxng'
+}
+
+{
+  name: 'Lavindu Devadithya',
+  batch: 'Batch 3',
+  role: 'Founder',
+  company: 'Planet',
+  linkedin: 'https://www.linkedin.com/in/lavindu-devadithya/'
+}
+
+{
+  name: 'Naoto Uemura',
+  batch: 'Batch 3',
+  company: 'Planet',
+  linkedin: 'https://www.linkedin.com/in/naotouemura/'
+}
+
+{
+  name: 'Rituraj Sohoni',
+  batch: 'Batch 3',
+  company: 'Spot',
+  linkedin: 'https://www.linkedin.com/in/rituraj-sohoni/'
+}
+
+{
+  name: 'Sai Sunku',
+  batch: 'Batch 3',
+  company: 'TaskMasterAI',
+  linkedin: 'https://www.linkedin.com/in/sai-sunku/'
+}
+
+{
+  name: 'Salma Hajian',
+  batch: 'Batch 3',
+  company: 'TaskMasterAI',
+  linkedin: 'https://www.linkedin.com/in/salma-hajian/'
+}
+
+{
+  name: 'Sam Ng',
+  batch: 'Batch 3',
+  role: 'Founder',
+  company: 'DataWall',
+  linkedin: 'https://www.linkedin.com/in/sam-ng-72a692251/'
+}
+
+{
+  name: 'Sathvik Kanuri',
+  batch: 'Batch 3',
+  company: 'Inpuri'
+}
+
+{
+  name: 'Shridhar Sinha',
+  batch: 'Batch 3',
+  company: 'Spot'
+}
+
+{
+  name: 'Soham Raut',
+  batch: 'Batch 3',
+  company: 'Spot',
+  linkedin: 'https://www.linkedin.com/in/sohamsraut/'
+}
+
+{
+  name: 'Varun Vijayababu',
+  batch: 'Batch 3',
+  role: 'Founder',
+  company: 'Roomie',
+  linkedin: 'https://www.linkedin.com/in/varun-vijayababu-1964b51b5/'
+}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BATCH 4
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+— EIRs —
+
+{
+  name: 'Andrew Zhou',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Aryan K. Kedarisetty',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Avni Rao',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Ethan Shen',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Eugene Wongso',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Hazel Zhou',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'JB Broussard Jr.',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Jeff Lin',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Jordan Lee',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Kriti Sharma',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Meera Patel',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Neel Sirivara',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Raymond Yu',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Sidharth Rajagopal',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Sophie Szeto',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Sriram Kutty',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Vera Chuang',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Vincent Shao',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+{
+  name: 'Yanda Bao',
+  batch: 'Batch 4',
+  role: 'EiR'
+}
+
+— Projects / Founders —
+
+{
+  name: 'Aarfan Hussain',
+  batch: 'Batch 4',
+  company: 'Soarin',
+  projectLink: 'https://soarin.dev/',
+  currentOccupation: 'N/A'
+}
+
+{
+  name: 'Aditya Khowal',
+  batch: 'Batch 4',
+  company: 'Slate'
+}
+
+{
+  name: 'Agnes Bisma',
+  batch: 'Batch 4',
+  company: 'HUNI'
+}
+
+{
+  name: 'Alex Metzger',
+  batch: 'Batch 4',
+  company: 'Koel Labs'
+}
+
+{
+  name: 'Angela Wu',
   batch: 'Batch 4',
   company: 'Ripple',
   projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
   currentOccupation: 'N/A'
+}
+
+{
+  name: 'Aruna Srivastava',
+  batch: 'Batch 4',
+  company: 'Koel Labs'
+}
+
+{
+  name: 'Arya Gummadi',
+  batch: 'Batch 4',
+  company: 'Triage'
+}
+
+{
+  name: 'Carolyn Chen',
+  batch: 'Batch 4',
+  company: 'AdWise'
 }
 
 {
@@ -40,50 +971,29 @@ FOUNDER DIRECTORY DATA
 }
 
 {
-  name: 'Angie Wu',
+  name: 'Daniel Le',
   batch: 'Batch 4',
-  company: 'Ripple',
-  projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
-  currentOccupation: 'N/A'
+  company: 'Serenity'
 }
 
 {
-  name: 'Victor Liu',
+  name: 'Elvin Fu',
   batch: 'Batch 4',
-  company: 'Soarin',
-  projectLink: 'https://soarin.dev/',
-  currentOccupation: 'N/A'
+  company: 'AstralCode'
 }
 
 {
-  name: 'Aarfan Hussain',
+  name: 'Farhan Khan',
   batch: 'Batch 4',
-  company: 'Soarin',
-  projectLink: 'https://soarin.dev/',
-  currentOccupation: 'N/A'
+  company: 'Meteor',
+  currentOccupation: 'Building Meteor @ Y Combinator'
 }
 
 {
-  name: 'Sthiti Patnaik',
-  batch: 'Batch 3',
-  company: 'N/A',
-  currentOccupation: 'N/A'
-}
-
-{
-  name: 'Sanjana Satagopan',
+  name: 'Grace Shin',
   batch: 'Batch 4',
-  company: 'UR Verdure',
-  projectLink: 'https://www.urverdure.app',
-  currentOccupation: 'N/A'
-}
-
-{
-  name: 'Erik Vank',
-  batch: 'Batch 3',
-  company: 'Oversea',
-  projectLink: 'https://narrative.video',
-  currentOccupation: 'Building Narrative @ Y Combinator'
+  company: 'In Your World',
+  projectLink: 'https://inyourworld.vercel.app/'
 }
 
 {
@@ -95,81 +1005,427 @@ FOUNDER DIRECTORY DATA
 }
 
 {
-  name: 'Michael Li',
-  batch: 'Batch 2',
-  company: 'Dabble',
-  currentOccupation: 'Masters @ Carnegie Mellon University'
+  name: 'Ian Chiu',
+  batch: 'Batch 4',
+  company: 'Triage'
 }
 
 {
-  name: 'Andrey Risukhin',
-  batch: 'Batch 0',
-  company: 'Utility/ranked choice exploration',
-  currentOccupation: 'Data @ Perceptron'
+  name: 'Julian McOmie',
+  batch: 'Batch 4',
+  company: 'CabinEQ'
 }
 
 {
-  name: 'Ian Yang',
-  batch: 'Batch 3',
-  company: 'ChatNest',
-  currentOccupation: 'SWE @ SoFi'
+  name: 'Kevin Xiao',
+  batch: 'Batch 4',
+  company: 'Triage'
+}
+
+{
+  name: 'Medha Rawat',
+  batch: 'Batch 4',
+  company: 'In Your World',
+  projectLink: 'https://inyourworld.vercel.app/'
+}
+
+{
+  name: 'Nikhil Devisetty',
+  batch: 'Batch 4',
+  company: 'Slate'
+}
+
+{
+  name: 'Parker Ritzmann',
+  batch: 'Batch 4',
+  company: 'Ripple',
+  projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
+  currentOccupation: 'Consultant @ Bain & Company'
+}
+
+{
+  name: 'Pranav Madhukar',
+  batch: 'Batch 4',
+  company: 'Meteor',
+  currentOccupation: 'Building Meteor @ Y Combinator'
+}
+
+{
+  name: 'Ruslan Mukhamedvaleev',
+  batch: 'Batch 4',
+  company: 'Koel Labs'
+}
+
+{
+  name: 'Sanjana Satagopan',
+  batch: 'Batch 4',
+  company: 'UR Verdure',
+  projectLink: 'https://www.urverdure.app',
+  currentOccupation: 'N/A'
+}
+
+{
+  name: 'Tim Kaltenbach',
+  batch: 'Batch 4',
+  company: 'Triage'
 }
 
 {
   name: 'Tyler Gee',
   batch: 'Batch 4',
-  company: 'Cabin',
+  company: 'CabinEQ',
   projectLink: 'https://cabinaudio.com',
   currentOccupation: 'SDE @ Amazon'
 }
 
 {
-  name: 'Nick Khormaei',
-  batch: 'Batch 2',
-  company: 'Neuramill',
-  currentOccupation: 'Founder - Neuramill'
+  name: 'Udayan Sharma',
+  batch: 'Batch 4',
+  company: 'AdWise'
 }
 
 {
-  name: 'Gunn Chun',
-  batch: 'Batch 2',
-  company: 'N/A',
-  currentOccupation: 'MLE @ BioSyft'
-}
-
-{
-  name: 'Eric Xiao',
-  batch: 'Batch 2',
-  company: 'Eat Together',
-  projectLink: 'https://www.eat-together.org/',
-  currentOccupation: 'SDE @ Amazon'
-}
-
-{
-  name: 'Caleb John',
-  batch: 'Batch 1',
-  company: 'Pongo',
-  currentOccupation: 'Pioneer Square Labs'
-}
-
-{
-  name: 'Evan Siu',
-  batch: 'Batch 1',
-  company: 'Future Cities and Urbanism Project',
-  currentOccupation: 'Schwarzman Scholar'
-}
-
-{
-  name: 'Kenneth Chen',
-  batch: 'Batch 3',
-  company: 'Datawall',
-  projectLink: 'https://datawall.ai/',
-  currentOccupation: 'Datawall'
-}
-
-{
-  name: 'Parsa Khazaeepoul',
-  batch: 'Batch 2',
-  company: 'Aristotle',
+  name: 'Victor Liu',
+  batch: 'Batch 4',
+  company: 'Soarin',
+  projectLink: 'https://soarin.dev/',
   currentOccupation: 'N/A'
+}
+
+{
+  name: 'Will Hunt',
+  batch: 'Batch 4',
+  company: 'Ripple',
+  projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
+  currentOccupation: 'N/A'
+}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BATCH 5
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{
+  name: 'Aaron Li',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/aaronli16/'
+}
+
+{
+  name: 'Abraham Gibson',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/abrahamgib'
+}
+
+{
+  name: 'Aditi Agarwal',
+  batch: 'Batch 5',
+  company: 'Iris',
+  linkedin: 'https://www.linkedin.com/in/aditiaagarwal/'
+}
+
+{
+  name: 'Aditya Shirodkar',
+  batch: 'Batch 5',
+  company: 'Chameleon',
+  linkedin: 'https://www.linkedin.com/in/shirodkar-aditya/'
+}
+
+{
+  name: 'Advait Raman',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/advait-raman-685984262'
+}
+
+{
+  name: 'Akshita Amarnath',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/akshiamar/'
+}
+
+{
+  name: 'Aleeza Bhatti',
+  batch: 'Batch 5',
+  company: 'Sparks',
+  linkedin: 'https://www.linkedin.com/in/aleezabhatti'
+}
+
+{
+  name: 'Alexander Zhu',
+  batch: 'Batch 5',
+  company: 'Zither',
+  linkedin: 'https://www.linkedin.com/in/alexander-zhu-80ab55377'
+}
+
+{
+  name: 'Anant Dhokia',
+  batch: 'Batch 5',
+  company: 'BeamBell',
+  linkedin: 'https://www.linkedin.com/in/anant-dhokia/'
+}
+
+{
+  name: 'Anika Rao',
+  batch: 'Batch 5',
+  company: 'Nomi',
+  linkedin: 'https://www.linkedin.com/in/rao-anika/'
+}
+
+{
+  name: 'Arvin Hakakian',
+  batch: 'Batch 5',
+  company: 'BeamBell',
+  linkedin: 'https://www.linkedin.com/in/arvin-hakakian'
+}
+
+{
+  name: 'Aur Shalev Merin',
+  batch: 'Batch 5',
+  company: 'BeamBell',
+  linkedin: 'https://www.linkedin.com/in/aur-shalev-merin/'
+}
+
+{
+  name: 'Azim Memon',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/azim-memon-7609b5381/'
+}
+
+{
+  name: 'Calista Vidianto',
+  batch: 'Batch 5',
+  company: 'Wallzy',
+  linkedin: 'https://www.linkedin.com/in/calista-vidianto-488778329'
+}
+
+{
+  name: 'Chandana Robba',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/chandana-robba-7b3021245'
+}
+
+{
+  name: 'Derek Liu',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/derek-l/'
+}
+
+{
+  name: 'Douglas Lin',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/douglas-lin/'
+}
+
+{
+  name: 'Eyal Shechtman',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/eyal-shechtman'
+}
+
+{
+  name: 'George Evans Daenuwy',
+  batch: 'Batch 5',
+  company: 'Wallzy',
+  linkedin: 'https://www.linkedin.com/in/grgevansportfolio/'
+}
+
+{
+  name: 'Hriesha Popat',
+  batch: 'Batch 5',
+  company: 'HeartBeats',
+  linkedin: 'https://www.linkedin.com/in/hrieshapopat'
+}
+
+{
+  name: 'Jove Pendapotan',
+  batch: 'Batch 5',
+  company: 'Qualty',
+  linkedin: 'https://www.linkedin.com/in/jove-pendapotan'
+}
+
+{
+  name: 'Keanu Thakalath',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/keanu-thakalath/'
+}
+
+{
+  name: 'Kezia Joesoef',
+  batch: 'Batch 5',
+  company: 'Wallzy',
+  linkedin: 'https://www.linkedin.com/in/keziamj/'
+}
+
+{
+  name: 'Michael Lin',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/michael-lin07/'
+}
+
+{
+  name: 'Nandini Sinha',
+  batch: 'Batch 5',
+  company: 'Nomi',
+  linkedin: 'https://www.linkedin.com/in/nandini-snha/'
+}
+
+{
+  name: 'Ojas Kandhare',
+  batch: 'Batch 5',
+  company: 'Theo',
+  linkedin: 'https://www.linkedin.com/in/ojas-kandhare-74b349212/'
+}
+
+{
+  name: 'Patrick Wijaya',
+  batch: 'Batch 5',
+  company: 'Wallzy',
+  linkedin: 'https://www.linkedin.com/in/patrickrolandwijaya'
+}
+
+{
+  name: 'Rahul Bonthu',
+  batch: 'Batch 5',
+  company: 'SynQ',
+  linkedin: 'https://www.linkedin.com/in/rahulbonthu'
+}
+
+{
+  name: 'Regina Lin',
+  batch: 'Batch 5',
+  company: 'Zither',
+  linkedin: 'https://www.linkedin.com/in/regina-jiaru-lin/'
+}
+
+{
+  name: 'Reuben Santoso',
+  batch: 'Batch 5',
+  company: 'Qualty',
+  linkedin: 'https://www.linkedin.com/in/reuben-ailin-santoso/'
+}
+
+{
+  name: 'Ronald Luong',
+  batch: 'Batch 5',
+  company: 'Chameleon',
+  linkedin: 'https://www.linkedin.com/in/rluong8'
+}
+
+{
+  name: 'Saachi Dhamija',
+  batch: 'Batch 5',
+  company: 'Iris',
+  linkedin: 'https://www.linkedin.com/in/saachi-dhamija-42492b226/'
+}
+
+{
+  name: 'Saachi Surana',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/saachi-surana/'
+}
+
+{
+  name: 'Samuel Purnama',
+  batch: 'Batch 5',
+  company: 'Qualty',
+  linkedin: 'https://www.linkedin.com/in/samuel-purnama-705b872a6/'
+}
+
+{
+  name: 'Shreya Pandey',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/shreyapandey2027'
+}
+
+{
+  name: 'Shreyank Gupta',
+  batch: 'Batch 5',
+  company: 'SynQ',
+  linkedin: 'https://www.linkedin.com/in/shreyank-gupta/'
+}
+
+{
+  name: 'Shruthika Balasubramanian',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/shruthika-balasubramanian-233634369/'
+}
+
+{
+  name: 'Sophia Zhang',
+  batch: 'Batch 5',
+  company: 'Nomi',
+  linkedin: 'https://www.linkedin.com/in/sophxz/'
+}
+
+{
+  name: 'Sydney Vo',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/sydneyvo'
+}
+
+{
+  name: 'Taj Khandekar',
+  batch: 'Batch 5',
+  company: 'Iris',
+  linkedin: 'https://www.linkedin.com/in/tajk/'
+}
+
+{
+  name: 'Tario You',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/tario-you'
+}
+
+{
+  name: 'Tharika Jayaraj',
+  batch: 'Batch 5',
+  company: 'Nomi',
+  linkedin: 'https://www.linkedin.com/in/tharika-jayaraj-58ba34257/'
+}
+
+{
+  name: 'William Pantel',
+  batch: 'Batch 5',
+  company: 'N/A',
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/williampantel/'
+}
+
+{
+  name: 'Zahra Taher',
+  batch: 'Batch 5',
+  company: 'Sparks',
+  linkedin: 'https://www.linkedin.com/in/zahra-taher-aabb602b8'
 }
