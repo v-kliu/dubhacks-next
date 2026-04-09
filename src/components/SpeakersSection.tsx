@@ -20,7 +20,7 @@ const SpeakersSection: React.FC = () => {
     return logos[name] || '';
   };
 
-  // Speakers ranked by impressiveness (achievements, company impact, credentials)
+  // Featured speakers panel
   const speakers = [
     {
       name: 'Armon Dadgar',
@@ -31,38 +31,6 @@ const SpeakersSection: React.FC = () => {
       image: '/assets/speakers/armon-dadgar.jpg'
     },
     {
-      name: 'Jon Chu',
-      title: 'Partner, Khosla Ventures',
-      batch: 'Venture Capital',
-      category: 'AI & Infrastructure',
-      description: 'Early engineer at Palantir (scaled 200→1800 employees). Founded and sold KoalityCode to Docker, led Docker Enterprise. Angel investor in Figma, Ollama, StackRox. Invests in cutting-edge AI infrastructure and developer tools.',
-      image: '/assets/speakers/jon-chu.jpg'
-    },
-    {
-      name: 'Vaibhav Gupta',
-      title: 'Founder & CEO, Boundary (YC W23)',
-      batch: 'Y Combinator',
-      category: 'AI Engineering',
-      description: 'Building BAML, the programming language for AI agents (6K+ GitHub stars). Previously built AI systems at Google AR, Microsoft HoloLens, and D.E. Shaw. Pioneering structured prompt engineering that saves companies 30% on AI costs.',
-      image: '/assets/speakers/vaibhav-gupta.jpg'
-    },
-    {
-      name: 'Prem Kumar',
-      title: 'Co-Founder & CEO, Humanly.io',
-      batch: 'GeekWire CEO of Year',
-      category: 'HR Tech & AI',
-      description: 'GeekWire 2023 Startup CEO of the Year. Built AI hiring platform (raised $5.5M). 10 years at Microsoft leading HR technology initiatives. PSBJ 40 under 40. Former product leader at TINYpulse.',
-      image: '/assets/speakers/prem-kumar.jpg'
-    },
-    {
-      name: 'Avi Geiger',
-      title: 'Founder & CEO, Groundlight AI',
-      batch: 'Madrona-Backed',
-      category: 'Computer Vision',
-      description: 'Building enterprise computer vision that works day one. 12 years as Principal Architect at Microsoft. Co-founder/CTO of Picobrew. Backed by Madrona and Greycroft. CB Insights Top 100 AI Company.',
-      image: '/assets/speakers/avi-geiger.jpg'
-    },
-    {
       name: 'Ken Horenstein',
       title: 'Founder & Partner, Pack Ventures',
       batch: 'UW Preferred Partner',
@@ -71,12 +39,12 @@ const SpeakersSection: React.FC = () => {
       image: '/assets/speakers/ken-horenstein.jpg'
     },
     {
-      name: 'Sam Dore',
-      title: 'Head of Talent, Madrona Venture Labs',
-      batch: 'Startup Studio',
-      category: 'Talent & Recruiting',
-      description: 'Builds winning teams for enterprise AI startups at Madrona Venture Labs. Partners with founders from day one to scale companies. Expertise in early-stage recruitment and founder team building.',
-      image: '/assets/speakers/sam-dore.jpg'
+      name: 'Vaibhav Gupta',
+      title: 'Founder & CEO, Boundary (YC W23)',
+      batch: 'Y Combinator',
+      category: 'AI Engineering',
+      description: 'Building BAML, the programming language for AI agents (6K+ GitHub stars). Previously built AI systems at Google AR, Microsoft HoloLens, and D.E. Shaw. Pioneering structured prompt engineering that saves companies 30% on AI costs.',
+      image: '/assets/speakers/vaibhav-gupta.jpg'
     },
     {
       name: 'Steven Green',
@@ -89,17 +57,16 @@ const SpeakersSection: React.FC = () => {
   ];
 
   const partners = [
-    // Top-tier VC firms and accelerators
-    { name: 'Y Combinator', category: 'Accelerator' },
-    { name: 'Khosla Ventures', category: 'Venture Capital' },
-    { name: 'Madrona Venture Group', category: 'Venture Capital' },
-    { name: 'Techstars', category: 'Accelerator' },
-    { name: 'Pack Ventures', category: 'Venture Capital' },
-    { name: '1517 Fund', category: 'Venture Capital' },
-    { name: 'Cascade Seed Fund', category: 'Venture Capital' },
-    { name: 'Pioneer Square Labs', category: 'Startup Studio' },
-    { name: 'Pillsbury Winthrop Shaw Pittman', category: 'Legal Partner' },
-    { name: 'University of Washington', category: 'Academic Partner' },
+    { name: 'Pack Ventures', category: 'Venture Capital', isSponsor: true },
+    { name: 'Pillsbury Winthrop Shaw Pittman', category: 'Legal Partner', isSponsor: true },
+    { name: 'Y Combinator', category: 'Accelerator', isSponsor: false },
+    { name: 'Khosla Ventures', category: 'Venture Capital', isSponsor: false },
+    { name: 'Madrona Venture Group', category: 'Venture Capital', isSponsor: false },
+    { name: 'Techstars', category: 'Accelerator', isSponsor: false },
+    { name: '1517 Fund', category: 'Venture Capital', isSponsor: false },
+    { name: 'Cascade Seed Fund', category: 'Venture Capital', isSponsor: false },
+    { name: 'Pioneer Square Labs', category: 'Startup Studio', isSponsor: false },
+    { name: 'University of Washington', category: 'Academic Partner', isSponsor: false },
   ];
 
   const categories = [
@@ -190,9 +157,10 @@ const SpeakersSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Partners Grid - 5 per row, more compact */}
+        {/* Partners Grid */}
         <div>
-          <h3 className="text-white text-2xl font-semibold mb-6">Partners & Ecosystem</h3>
+          <h3 className="text-white text-2xl font-semibold mb-2">Hosted VCs and Founders From</h3>
+          <p className="text-white/50 text-sm mb-6">The ecosystem behind our speakers, mentors, and community</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {partners.map((partner, index) => (
               <motion.div
@@ -201,9 +169,22 @@ const SpeakersSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300 group text-center"
+                className={`relative backdrop-blur-sm rounded-xl p-4 transition-all duration-300 group text-center ${
+                  partner.isSponsor
+                    ? 'bg-gradient-to-br from-primary-500/20 to-accent-500/15 border border-primary-400/40 hover:border-primary-400/70 hover:bg-primary-500/25'
+                    : 'bg-white/5 border border-white/10 hover:bg-white/10'
+                }`}
               >
-                <div className="w-20 h-20 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-3 p-3 group-hover:bg-white/15 transition-all duration-300 border border-white/20">
+                {partner.isSponsor && (
+                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-gradient-to-r from-primary-500 to-accent-500 text-white text-[10px] font-bold rounded-full uppercase tracking-wide whitespace-nowrap">
+                    Sponsor
+                  </span>
+                )}
+                <div className={`w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-3 p-3 transition-all duration-300 border ${
+                  partner.isSponsor
+                    ? 'bg-white/20 border-white/30 group-hover:bg-white/25'
+                    : 'bg-white/10 border-white/20 group-hover:bg-white/15'
+                }`}>
                   {getPartnerLogo(partner.name) ? (
                     <img
                       src={getPartnerLogo(partner.name)}
@@ -217,7 +198,11 @@ const SpeakersSection: React.FC = () => {
                   )}
                 </div>
                 <h4 className="font-semibold text-white text-sm mb-1 leading-tight">{partner.name}</h4>
-                <span className="px-2 py-0.5 bg-accent-500/20 text-accent-300 text-xs rounded-full inline-block">
+                <span className={`px-2 py-0.5 text-xs rounded-full inline-block ${
+                  partner.isSponsor
+                    ? 'bg-primary-500/30 text-primary-200'
+                    : 'bg-accent-500/20 text-accent-300'
+                }`}>
                   {partner.category}
                 </span>
               </motion.div>

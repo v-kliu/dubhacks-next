@@ -19,6 +19,7 @@ import ApplicationCTASection from './components/ApplicationCTASection';
 import Footer from './components/Footer';
 import StartupDirectory from './components/StartupDirectory';
 import FounderDirectory from './components/FounderDirectory';
+import SponsorsSection from './components/SponsorsSection';
 
 // Home page component
 const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete }) => {
@@ -37,6 +38,7 @@ const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete })
         <>
           <HeroSection />
           <StatsSection />
+          <SponsorsSection />
           <ProgramOverviewSection />
           <TracksSection />
           <UpcomingEventsSection />
