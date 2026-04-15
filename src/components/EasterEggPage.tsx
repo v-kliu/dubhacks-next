@@ -208,6 +208,15 @@ const EasterEggPage: React.FC = () => {
           >
             — Steve Jobs, 1994
           </motion.cite>
+
+          {/* Funny follow-up */}
+          <motion.p
+            variants={fadeUp}
+            custom={3}
+            className="text-white/45 text-sm font-light mt-10 italic"
+          >
+            "and that sthiti is batch 5's most scary exec" — batch 5
+          </motion.p>
         </motion.div>
 
         {/* Subtle scroll hint */}
