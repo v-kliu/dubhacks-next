@@ -31,12 +31,13 @@ export default async function handler(req: any, res: any) {
       country, city, region, device, latitude, longitude, is_admin, ip
     })
 
-    if (error) {
-      return res.status(500).json({ error: error.message })
-    }
+    // Supabase insert is best-effort — log failures but always return the counter
+    if (error) console.error('Supabase insert error:', error.message)
 
     return res.status(200).json({ totalVisits })
   } catch (err) {
-    return res.status(500).json({ error: 'Internal server error' })
+    // Still return the Redis count even if the Supabase block throws
+    console.error('Visit handler error:', err)
+    return res.status(200).json({ totalVisits })
   }
 }
