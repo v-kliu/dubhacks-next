@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
@@ -21,7 +22,15 @@ const Footer: React.FC = () => {
           </p>
 
           <div className="text-pink text-sm mb-4">
-            Made with ❤️ by the DubHacks Next Team
+            Made with{' '}
+            <Link
+              to="/secret"
+              className="cursor-pointer hover:scale-125 inline-block transition-transform duration-200"
+              aria-label="You found something"
+            >
+              ❤️
+            </Link>
+            {' '}by the DubHacks Next Team
           </div>
           
           <div className="text-white/60 text-sm mb-4">

@@ -20,6 +20,7 @@ import Footer from './components/Footer';
 import StartupDirectory from './components/StartupDirectory';
 import FounderDirectory from './components/FounderDirectory';
 import SponsorsSection from './components/SponsorsSection';
+import EasterEggPage from './components/EasterEggPage';
 
 // Home page component
 const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete }) => {
@@ -80,16 +81,19 @@ const AppContent: React.FC = () => {
   };
 
   const isHomePage = location.pathname === '/';
+  const isSecretPage = location.pathname === '/secret';
   // Only show footer on home page after loading completes, always show on other pages
-  const shouldShowFooter = !isHomePage || isHomePageLoaded;
+  // Never show main footer/nav on the secret page (it has its own)
+  const shouldShowFooter = !isSecretPage && (!isHomePage || isHomePageLoaded);
 
   return (
     <div className="App">
-      <Navigation />
+      {!isSecretPage && <Navigation />}
       <Routes>
         <Route path="/" element={<HomePage key={location.key} onLoadComplete={handleHomePageLoadComplete} />} />
         <Route path="/startup-directory" element={<StartupDirectory />} />
         <Route path="/founder-directory" element={<FounderDirectory />} />
+        <Route path="/secret" element={<EasterEggPage />} />
       </Routes>
       {shouldShowFooter && <Footer />}
     </div>
