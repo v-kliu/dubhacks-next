@@ -1,5 +1,7 @@
+import { Redis } from '@upstash/redis'
 import { createClient } from '@supabase/supabase-js'
 
+const redis = Redis.fromEnv()
 const supabase = createClient(
   process.env.SUPABASE_URL!,
   process.env.SUPABASE_ANON_KEY!
@@ -11,7 +13,8 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ error: 'Method Not Allowed' })
   }
 
-  const [dotsResult, allVisitsResult] = await Promise.all([
+  const [totalVisits, dotsResult, allVisitsResult] = await Promise.all([
+    redis.get<number>('totalVisits'),
     supabase
       .from('visits')
       .select('ip, latitude, longitude')
@@ -64,5 +67,5 @@ export default async function handler(req: any, res: any) {
     ? countryKeys.reduce((a, b) => (countryCounts[a] > countryCounts[b] ? a : b))
     : 'Unknown'
 
-  return res.status(200).json({ dots, uniqueVisitors, countriesCount, topCountry })
+  return res.status(200).json({ dots, totalVisits: totalVisits ?? 0, uniqueVisitors, countriesCount, topCountry })
 }

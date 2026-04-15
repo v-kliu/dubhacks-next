@@ -26,6 +26,11 @@ import EasterEggPage from './components/EasterEggPage';
 const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete }) => {
   const [isLoading, setIsLoading] = useState(true);
 
+  // Fire-and-forget: log visit to Redis + Supabase on every main page load
+  useEffect(() => {
+    fetch('/api/visit', { method: 'POST' }).catch(() => {});
+  }, []);
+
   const handleLoadingComplete = () => {
     setIsLoading(false);
     onLoadComplete?.();

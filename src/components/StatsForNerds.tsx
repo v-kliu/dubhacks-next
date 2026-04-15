@@ -44,7 +44,6 @@ const StatsForNerds: React.FC = () => {
   const [countriesCount, setCountriesCount] = useState<number | null>(null);
   const [topCountry, setTopCountry] = useState<string | null>(null);
   const [dots, setDots] = useState<Dot[]>([]);
-  const [fetchError, setFetchError] = useState(false);
 
   const totalVisitsDisplay = useCountUp(totalVisits);
   const uniqueVisitorsDisplay = useCountUp(uniqueVisitors);
@@ -53,29 +52,18 @@ const StatsForNerds: React.FC = () => {
     (Date.now() - LAUNCH_DATE.getTime()) / (1000 * 60 * 60 * 24)
   );
 
-  // Log visit — Redis atomic counter, returns totalVisits only
-  useEffect(() => {
-    fetch('/api/visit', { method: 'POST' })
-      .then((res) => res.json())
-      .then((data: { totalVisits: number }) => {
-        setTotalVisits(data.totalVisits ?? null);
-      })
-      .catch(() => setFetchError(true));
-  }, []);
-
-  // Fetch map dots + all stats computed from Supabase
+  // Fetch all stats from locations — Redis counter + Supabase geo data
   useEffect(() => {
     fetch('/api/locations')
       .then((res) => res.json())
-      .then((data: { dots: Dot[]; uniqueVisitors: number; countriesCount: number; topCountry: string }) => {
+      .then((data: { dots: Dot[]; totalVisits: number; uniqueVisitors: number; countriesCount: number; topCountry: string }) => {
         setDots(data.dots ?? []);
+        setTotalVisits(data.totalVisits ?? null);
         setUniqueVisitors(data.uniqueVisitors ?? null);
         setCountriesCount(data.countriesCount ?? null);
         setTopCountry(data.topCountry ?? null);
       })
-      .catch(() => {
-        // Map still renders without dots
-      });
+      .catch(() => {});
   }, []);
 
   const fmt = (n: number) => n.toLocaleString();
@@ -83,11 +71,11 @@ const StatsForNerds: React.FC = () => {
   const statCards = [
     {
       label: 'Total Visits',
-      value: fetchError ? '—' : totalVisits === null ? '···' : fmt(totalVisitsDisplay),
+      value: totalVisits === null ? '···' : fmt(totalVisitsDisplay),
     },
     {
       label: 'Unique Visitors',
-      value: fetchError ? '—' : uniqueVisitors === null ? '···' : fmt(uniqueVisitorsDisplay),
+      value: uniqueVisitors === null ? '···' : fmt(uniqueVisitorsDisplay),
     },
     {
       label: 'Countries Reached',
