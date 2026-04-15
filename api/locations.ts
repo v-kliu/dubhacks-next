@@ -1,29 +1,14 @@
 import { createClient } from '@supabase/supabase-js'
 
-interface VisitRow {
-  ip: string
-  latitude: string
-  longitude: string
-}
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_ANON_KEY!
+)
 
-interface CountryRow {
-  country: string
-}
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function handler(req: any, res: any) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method Not Allowed' })
-  }
-
-  let supabase: ReturnType<typeof createClient>
-  try {
-    supabase = createClient(
-      process.env.SUPABASE_URL!,
-      process.env.SUPABASE_ANON_KEY!
-    )
-  } catch (e) {
-    console.error('Supabase init failed:', e)
-    return res.status(500).json({ error: 'Supabase not configured' })
   }
 
   const [dotsResult, countriesResult] = await Promise.all([
@@ -43,13 +28,12 @@ export default async function handler(req: any, res: any) {
   ])
 
   if (dotsResult.error) {
-    console.error('Supabase dots query error:', dotsResult.error.message)
     return res.status(500).json({ error: dotsResult.error.message })
   }
 
   // One dot per unique IP
   const seen = new Set<string>()
-  const dots = (dotsResult.data as VisitRow[])
+  const dots = (dotsResult.data as { ip: string; latitude: string; longitude: string }[])
     .filter((row) => {
       if (seen.has(row.ip)) return false
       seen.add(row.ip)
@@ -66,7 +50,7 @@ export default async function handler(req: any, res: any) {
 
   if (!countriesResult.error && countriesResult.data) {
     const counts: Record<string, number> = {}
-    for (const row of countriesResult.data as CountryRow[]) {
+    for (const row of countriesResult.data as { country: string }[]) {
       counts[row.country] = (counts[row.country] ?? 0) + 1
     }
     const keys = Object.keys(counts)
