@@ -53,23 +53,23 @@ const StatsForNerds: React.FC = () => {
     (Date.now() - LAUNCH_DATE.getTime()) / (1000 * 60 * 60 * 24)
   );
 
-  // Log visit + get counts
+  // Log visit — Redis atomic counter, returns totalVisits only
   useEffect(() => {
     fetch('/api/visit', { method: 'POST' })
       .then((res) => res.json())
-      .then((data: { totalVisits: number; uniqueVisitors: number }) => {
+      .then((data: { totalVisits: number }) => {
         setTotalVisits(data.totalVisits ?? null);
-        setUniqueVisitors(data.uniqueVisitors ?? null);
       })
       .catch(() => setFetchError(true));
   }, []);
 
-  // Fetch map dots + country stats
+  // Fetch map dots + all stats computed from Supabase
   useEffect(() => {
     fetch('/api/locations')
       .then((res) => res.json())
-      .then((data: { dots: Dot[]; countriesCount: number; topCountry: string }) => {
+      .then((data: { dots: Dot[]; uniqueVisitors: number; countriesCount: number; topCountry: string }) => {
         setDots(data.dots ?? []);
+        setUniqueVisitors(data.uniqueVisitors ?? null);
         setCountriesCount(data.countriesCount ?? null);
         setTopCountry(data.topCountry ?? null);
       })

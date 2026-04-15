@@ -13,14 +13,8 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ error: 'Method Not Allowed' })
   }
 
-  const ip = (req.headers['x-forwarded-for'] as string)?.split(',')[0] ?? 'unknown'
-
-  const [totalVisits] = await Promise.all([
-    redis.incr('totalVisits'),
-    redis.sadd('uniqueIPs', ip),
-  ])
-
-  const uniqueVisitors = await redis.scard('uniqueIPs')
+  // Redis is used solely as an atomic visit counter
+  const totalVisits = await redis.incr('totalVisits')
 
   try {
     const country = (req.headers['x-vercel-ip-country'] as string) ?? 'unknown'
@@ -30,6 +24,7 @@ export default async function handler(req: any, res: any) {
     const longitude = (req.headers['x-vercel-ip-longitude'] as string) ?? null
     const ua = (req.headers['user-agent'] as string) ?? ''
     const device = /mobile/i.test(ua) ? 'mobile' : /tablet|ipad/i.test(ua) ? 'tablet' : 'desktop'
+    const ip = (req.headers['x-forwarded-for'] as string)?.split(',')[0] ?? 'unknown'
     const is_admin = (ip === process.env.ADMIN_IP!) || (ip === process.env.ADMIN_IP_MOBILE!)
 
     const { error } = await supabase.from('visits').insert({
@@ -40,7 +35,7 @@ export default async function handler(req: any, res: any) {
       return res.status(500).json({ error: error.message })
     }
 
-    return res.status(200).json({ totalVisits, uniqueVisitors })
+    return res.status(200).json({ totalVisits })
   } catch (err) {
     return res.status(500).json({ error: 'Internal server error' })
   }
