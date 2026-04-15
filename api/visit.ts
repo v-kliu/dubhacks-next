@@ -16,24 +16,25 @@ export default async function handler(req: any, res: any) {
   // Redis is used solely as an atomic visit counter
   const totalVisits = await redis.incr('totalVisits')
 
-  // TODO: re-enable Supabase geo logging once RLS is configured
-  // try {
-  //   const country = (req.headers['x-vercel-ip-country'] as string) ?? 'unknown'
-  //   const city = decodeURIComponent((req.headers['x-vercel-ip-city'] as string) ?? 'unknown')
-  //   const region = (req.headers['x-vercel-ip-country-region'] as string) ?? 'unknown'
-  //   const latitude = (req.headers['x-vercel-ip-latitude'] as string) ?? null
-  //   const longitude = (req.headers['x-vercel-ip-longitude'] as string) ?? null
-  //   const ua = (req.headers['user-agent'] as string) ?? ''
-  //   const device = /mobile/i.test(ua) ? 'mobile' : /tablet|ipad/i.test(ua) ? 'tablet' : 'desktop'
-  //   const ip = (req.headers['x-forwarded-for'] as string)?.split(',')[0] ?? 'unknown'
-  //   const is_admin = (ip === process.env.ADMIN_IP!) || (ip === process.env.ADMIN_IP_MOBILE!)
-  //   const { error } = await supabase.from('visits').insert({
-  //     country, city, region, device, latitude, longitude, is_admin, ip
-  //   })
-  //   if (error) console.error('Supabase insert error:', error.message)
-  // } catch (err) {
-  //   console.error('Visit handler error:', err)
-  // }
+  try {
+    const country = (req.headers['x-vercel-ip-country'] as string) ?? 'unknown'
+    const city = decodeURIComponent((req.headers['x-vercel-ip-city'] as string) ?? 'unknown')
+    const region = (req.headers['x-vercel-ip-country-region'] as string) ?? 'unknown'
+    const latitude = (req.headers['x-vercel-ip-latitude'] as string) ?? null
+    const longitude = (req.headers['x-vercel-ip-longitude'] as string) ?? null
+    const ua = (req.headers['user-agent'] as string) ?? ''
+    const device = /mobile/i.test(ua) ? 'mobile' : /tablet|ipad/i.test(ua) ? 'tablet' : 'desktop'
+    const ip = (req.headers['x-forwarded-for'] as string)?.split(',')[0] ?? 'unknown'
+    const is_admin = (ip === process.env.ADMIN_IP!) || (ip === process.env.ADMIN_IP_MOBILE!)
+
+    const { error } = await supabase.from('visits').insert({
+      country, city, region, device, latitude, longitude, is_admin, ip
+    })
+
+    if (error) console.error('Supabase insert error:', error.message)
+  } catch (err) {
+    console.error('Visit handler error:', err)
+  }
 
   return res.status(200).json({ totalVisits })
 }
