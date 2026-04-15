@@ -1,10 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_ANON_KEY!
-)
-
 interface VisitRow {
   ip: string
   latitude: string
@@ -18,6 +13,17 @@ interface CountryRow {
 export default async function handler(req: any, res: any) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method Not Allowed' })
+  }
+
+  let supabase: ReturnType<typeof createClient>
+  try {
+    supabase = createClient(
+      process.env.SUPABASE_URL!,
+      process.env.SUPABASE_ANON_KEY!
+    )
+  } catch (e) {
+    console.error('Supabase init failed:', e)
+    return res.status(500).json({ error: 'Supabase not configured' })
   }
 
   const [dotsResult, countriesResult] = await Promise.all([
@@ -37,6 +43,7 @@ export default async function handler(req: any, res: any) {
   ])
 
   if (dotsResult.error) {
+    console.error('Supabase dots query error:', dotsResult.error.message)
     return res.status(500).json({ error: dotsResult.error.message })
   }
 
