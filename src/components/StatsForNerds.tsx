@@ -4,8 +4,8 @@ import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps
 
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
-// DubHacks Next launched October 2021
-const LAUNCH_DATE = new Date('2021-10-01');
+// DubHacks Next website launched April 14, 2026
+const LAUNCH_DATE = new Date('2026-04-14');
 
 interface Dot {
   latitude: number;
@@ -42,7 +42,6 @@ const StatsForNerds: React.FC = () => {
   const [totalVisits, setTotalVisits] = useState<number | null>(null);
   const [uniqueVisitors, setUniqueVisitors] = useState<number | null>(null);
   const [countriesCount, setCountriesCount] = useState<number | null>(null);
-  const [topCountry, setTopCountry] = useState<string | null>(null);
   const [dots, setDots] = useState<Dot[]>([]);
 
   const totalVisitsDisplay = useCountUp(totalVisits);
@@ -56,12 +55,11 @@ const StatsForNerds: React.FC = () => {
   useEffect(() => {
     fetch('/api/locations')
       .then((res) => res.json())
-      .then((data: { dots: Dot[]; totalVisits: number; uniqueVisitors: number; countriesCount: number; topCountry: string }) => {
+      .then((data: { dots: Dot[]; totalVisits: number; uniqueVisitors: number; countriesCount: number }) => {
         setDots(data.dots ?? []);
         setTotalVisits(data.totalVisits ?? null);
         setUniqueVisitors(data.uniqueVisitors ?? null);
         setCountriesCount(data.countriesCount ?? null);
-        setTopCountry(data.topCountry ?? null);
       })
       .catch(() => {});
   }, []);
@@ -80,11 +78,6 @@ const StatsForNerds: React.FC = () => {
     {
       label: 'Countries Reached',
       value: countriesCount === null ? '···' : fmt(countriesDisplay),
-    },
-    {
-      label: 'Top Country',
-      value: topCountry ?? '···',
-      isText: true,
     },
     {
       label: 'Days Alive',
@@ -107,10 +100,10 @@ const StatsForNerds: React.FC = () => {
             className="text-white font-light text-3xl md:text-4xl mb-2"
             style={{ letterSpacing: '-0.02em' }}
           >
-            Stats for nerds.
+            stats for nerds :))
           </h2>
           <p className="text-white/30 text-sm font-light">
-            Since launch · Live data
+            Since April 14, 2026 · Live data
           </p>
         </motion.div>
 
@@ -120,7 +113,7 @@ const StatsForNerds: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 border border-white/8 mb-14"
+          className="grid grid-cols-2 border border-white/8 mb-14"
         >
           {statCards.map((card, i) => (
             <div
@@ -131,10 +124,8 @@ const StatsForNerds: React.FC = () => {
               }}
             >
               <div
-                className={`font-light mb-2 text-pink ${
-                  card.isText ? 'text-xl md:text-2xl' : 'text-3xl md:text-4xl'
-                }`}
-                style={{ letterSpacing: card.isText ? '0' : '-0.03em' }}
+                className="font-light mb-2 text-pink text-3xl md:text-4xl"
+                style={{ letterSpacing: '-0.03em' }}
               >
                 {card.value}
               </div>
