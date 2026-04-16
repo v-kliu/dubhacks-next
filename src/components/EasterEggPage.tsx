@@ -104,9 +104,9 @@ const PEOPLE_GROUPS: PeopleGroup[] = [
       'Sthiti Patnaik',
       'Ryan Hsu',
       'Anshul Shah',
-      'Abigail',
-      'Varun',
-      'Farhan',
+      'Abigail Setiawan',
+      'Varun Vijayababu',
+      'Farhan Khan',
     ],
   },
   {
