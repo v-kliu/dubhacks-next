@@ -6,7 +6,10 @@
       "Bash(cat tailwind.config.js)",
       "Bash(cat tailwind.config.ts)",
       "Bash(npm install:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Skill(update-config)",
+      "Bash(netstat -ano)",
+      "Bash(node -e ' *)"
     ]
   }
 }

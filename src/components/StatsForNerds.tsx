@@ -100,7 +100,7 @@ const StatsForNerds: React.FC = () => {
             className="text-white font-light text-3xl md:text-4xl mb-2"
             style={{ letterSpacing: '-0.02em' }}
           >
-            stats for nerds :))
+            stats for nerds :)) 
           </h2>
           <p className="text-white/30 text-sm font-light">
             Since April 14, 2026 · Live data
