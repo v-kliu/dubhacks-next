@@ -797,115 +797,120 @@ BATCH 4
 {
   name: 'Andrew Zhou',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/andou/'
 }
 
 {
   name: 'Aryan K. Kedarisetty',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/aryan-k-kedarisetty1/'
 }
 
 {
   name: 'Avni Rao',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/avnirao/'
 }
 
 {
   name: 'Ethan Shen',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/ethanlshen/'
 }
 
 {
   name: 'Eugene Wongso',
   batch: 'Batch 4',
-  role: 'EiR'
-}
-
-{
-  name: 'Hazel Zhou',
-  batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/eugenewongso/'
 }
 
 {
   name: 'JB Broussard Jr.',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/jbbroussardjr/'
 }
 
 {
   name: 'Jeff Lin',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/jeffylin/'
 }
 
 {
   name: 'Jordan Lee',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/airjlee/'
 }
 
 {
   name: 'Kriti Sharma',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/kriti-sharma-1b6306192/'
 }
 
 {
   name: 'Meera Patel',
   batch: 'Batch 4',
-  role: 'EiR'
-}
-
-{
-  name: 'Neel Sirivara',
-  batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/meera-patel-92704b207/'
 }
 
 {
   name: 'Raymond Yu',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/yuraymond5/'
 }
 
 {
   name: 'Sidharth Rajagopal',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/sidharth-rajagopal-66932a221/'
 }
 
 {
   name: 'Sophie Szeto',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/sophie-szeto'
 }
 
 {
   name: 'Sriram Kutty',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/sriram-kutty-640773244/'
 }
 
 {
   name: 'Vera Chuang',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/veraachuang/'
 }
 
 {
   name: 'Vincent Shao',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/vincent-shao-074a45167/'
 }
 
 {
   name: 'Yanda Bao',
   batch: 'Batch 4',
-  role: 'EiR'
+  role: 'EiR',
+  linkedin: 'https://www.linkedin.com/in/yanda-bao/'
 }
 
 — Projects / Founders —
@@ -915,25 +920,29 @@ BATCH 4
   batch: 'Batch 4',
   company: 'Soarin',
   projectLink: 'https://soarin.dev/',
-  currentOccupation: 'N/A'
+  currentOccupation: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/aarfan-hussain-b67224213/'
 }
 
 {
   name: 'Aditya Khowal',
   batch: 'Batch 4',
-  company: 'Slate'
+  company: 'Slate',
+  linkedin: 'https://www.linkedin.com/in/aditya-khowal/'
 }
 
 {
   name: 'Agnes Bisma',
   batch: 'Batch 4',
-  company: 'HUNI'
+  company: 'HUNI',
+  linkedin: 'https://www.linkedin.com/in/agnesbisma/'
 }
 
 {
   name: 'Alex Metzger',
   batch: 'Batch 4',
-  company: 'Koel Labs'
+  company: 'Koel Labs',
+  linkedin: 'https://www.linkedin.com/in/alexander-le-metzger/'
 }
 
 {
@@ -941,25 +950,29 @@ BATCH 4
   batch: 'Batch 4',
   company: 'Ripple',
   projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
-  currentOccupation: 'N/A'
+  currentOccupation: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/angela-wu-275b0427b/'
 }
 
 {
   name: 'Aruna Srivastava',
   batch: 'Batch 4',
-  company: 'Koel Labs'
+  company: 'Koel Labs',
+  linkedin: 'https://www.linkedin.com/in/arunasr/'
 }
 
 {
   name: 'Arya Gummadi',
   batch: 'Batch 4',
-  company: 'Triage'
+  company: 'Triage',
+  linkedin: 'https://www.linkedin.com/in/arya-gummadi/'
 }
 
 {
   name: 'Carolyn Chen',
   batch: 'Batch 4',
-  company: 'AdWise'
+  company: 'AdWise',
+  linkedin: 'https://www.linkedin.com/in/carolynchristopherchen/'
 }
 
 {
@@ -967,33 +980,38 @@ BATCH 4
   batch: 'Batch 4',
   company: 'Ripple',
   projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
-  currentOccupation: 'N/A'
+  currentOccupation: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/connor-chan/'
 }
 
 {
   name: 'Daniel Le',
   batch: 'Batch 4',
-  company: 'Serenity'
+  company: 'Serenity',
+  linkedin: 'https://www.linkedin.com/in/xled/'
 }
 
 {
   name: 'Elvin Fu',
   batch: 'Batch 4',
-  company: 'AstralCode'
+  company: 'AstralCode',
+  linkedin: 'https://www.linkedin.com/in/fuelvin/'
 }
 
 {
   name: 'Farhan Khan',
   batch: 'Batch 4',
   company: 'Meteor',
-  currentOccupation: 'Building Meteor @ Y Combinator'
+  currentOccupation: 'Building Meteor @ Y Combinator',
+  linkedin: 'https://www.linkedin.com/in/farhankhan4/'
 }
 
 {
   name: 'Grace Shin',
   batch: 'Batch 4',
   company: 'In Your World',
-  projectLink: 'https://inyourworld.vercel.app/'
+  projectLink: 'https://inyourworld.vercel.app/',
+  linkedin: 'https://www.linkedin.com/in/grace-shin-11530621b/'
 }
 
 {
@@ -1001,38 +1019,44 @@ BATCH 4
   batch: 'Batch 4',
   company: 'In Your World',
   projectLink: 'https://inyourworld.vercel.app/',
-  currentOccupation: 'Point72 Ventures'
+  currentOccupation: 'Point72 Ventures',
+  linkedin: 'https://www.linkedin.com/in/graceyim3'
 }
 
 {
   name: 'Ian Chiu',
   batch: 'Batch 4',
-  company: 'Triage'
+  company: 'Triage',
+  linkedin: 'https://www.linkedin.com/in/ian-chiu-494058215/'
 }
 
 {
   name: 'Julian McOmie',
   batch: 'Batch 4',
-  company: 'CabinEQ'
+  company: 'CabinEQ',
+  linkedin: 'https://www.linkedin.com/in/julianmcomie/'
 }
 
 {
   name: 'Kevin Xiao',
   batch: 'Batch 4',
-  company: 'Triage'
+  company: 'Triage',
+  linkedin: 'https://www.linkedin.com/in/xckev/'
 }
 
 {
   name: 'Medha Rawat',
   batch: 'Batch 4',
   company: 'In Your World',
-  projectLink: 'https://inyourworld.vercel.app/'
+  projectLink: 'https://inyourworld.vercel.app/',
+  linkedin: 'https://www.linkedin.com/in/medha-rawat/'
 }
 
 {
   name: 'Nikhil Devisetty',
   batch: 'Batch 4',
-  company: 'Slate'
+  company: 'Slate',
+  linkedin: 'https://www.linkedin.com/in/nikhil-devisetty/'
 }
 
 {
@@ -1040,20 +1064,23 @@ BATCH 4
   batch: 'Batch 4',
   company: 'Ripple',
   projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
-  currentOccupation: 'Consultant @ Bain & Company'
+  currentOccupation: 'Consultant @ Bain & Company',
+  linkedin: 'https://www.linkedin.com/in/parker-ritzmann-8a4767198/'
 }
 
 {
   name: 'Pranav Madhukar',
   batch: 'Batch 4',
   company: 'Meteor',
-  currentOccupation: 'Building Meteor @ Y Combinator'
+  currentOccupation: 'Building Meteor @ Y Combinator',
+  linkedin: 'https://www.linkedin.com/in/pranav-madhukar-pcm/'
 }
 
 {
   name: 'Ruslan Mukhamedvaleev',
   batch: 'Batch 4',
-  company: 'Koel Labs'
+  company: 'Koel Labs',
+  linkedin: 'https://www.linkedin.com/in/ruslan-muk/'
 }
 
 {
@@ -1061,13 +1088,15 @@ BATCH 4
   batch: 'Batch 4',
   company: 'UR Verdure',
   projectLink: 'https://www.urverdure.app',
-  currentOccupation: 'N/A'
+  currentOccupation: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/sanjanasatagopan/'
 }
 
 {
   name: 'Tim Kaltenbach',
   batch: 'Batch 4',
-  company: 'Triage'
+  company: 'Triage',
+  linkedin: 'https://www.linkedin.com/in/tim-kaltenbach/'
 }
 
 {
@@ -1075,13 +1104,15 @@ BATCH 4
   batch: 'Batch 4',
   company: 'CabinEQ',
   projectLink: 'https://cabinaudio.com',
-  currentOccupation: 'SDE @ Amazon'
+  currentOccupation: 'SDE @ Amazon',
+  linkedin: 'https://www.linkedin.com/in/tyler-gee-998b46260/'
 }
 
 {
   name: 'Udayan Sharma',
   batch: 'Batch 4',
-  company: 'AdWise'
+  company: 'AdWise',
+  linkedin: 'https://www.linkedin.com/in/udayansh/'
 }
 
 {
@@ -1089,7 +1120,8 @@ BATCH 4
   batch: 'Batch 4',
   company: 'Soarin',
   projectLink: 'https://soarin.dev/',
-  currentOccupation: 'N/A'
+  currentOccupation: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/vkliu/'
 }
 
 {
@@ -1097,7 +1129,8 @@ BATCH 4
   batch: 'Batch 4',
   company: 'Ripple',
   projectLink: 'https://apps.apple.com/us/app/ripple-marketplace/id6739227525',
-  currentOccupation: 'N/A'
+  currentOccupation: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/phunt22/'
 }
 
 

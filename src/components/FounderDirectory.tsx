@@ -114,7 +114,7 @@ const FounderDirectory: React.FC = () => {
               </button>
             ))}
             <span className="ml-auto text-sm text-neutral-400 whitespace-nowrap">
-              {filteredMembers.length} members
+              {filteredMembers.length} founders
             </span>
           </div>
         </div>
@@ -138,7 +138,7 @@ const FounderDirectory: React.FC = () => {
               <div className="flex items-center gap-3 mb-5">
                 <h2 className="text-xl font-semibold text-neutral-900">{batch}</h2>
                 <div className="flex-1 h-px bg-neutral-200" />
-                <span className="text-xs text-neutral-400">{batchMembers.length} members</span>
+                <span className="text-xs text-neutral-400">{batchMembers.length} founders</span>
               </div>
 
               {/* Grid */}
