@@ -13,7 +13,7 @@ const getTeamMemberImage = (name: string): string => {
     'Anshul': '/assets/team_headshots/anshul.jpg',
     'Aaron': '/assets/team_headshots/aaron.jpg',
     'William': '/assets/team_headshots/william.jpg',
-    'Saachi': '/assets/team_headshots/saachi.png',
+    'Saachi': '/assets/team_headshots/saachi.jpg',
     'Sanjana': '/assets/team_headshots/sanjana.jpg',
     'Victor': '/assets/team_headshots/victor.jpg',
     'Areej': '/assets/team_headshots/areej.JPEG',
