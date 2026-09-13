@@ -125,6 +125,21 @@ const PEOPLE_GROUPS: PeopleGroup[] = [
       'Ryan Hsu',
     ],
   },
+  {
+    label: 'Batch 6 Exec',
+    year: '2026–present',
+    names: [
+      'Sanjana Satagopan',
+      'Anshul Shah',
+      'Aaron Li',
+      'William Pantel',
+      'Saachi Dhamija',
+      'Hriesha Popat',
+      'Areej Hassan',
+      'Danielle Bae',
+      'Ryan Hsu',
+    ],
+  },
 ];
 
 const fadeUp = {
