@@ -15,7 +15,7 @@ const getTeamMemberImage = (name: string): string => {
     'William': '/assets/team_headshots/william.jpg',
     'Saachi': '/assets/team_headshots/saachi.jpg',
     'Sanjana': '/assets/team_headshots/sanjana.jpg',
-    'Victor': '/assets/team_headshots/victor.jpg',
+    'Hriesha': '/assets/team_headshots/hriesha.jpg',
     'Areej': '/assets/team_headshots/areej.JPEG',
     'Danielle': '/assets/team_headshots/danielle.jpeg',
     'Ryan': '/assets/team_headshots/ryan.png',
@@ -30,7 +30,7 @@ const TeamSection: React.FC = () => {
     { name: 'Aaron', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/aaronli16/' },
     { name: 'William', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/williampantel/' },
     { name: 'Saachi', role: 'EiR Director', linkedin: 'https://www.linkedin.com/in/saachidhamija/' },
-    { name: 'Victor', role: 'Director of Technology', linkedin: 'https://www.linkedin.com/in/vkliu/' },
+    { name: 'Hriesha', role: 'Director of Technology and Community', linkedin: 'https://www.linkedin.com/in/hrieshapopat/' },
     { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/' },
     { name: 'Danielle', role: 'Director of Marketing' },
     { name: 'Ryan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/ryanahsu/' }
