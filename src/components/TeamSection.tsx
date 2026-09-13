@@ -19,7 +19,7 @@ const getTeamMemberImage = (name: string): string => {
     'Areej': '/assets/team_headshots/areej.JPEG',
     'Danielle': '/assets/team_headshots/danielle.jpeg',
     'Ryan': '/assets/team_headshots/ryan.png',
-    'Sthiti': '/assets/team_headshots/sthiti.png',
+    'Sthiti': '/assets/team_headshots/sthiti.jpg',
   };
   return images[name] || '/assets/team_headshots/dubs.jpg';
 };
