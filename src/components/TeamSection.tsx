@@ -26,14 +26,14 @@ const getTeamMemberImage = (name: string): string => {
 const TeamSection: React.FC = () => {
   const teamMembers: TeamMember[] = [
     { name: 'Sanjana', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/sanjanasatagopan/' },
-    { name: 'Anshul', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/anshul-shah1/' },
     { name: 'Aaron', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/aaronli16/' },
     { name: 'William', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/williampantel/' },
     { name: 'Saachi', role: 'EiR Director', linkedin: 'https://www.linkedin.com/in/saachidhamija/' },
     { name: 'Hriesha', role: 'Director of Technology and Community', linkedin: 'https://www.linkedin.com/in/hrieshapopat/' },
     { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/' },
     { name: 'Danielle', role: 'Director of Marketing' },
-    { name: 'Ryan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/ryanahsu/' }
+    { name: 'Ryan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/ryanahsu/' },
+    { name: 'Anshul', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/anshul-shah1/' }
   ];
 
   const renderTeamMember = (member: TeamMember, index: number) => {
@@ -93,14 +93,14 @@ const TeamSection: React.FC = () => {
           <h2 className="section-title text-neutral-900">Run by Students, For Students</h2>
         </motion.div>
 
-        {/* First Row - 4 members */}
+        {/* First Row - 5 members */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-12">
-          {teamMembers.slice(0, 4).map((member, index) => renderTeamMember(member, index))}
+          {teamMembers.slice(0, 5).map((member, index) => renderTeamMember(member, index))}
         </div>
 
-        {/* Second Row - 5 members */}
+        {/* Second Row - 4 members */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-          {teamMembers.slice(4).map((member, index) => renderTeamMember(member, index + 4))}
+          {teamMembers.slice(5).map((member, index) => renderTeamMember(member, index + 5))}
         </div>
       </div>
     </section>
