@@ -130,7 +130,6 @@ const PEOPLE_GROUPS: PeopleGroup[] = [
     year: '2026–present',
     names: [
       'Sanjana Satagopan',
-      'Anshul Shah',
       'Aaron Li',
       'William Pantel',
       'Saachi Dhamija',
@@ -138,6 +137,7 @@ const PEOPLE_GROUPS: PeopleGroup[] = [
       'Areej Hassan',
       'Danielle Bae',
       'Ryan Hsu',
+      'Anshul Shah',
     ],
   },
 ];
