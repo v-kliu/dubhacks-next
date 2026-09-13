@@ -46,17 +46,17 @@ interface PeopleGroup {
 const PEOPLE_GROUPS: PeopleGroup[] = [
   {
     label: 'Founders',
-    year: '2021',
+    year: '2020',
     names: ['Adam Towers', 'Sharan Jhangiani'],
   },
   {
     label: 'Batch 0 Exec',
-    year: '2021–2022',
+    year: '2020–2021',
     names: ['Adam Towers', 'Sharan Jhangiani', 'Sierra Lee', 'Albert Lam'],
   },
   {
     label: 'Batch 1 Exec',
-    year: '2022–2023',
+    year: '2021–2022',
     names: [
       'Albert Lam',
       'Sierra Lee',
@@ -67,7 +67,7 @@ const PEOPLE_GROUPS: PeopleGroup[] = [
   },
   {
     label: 'Batch 2 Exec',
-    year: '2023–2024',
+    year: '2022–2023',
     names: [
       'Sahana Sasikumar',
       'Manasa Lingireddy',
@@ -85,7 +85,7 @@ const PEOPLE_GROUPS: PeopleGroup[] = [
   },
   {
     label: 'Batch 3 Exec',
-    year: '2024–2025',
+    year: '2023–2024',
     names: [
       'Ryan Hsu',
       'Aryan Mahindra',
@@ -99,7 +99,7 @@ const PEOPLE_GROUPS: PeopleGroup[] = [
   },
   {
     label: 'Batch 4 Exec',
-    year: '2025–2026',
+    year: '2024–2025',
     names: [
       'Sthiti Patnaik',
       'Ryan Hsu',
@@ -111,7 +111,7 @@ const PEOPLE_GROUPS: PeopleGroup[] = [
   },
   {
     label: 'Batch 5 Exec',
-    year: '2026–present',
+    year: '2025–present',
     names: [
       'Anshul Shah',
       'Sthiti Patnaik',
