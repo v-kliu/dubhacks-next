@@ -93,14 +93,14 @@ const TeamSection: React.FC = () => {
           <h2 className="section-title text-neutral-900">Run by Students, For Students</h2>
         </motion.div>
 
-        {/* First Row - 5 members */}
+        {/* First Row - 4 members */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-12">
-          {teamMembers.slice(0, 5).map((member, index) => renderTeamMember(member, index))}
+          {teamMembers.slice(0, 4).map((member, index) => renderTeamMember(member, index))}
         </div>
 
         {/* Second Row - 5 members */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-          {teamMembers.slice(5, 10).map((member, index) => renderTeamMember(member, index + 5))}
+          {teamMembers.slice(4).map((member, index) => renderTeamMember(member, index + 4))}
         </div>
       </div>
     </section>
