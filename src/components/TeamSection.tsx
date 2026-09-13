@@ -19,6 +19,7 @@ const getTeamMemberImage = (name: string): string => {
     'Areej': '/assets/team_headshots/areej.JPEG',
     'Danielle': '/assets/team_headshots/danielle.jpeg',
     'Ryan': '/assets/team_headshots/ryan.png',
+    'Sthiti': '/assets/team_headshots/sthiti.png',
   };
   return images[name] || '/assets/team_headshots/dubs.jpg';
 };
@@ -33,7 +34,8 @@ const TeamSection: React.FC = () => {
     { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/' },
     { name: 'Danielle', role: 'Director of Marketing' },
     { name: 'Ryan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/ryanahsu/' },
-    { name: 'Anshul', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/anshul-shah1/' }
+    { name: 'Anshul', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/anshul-shah1/' },
+    { name: 'Sthiti', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/sthiti-patnaik/' }
   ];
 
   const renderTeamMember = (member: TeamMember, index: number) => {
@@ -98,7 +100,7 @@ const TeamSection: React.FC = () => {
           {teamMembers.slice(0, 5).map((member, index) => renderTeamMember(member, index))}
         </div>
 
-        {/* Second Row - 4 members */}
+        {/* Second Row - 5 members */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
           {teamMembers.slice(5).map((member, index) => renderTeamMember(member, index + 5))}
         </div>
