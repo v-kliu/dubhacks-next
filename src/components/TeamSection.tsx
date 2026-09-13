@@ -27,8 +27,8 @@ const TeamSection: React.FC = () => {
   const teamMembers: TeamMember[] = [
     { name: 'Sanjana', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/sanjanasatagopan/' },
     { name: 'Aaron', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/aaronli16/' },
-    { name: 'William', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/williampantel/' },
-    { name: 'Saachi', role: 'EiR Director', linkedin: 'https://www.linkedin.com/in/saachidhamija/' },
+    { name: 'William', role: 'Director of EiR', linkedin: 'https://www.linkedin.com/in/williampantel/' },
+    { name: 'Saachi', role: 'Director of EiR', linkedin: 'https://www.linkedin.com/in/saachidhamija/' },
     { name: 'Hriesha', role: 'Director of Technology and Community', linkedin: 'https://www.linkedin.com/in/hrieshapopat/' },
     { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/' },
     { name: 'Danielle', role: 'Director of Marketing' },
