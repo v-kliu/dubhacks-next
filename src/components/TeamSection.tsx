@@ -11,8 +11,8 @@ interface TeamMember {
 const getTeamMemberImage = (name: string): string => {
   const images: { [key: string]: string } = {
     'Anshul': '/assets/team_headshots/anshul.jpg',
-    'Meera': '/assets/team_headshots/meera.jpg',
-    'Jordan': '/assets/team_headshots/jordan.jpg',
+    'Aaron': '/assets/team_headshots/aaron.jpg',
+    'William': '/assets/team_headshots/william.jpg',
     'Aarfan': '/assets/team_headshots/aarfan.jpg',
     'Sanjana': '/assets/team_headshots/sanjana.jpg',
     'Victor': '/assets/team_headshots/victor.jpg',
@@ -27,8 +27,8 @@ const TeamSection: React.FC = () => {
   const teamMembers: TeamMember[] = [
     { name: 'Sanjana', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/sanjanasatagopan/' },
     { name: 'Anshul', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/anshul-shah1/' },
-    { name: 'Meera', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/meera-patel-92704b207/' },
-    { name: 'Jordan', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/airjlee/' },
+    { name: 'Aaron', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/aaronli16/' },
+    { name: 'William', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/williampantel/' },
     { name: 'Aarfan', role: 'EiR Director', linkedin: 'https://www.linkedin.com/in/aarfan-hussain/' },
     { name: 'Victor', role: 'Director of Technology', linkedin: 'https://www.linkedin.com/in/vkliu/' },
     { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/' },
