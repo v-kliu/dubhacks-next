@@ -111,7 +111,7 @@ const PEOPLE_GROUPS: PeopleGroup[] = [
   },
   {
     label: 'Batch 5 Exec',
-    year: '2025–present',
+    year: '2025–2026',
     names: [
       'Anshul Shah',
       'Sthiti Patnaik',
