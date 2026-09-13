@@ -11,7 +11,6 @@ interface TeamMember {
 const getTeamMemberImage = (name: string): string => {
   const images: { [key: string]: string } = {
     'Anshul': '/assets/team_headshots/anshul.jpg',
-    'Sthiti': '/assets/team_headshots/sthiti.png',
     'Meera': '/assets/team_headshots/meera.jpg',
     'Jordan': '/assets/team_headshots/jordan.jpg',
     'Aarfan': '/assets/team_headshots/aarfan.jpg',
@@ -27,11 +26,10 @@ const getTeamMemberImage = (name: string): string => {
 const TeamSection: React.FC = () => {
   const teamMembers: TeamMember[] = [
     { name: 'Anshul', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/anshul-shah1/' },
-    { name: 'Sthiti', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/sthiti-patnaik/' },
+    { name: 'Sanjana', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/sanjanasatagopan/' },
     { name: 'Meera', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/meera-patel-92704b207/' },
     { name: 'Jordan', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/airjlee/' },
     { name: 'Aarfan', role: 'EiR Director', linkedin: 'https://www.linkedin.com/in/aarfan-hussain/' },
-    { name: 'Sanjana', role: 'Director of Community', linkedin: 'https://www.linkedin.com/in/sanjanasatagopan/' },
     { name: 'Victor', role: 'Director of Technology', linkedin: 'https://www.linkedin.com/in/vkliu/' },
     { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/' },
     { name: 'Danielle', role: 'Director of Marketing' },
