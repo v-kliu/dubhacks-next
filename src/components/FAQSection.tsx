@@ -12,7 +12,7 @@ const FAQSection: React.FC = () => {
     },
     {
       question: 'What are you looking for in applicants?',
-      answer: 'See the overview for Entrepreneurs-in-Residence and Projects Tracks.'
+      answer: 'See the overview of the Entrepreneur-in-Residence and Project Tracks above.'
     },
     {
       question: 'What is the time commitment of the program?',
