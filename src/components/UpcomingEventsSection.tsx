@@ -14,7 +14,33 @@ interface Event {
 }
 
 const UpcomingEventsSection: React.FC = () => {
-  const events: Event[] = [];
+  const events: Event[] = [
+    {
+      date: '2026-10-19',
+      displayDate: 'Oct 19',
+      title: 'Batch 6 Applications Open',
+      description: 'Applications for EiRs and Projects to join Batch 6 open today. Apply early to be considered in the priority round.'
+    },
+    {
+      date: '2026-10-26',
+      displayDate: 'Oct 26',
+      title: 'Shark Tank Event',
+      description: 'Watch founders pitch live, Shark Tank style, and meet the NEXT community. Details on time and location coming soon.',
+      highlight: true
+    },
+    {
+      date: '2026-10-26',
+      displayDate: 'Oct 26',
+      title: 'Priority Application Deadline',
+      description: 'Submit your application by October 26th to be reviewed in the priority round.'
+    },
+    {
+      date: '2026-11-02',
+      displayDate: 'Nov 2',
+      title: 'Applications Close',
+      description: 'Final deadline for all Batch 6 EiR and Project applications.'
+    }
+  ];
 
   return (
     <section id="events" className="bg-white py-8 md:py-16 px-4 md:px-6 lg:px-12">

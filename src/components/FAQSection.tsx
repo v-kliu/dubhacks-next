@@ -39,8 +39,8 @@ const FAQSection: React.FC = () => {
       answer: 'Our expectation is that EiR applicants are current UW students and that Project teams consist of a majority of UW students.'
     },
     {
-      question: 'When are the application deadlines for Batch 5?',
-      answer: 'We will be opening applications for EiRs and Projects to join Batch 5 starting October 18th. Priority applications are due October 24th. Regular applications are due November 2nd.'
+      question: 'When are the application deadlines for Batch 6?',
+      answer: 'We will be opening applications for EiRs and Projects to join Batch 6 starting October 19th. Priority applications are due October 26th. Regular applications are due November 2nd.'
     },
     {
       question: '404: Question Not Found',
