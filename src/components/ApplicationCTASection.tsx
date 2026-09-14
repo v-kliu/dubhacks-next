@@ -36,7 +36,7 @@ const ApplicationCTASection: React.FC = () => {
               viewport={{ once: true }}
               className="text-white text-lg md:text-xl pt-4 max-w-2xl mx-auto"
             >
-              Applications for Batch 6 will open Autumn 2026!
+              Applications for Batch 6 open October 19, 2026!
             </motion.p>
           </motion.div>
         </div>
