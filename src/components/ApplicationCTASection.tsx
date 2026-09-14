@@ -26,7 +26,7 @@ const ApplicationCTASection: React.FC = () => {
             </div>
 
             <h2 className="text-5xl md:text-7xl font-light text-white leading-tight">
-              Currently Incubating Batch 6
+              See You in Batch 6!
             </h2>
 
             <motion.p
