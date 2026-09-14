@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Mail, BookOpen, Users, Lightbulb } from 'lucide-react';
+import { ExternalLink, ArrowRight, Mail, BookOpen, Users, Lightbulb, LucideIcon } from 'lucide-react';
+import MailingListModal from './MailingListModal';
+
+interface Resource {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  color: 'primary' | 'accent';
+  link?: string;        // opens in a new tab
+  onClick?: () => void; // opens something on the page instead
+}
 
 const ResourcesSection: React.FC = () => {
-  const resources = [
+  const [isMailingListOpen, setIsMailingListOpen] = useState(false);
+
+  const resources: Resource[] = [
     {
       title: 'Mailing List',
       description: 'Stay updated with the latest news, events, and opportunities',
       icon: Mail,
-      link: 'https://mailchi.mp/dubhacks.co/next',
+      onClick: () => setIsMailingListOpen(true),
       color: 'primary'
     },
     {
@@ -34,6 +46,36 @@ const ResourcesSection: React.FC = () => {
     }
   ];
 
+  const cardClass =
+    'group bg-white p-6 md:p-8 rounded-2xl border-2 border-primary-200 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-primary-400 text-left w-full';
+
+  const renderCardContent = (resource: Resource) => {
+    const ActionIcon = resource.link ? ExternalLink : ArrowRight;
+    return (
+      <div className="flex items-start gap-4">
+        <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
+          resource.color === 'primary'
+            ? 'bg-primary-100 text-primary-600 group-hover:bg-primary-600 group-hover:text-white'
+            : 'bg-accent-100 text-accent-600 group-hover:bg-accent-600 group-hover:text-white'
+        } transition-all duration-300`}>
+          <resource.icon size={24} />
+        </div>
+
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-2">
+            <h3 className="text-xl font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors duration-300">
+              {resource.title}
+            </h3>
+            <ActionIcon size={16} className="text-neutral-400 group-hover:text-primary-600 transition-colors duration-300" />
+          </div>
+          <p className="text-neutral-600 text-sm leading-relaxed">
+            {resource.description}
+          </p>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section className="bg-gradient-to-br from-primary-50 to-accent-50 py-12 md:py-section px-4 md:px-6 lg:px-12">
       <div className="max-w-content mx-auto">
@@ -54,43 +96,41 @@ const ResourcesSection: React.FC = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {resources.map((resource, index) => (
-            <motion.a
-              key={index}
-              href={resource.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group bg-white p-6 md:p-8 rounded-2xl border-2 border-primary-200 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-primary-400"
-            >
-              <div className="flex items-start gap-4">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                  resource.color === 'primary'
-                    ? 'bg-primary-100 text-primary-600 group-hover:bg-primary-600 group-hover:text-white'
-                    : 'bg-accent-100 text-accent-600 group-hover:bg-accent-600 group-hover:text-white'
-                } transition-all duration-300`}>
-                  <resource.icon size={24} />
-                </div>
+          {resources.map((resource, index) => {
+            const animation = {
+              initial: { opacity: 0, y: 30 },
+              whileInView: { opacity: 1, y: 0 },
+              transition: { duration: 0.6, delay: index * 0.1 },
+              viewport: { once: true }
+            };
 
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-xl font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors duration-300">
-                      {resource.title}
-                    </h3>
-                    <ExternalLink size={16} className="text-neutral-400 group-hover:text-primary-600 transition-colors duration-300" />
-                  </div>
-                  <p className="text-neutral-600 text-sm leading-relaxed">
-                    {resource.description}
-                  </p>
-                </div>
-              </div>
-            </motion.a>
-          ))}
+            return resource.link ? (
+              <motion.a
+                key={index}
+                href={resource.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                {...animation}
+                className={cardClass}
+              >
+                {renderCardContent(resource)}
+              </motion.a>
+            ) : (
+              <motion.button
+                key={index}
+                type="button"
+                onClick={resource.onClick}
+                {...animation}
+                className={cardClass}
+              >
+                {renderCardContent(resource)}
+              </motion.button>
+            );
+          })}
         </div>
       </div>
+
+      <MailingListModal isOpen={isMailingListOpen} onClose={() => setIsMailingListOpen(false)} />
     </section>
   );
 };
