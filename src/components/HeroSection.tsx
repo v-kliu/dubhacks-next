@@ -67,7 +67,7 @@ const HeroSection: React.FC = () => {
                 >
                   <div className="inline-block bg-white/90 backdrop-blur-md border-2 border-primary-200 rounded-xl p-4 md:p-6 shadow-lg shadow-primary-500/10">
                     <div className="text-sm md:text-base text-primary-600 font-medium text-center">
-                      Applications for Batch 6 will open Autumn 2026!
+                      Applications for Batch 6 open October 19, 2026!
                     </div>
                   </div>
                 </motion.div>
