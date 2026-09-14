@@ -51,9 +51,9 @@ const PhotoGallerySection: React.FC = () => {
       alt: 'Four Batch 5 fellows, now Batch 6 exec, in front of the Demo Day screen'
     },
     {
-      filename: 'edu.jpg',
-      caption: 'look mom it\'s me! (this could be you next 🫵)',
-      alt: 'Educational workshop session'
+      filename: 'oren.jpg',
+      caption: 'interesting conversations with Oren Etzioni 🧠',
+      alt: 'Batch 5 group photo with Oren Etzioni after his talk'
     }
   ];
 
