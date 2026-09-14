@@ -47,7 +47,7 @@ const PhotoGallerySection: React.FC = () => {
     },
     {
       filename: 'dubs_at_demo.jpg',
-      caption: 'Fellows to exec 😛',
+      caption: 'enjoying some wins at Demo Day 🏆',
       alt: 'Four Batch 5 fellows, now Batch 6 exec, in front of the Demo Day screen'
     },
     {
