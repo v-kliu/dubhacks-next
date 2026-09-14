@@ -41,9 +41,9 @@ const PhotoGallerySection: React.FC = () => {
       alt: 'Three Batch 5 members posing with badminton rackets at the retreat'
     },
     {
-      filename: 'koel_labs.jpg',
-      caption: 'Koel Labs killing their demo at Demo Day 🗣️',
-      alt: 'Koel Labs presentation'
+      filename: 'clearlobby.jpg',
+      caption: 'ClearLobby killing their pitch at Demo Day 🗣️',
+      alt: 'ClearLobby founder pitching on stage at Demo Day'
     },
     {
       filename: 'slate.jpg',
