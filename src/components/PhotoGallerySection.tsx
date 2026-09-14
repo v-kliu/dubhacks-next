@@ -52,7 +52,7 @@ const PhotoGallerySection: React.FC = () => {
     },
     {
       filename: 'oren.jpg',
-      caption: 'interesting conversations with Oren Etzioni 🧠',
+      caption: 'interesting conversations with Oren Etzioni',
       alt: 'Batch 5 group photo with Oren Etzioni after his talk'
     }
   ];
