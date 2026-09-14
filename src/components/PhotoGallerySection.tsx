@@ -26,9 +26,9 @@ const PhotoGallerySection: React.FC = () => {
       alt: 'Batch 5 cohort group photo'
     },
     {
-      filename: 'batch4_exec.jpg',
-      caption: 'our lovely Batch 4 exec team post demo-day!',
-      alt: 'Batch 4 executive team'
+      filename: 'exec.jpg',
+      caption: 'our lovely Batch 5 exec team post demo-day!',
+      alt: 'Batch 5 executive team'
     },
     {
       filename: 'cognito.jpg',
