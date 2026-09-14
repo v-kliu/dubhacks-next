@@ -21,9 +21,9 @@ const PhotoGallerySection: React.FC = () => {
   // 2. Add/edit entries below with filename, caption, and alt text
   const photos: Photo[] = [
     {
-      filename: 'batch4.jpg',
-      caption: 'batch 4 vibes at our retreat!',
-      alt: 'Batch 4 cohort group photo'
+      filename: 'retreat.jpg',
+      caption: 'batch 5 vibes at our retreat!',
+      alt: 'Batch 5 cohort group photo'
     },
     {
       filename: 'batch4_exec.jpg',
