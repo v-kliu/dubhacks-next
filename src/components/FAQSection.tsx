@@ -24,7 +24,7 @@ const FAQSection: React.FC = () => {
     },
     {
       question: 'How long has Next been around?',
-      answer: 'Batch 5 will be our 6th year running Next.'
+      answer: 'Batch 6 will be our 7th year running Next.'
     },  
     {
       question: 'Should I apply to the EiR or Project Track?',

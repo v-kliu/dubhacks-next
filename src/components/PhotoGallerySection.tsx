@@ -22,12 +22,12 @@ const PhotoGallerySection: React.FC = () => {
   const photos: Photo[] = [
     {
       filename: 'retreat.jpg',
-      caption: 'batch 5 vibes at our retreat!',
+      caption: 'Batch 5 vibes at our retreat!',
       alt: 'Batch 5 cohort group photo'
     },
     {
       filename: 'exec.jpg',
-      caption: 'our lovely Batch 5 exec team post demo-day!',
+      caption: 'Our lovely Batch 5 exec team post Demo Day!',
       alt: 'Batch 5 executive team'
     },
     {
@@ -37,22 +37,22 @@ const PhotoGallerySection: React.FC = () => {
     },
     {
       filename: 'touch_grass.jpg',
-      caption: 'turns out we CAN touch grass! (Batch 5 retreat) 🏸',
+      caption: 'Turns out we CAN touch grass! (Batch 5 retreat) 🏸',
       alt: 'Three Batch 5 members posing with badminton rackets at the retreat'
     },
     {
       filename: 'clearlobby.jpg',
-      caption: 'ClearLobby killing their pitch at Demo Day 🗣️',
+      caption: 'ClearLobby killing the pitch at Demo Day 🗣️',
       alt: 'ClearLobby founder pitching on stage at Demo Day'
     },
     {
       filename: 'dubs_at_demo.jpg',
-      caption: 'enjoying some wins at Demo Day 🏆',
+      caption: 'Enjoying some wins at Demo Day 🏆',
       alt: 'Four Batch 5 fellows, now Batch 6 exec, in front of the Demo Day screen'
     },
     {
       filename: 'oren.jpg',
-      caption: 'interesting conversations with Oren Etzioni',
+      caption: 'Interesting conversations with Oren Etzioni',
       alt: 'Batch 5 group photo with Oren Etzioni after his talk'
     }
   ];
