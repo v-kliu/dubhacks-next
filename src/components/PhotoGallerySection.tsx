@@ -31,9 +31,9 @@ const PhotoGallerySection: React.FC = () => {
       alt: 'Batch 5 executive team'
     },
     {
-      filename: 'cognito.jpg',
-      caption: 'Cognito casually pitching for 200 million dollars at Demo Day 🤑',
-      alt: 'Cognito Demo Day presentation'
+      filename: 'sparks_booth.jpg',
+      caption: 'Sparks showing off their booth at Demo Day ✨',
+      alt: 'Sparks founders demoing at their Demo Day booth'
     },
     {
       filename: 'hike.jpg',
