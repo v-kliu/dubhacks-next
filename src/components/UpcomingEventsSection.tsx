@@ -25,7 +25,7 @@ const UpcomingEventsSection: React.FC = () => {
       date: '2026-10-26',
       displayDate: 'Oct 26',
       title: 'Shark Tank Event',
-      description: 'Watch founders pitch live, Shark Tank style, and meet the NEXT community. Details on time and location coming soon.',
+      description: 'Pitch your startup Shark Tank style, or come watch fellow founders take the stage. Network with the NEXT community and compete for prizes. Details on time and location coming soon.',
       highlight: true
     },
     {
