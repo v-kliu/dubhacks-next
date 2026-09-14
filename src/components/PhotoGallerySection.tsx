@@ -36,9 +36,9 @@ const PhotoGallerySection: React.FC = () => {
       alt: 'Sparks founders demoing at their Demo Day booth'
     },
     {
-      filename: 'badminton.jpg',
-      caption: 'turns out we CAN touch grass! (Batch 5 retreat badminton) 🏸',
-      alt: 'Batch 5 playing badminton on the grass at the retreat'
+      filename: 'touch_grass.jpg',
+      caption: 'turns out we CAN touch grass! (Batch 5 retreat) 🏸',
+      alt: 'Three Batch 5 members posing with badminton rackets at the retreat'
     },
     {
       filename: 'koel_labs.jpg',
