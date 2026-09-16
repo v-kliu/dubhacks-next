@@ -29,6 +29,7 @@ const MailingListForm: React.FC<MailingListFormProps> = ({ onDone, titleId }) =>
   const [major, setMajor] = useState('');
   const [website, setWebsite] = useState(''); // honeypot, hidden from people
   const [status, setStatus] = useState<Status>('idle');
+  const [isDuplicate, setIsDuplicate] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -49,6 +50,7 @@ const MailingListForm: React.FC<MailingListFormProps> = ({ onDone, titleId }) =>
         setStatus('error');
         return;
       }
+      setIsDuplicate(Boolean(data.duplicate));
       setStatus('success');
     } catch {
       setErrorMessage('Could not reach the server. Please check your connection and try again.');
@@ -62,9 +64,13 @@ const MailingListForm: React.FC<MailingListFormProps> = ({ onDone, titleId }) =>
         <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center">
           <CheckCircle size={28} />
         </div>
-        <h3 className="text-2xl font-light text-neutral-900 mb-2">You're on the list!</h3>
+        <h3 className="text-2xl font-light text-neutral-900 mb-2">
+          {isDuplicate ? "You're already on the list!" : "You're on the list!"}
+        </h3>
         <p className="text-neutral-600 text-sm leading-relaxed mb-6">
-          We'll keep you posted on events, applications, and opportunities.
+          {isDuplicate
+            ? 'That email is already signed up, so nothing new was added. You\'re all set.'
+            : "We'll keep you posted on events, applications, and opportunities."}
         </p>
         {onDone && (
           <button
