@@ -21,6 +21,7 @@ import StartupDirectory from './components/StartupDirectory';
 import FounderDirectory from './components/FounderDirectory';
 import SponsorsSection from './components/SponsorsSection';
 import EasterEggPage from './components/EasterEggPage';
+import JoinPage from './components/JoinPage';
 
 // Home page component
 const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete }) => {
@@ -99,6 +100,7 @@ const AppContent: React.FC = () => {
         <Route path="/startup-directory" element={<StartupDirectory />} />
         <Route path="/founder-directory" element={<FounderDirectory />} />
         <Route path="/secret" element={<EasterEggPage />} />
+        <Route path="/join" element={<JoinPage />} />
       </Routes>
       {shouldShowFooter && <Footer />}
     </div>
