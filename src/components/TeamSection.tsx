@@ -33,9 +33,9 @@ const TeamSection: React.FC = () => {
     { name: 'Hriesha', role: 'Director of Technology and Community', linkedin: 'https://www.linkedin.com/in/hrieshapopat/' },
     { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/' },
     { name: 'Danielle', role: 'Director of Marketing' },
+    { name: 'Jordan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/airjlee/' },
     { name: 'Anshul', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/anshul-shah1/' },
-    { name: 'Sthiti', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/sthiti-patnaik/' },
-    { name: 'Jordan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/airjlee/' }
+    { name: 'Sthiti', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/sthiti-patnaik/' }
   ];
 
   const renderTeamMember = (member: TeamMember, index: number) => {
