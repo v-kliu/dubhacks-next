@@ -18,7 +18,7 @@ const getTeamMemberImage = (name: string): string => {
     'Hriesha': '/assets/team_headshots/hriesha.jpg',
     'Areej': '/assets/team_headshots/areej.JPEG',
     'Danielle': '/assets/team_headshots/danielle.jpeg',
-    'Ryan': '/assets/team_headshots/ryan.png',
+    'Jordan': '/assets/team_headshots/jordan.jpg',
     'Sthiti': '/assets/team_headshots/sthiti.jpg',
   };
   return images[name] || '/assets/team_headshots/dubs.jpg';
@@ -33,9 +33,9 @@ const TeamSection: React.FC = () => {
     { name: 'Hriesha', role: 'Director of Technology and Community', linkedin: 'https://www.linkedin.com/in/hrieshapopat/' },
     { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/' },
     { name: 'Danielle', role: 'Director of Marketing' },
-    { name: 'Ryan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/ryanahsu/' },
     { name: 'Anshul', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/anshul-shah1/' },
-    { name: 'Sthiti', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/sthiti-patnaik/' }
+    { name: 'Sthiti', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/sthiti-patnaik/' },
+    { name: 'Jordan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/airjlee/' }
   ];
 
   const renderTeamMember = (member: TeamMember, index: number) => {
