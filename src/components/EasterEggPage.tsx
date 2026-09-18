@@ -136,9 +136,9 @@ const PEOPLE_GROUPS: PeopleGroup[] = [
       'Hriesha Popat',
       'Areej Hassan',
       'Danielle Bae',
+      'Jordan Lee',
       'Anshul Shah',
       'Sthiti Patnaik',
-      'Jordan Lee',
     ],
   },
 ];
