@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const StatsSection: React.FC = () => {
   const stats = [
-    { number: '$5M+', label: 'Total Raised' },
+    { number: '$25M+', label: 'Total Raised' },
     { number: '150+', label: 'Alumni Founders' },
     { number: '5', label: 'Batches Completed' },
     { number: '25+', label: 'Active Companies' },
