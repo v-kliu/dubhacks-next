@@ -1,6 +1,149 @@
-import React from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Award, Users, Handshake, Globe } from 'lucide-react';
+import { Award, Users, Handshake, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
+
+interface Speaker {
+  name: string;
+  title: string;
+  batch: string;
+  category: string;
+  description: string;
+  image: string;
+}
+
+interface SpeakerCarouselProps {
+  speakers: Speaker[];
+}
+
+// Horizontal, swipeable carousel: 1 card per view on mobile, 2 on tablet, 4 on laptop.
+// Pages are derived from the rendered card width so the controls stay correct as speakers are added.
+const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({ speakers }) => {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [pageCount, setPageCount] = useState(1);
+  const [activePage, setActivePage] = useState(0);
+
+  const getMetrics = useCallback(() => {
+    const scroller = scrollerRef.current;
+    const firstCard = scroller?.firstElementChild;
+    if (!scroller || !(firstCard instanceof HTMLElement)) return null;
+    const gap = parseFloat(getComputedStyle(scroller).columnGap) || 0;
+    const step = firstCard.offsetWidth + gap;
+    const perView = Math.max(1, Math.round((scroller.clientWidth + gap) / step));
+    return {
+      scroller,
+      pageWidth: step * perView,
+      maxScroll: scroller.scrollWidth - scroller.clientWidth,
+      pages: Math.max(1, Math.ceil(speakers.length / perView)),
+    };
+  }, [speakers.length]);
+
+  const syncState = useCallback(() => {
+    const metrics = getMetrics();
+    if (!metrics) return;
+    const { scroller, pageWidth, maxScroll, pages } = metrics;
+    const atEnd = maxScroll > 0 && scroller.scrollLeft >= maxScroll - 1;
+    setPageCount(pages);
+    setActivePage(atEnd ? pages - 1 : Math.min(pages - 1, Math.round(scroller.scrollLeft / pageWidth)));
+  }, [getMetrics]);
+
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    syncState();
+    scroller?.addEventListener('scroll', syncState, { passive: true });
+    window.addEventListener('resize', syncState);
+    return () => {
+      scroller?.removeEventListener('scroll', syncState);
+      window.removeEventListener('resize', syncState);
+    };
+  }, [syncState]);
+
+  const scrollToPage = (page: number) => {
+    const metrics = getMetrics();
+    if (!metrics) return;
+    const { scroller, pageWidth, maxScroll, pages } = metrics;
+    const target = Math.min(Math.max(page, 0), pages - 1);
+    scroller.scrollTo({ left: Math.min(target * pageWidth, maxScroll), behavior: 'smooth' });
+  };
+
+  const controlButtonClasses =
+    'w-11 h-11 rounded-full border border-white/20 bg-white/5 text-white flex items-center justify-center hover:bg-white/10 transition-colors duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-white/5';
+
+  return (
+    <div>
+      <div
+        ref={scrollerRef}
+        className="flex gap-6 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hide pb-8 -mb-8"
+      >
+        {speakers.map((speaker, index) => (
+          <motion.div
+            key={speaker.name}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.05 }}
+            viewport={{ once: true }}
+            className="snap-start flex-none w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-all duration-300 group"
+          >
+            <div className="flex items-start space-x-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary-200 to-accent-200 rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-primary-600 font-bold text-sm">
+                  {speaker.name.split(' ').map(n => n[0]).join('')}
+                </span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="font-semibold text-white text-sm leading-tight">{speaker.name}</h4>
+                <p className="text-white/60 text-xs mt-1 leading-tight">{speaker.title}</p>
+              </div>
+            </div>
+
+            <div className="flex gap-1 mb-3">
+              <span className="px-2 py-0.5 bg-primary-500/20 text-primary-300 text-xs rounded-full">
+                {speaker.batch}
+              </span>
+              <span className="px-2 py-0.5 bg-white/10 text-white/60 text-xs rounded-full">
+                {speaker.category}
+              </span>
+            </div>
+
+            <p className="text-white/50 text-xs leading-relaxed">
+              {speaker.description}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="flex items-center justify-center gap-4 mt-6">
+        <button
+          type="button"
+          onClick={() => scrollToPage(activePage - 1)}
+          disabled={activePage === 0}
+          aria-label="Previous speakers"
+          className={controlButtonClasses}
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <div className="flex items-center gap-2" aria-hidden="true">
+          {Array.from({ length: pageCount }, (_, index) => (
+            <span
+              key={index}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                index === activePage ? 'w-6 bg-primary-400' : 'w-1.5 bg-white/30'
+              }`}
+            />
+          ))}
+        </div>
+        <button
+          type="button"
+          onClick={() => scrollToPage(activePage + 1)}
+          disabled={activePage >= pageCount - 1}
+          aria-label="Next speakers"
+          className={controlButtonClasses}
+        >
+          <ChevronRight size={20} />
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const SpeakersSection: React.FC = () => {
   // Function to get partner logo
@@ -20,8 +163,8 @@ const SpeakersSection: React.FC = () => {
     return logos[name] || '';
   };
 
-  // Featured speakers panel
-  const speakers = [
+  // Featured speakers panel - add new speakers here; order here is display order in the carousel
+  const speakers: Speaker[] = [
     {
       name: 'Armon Dadgar',
       title: 'Co-Founder & CTO, HashiCorp (IBM)',
@@ -53,6 +196,14 @@ const SpeakersSection: React.FC = () => {
       category: 'Startup Law',
       description: 'Leading startup lawyer for life sciences and biotech companies in Silicon Valley. Advises on formation, fundraising, M&A, and IPOs. Previously partner at Goodwin Procter. University of Chicago Law.',
       image: '/assets/speakers/steven-green.jpg'
+    },
+    {
+      name: 'Oren Etzioni',
+      title: 'Founding CEO, Allen Institute for AI (AI2)',
+      batch: 'UW Faculty',
+      category: 'Artificial Intelligence',
+      description: 'Led the Allen Institute for AI from its founding into a world-leading research lab. UW computer science professor emeritus and serial founder of Farecast (acquired by Microsoft) and Decide.com (acquired by eBay). Venture partner at Madrona and founder of TrueMedia.org.',
+      image: '/assets/speakers/oren-etzioni.jpg'
     }
   ];
 
@@ -115,46 +266,10 @@ const SpeakersSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Speakers Grid - 4 per row on large screens, more compact */}
+        {/* Speakers Carousel - cards come from the `speakers` array above */}
         <div className="mb-12">
           <h3 className="text-white text-2xl font-semibold mb-6">Featured Speakers & Mentors</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {speakers.map((speaker, index) => (
-              <motion.div
-                key={`speaker-${index}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-all duration-300 group"
-              >
-                <div className="flex items-start space-x-3 mb-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-200 to-accent-200 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-primary-600 font-bold text-sm">
-                      {speaker.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-white text-sm leading-tight">{speaker.name}</h4>
-                    <p className="text-white/60 text-xs mt-1 leading-tight">{speaker.title}</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-1 mb-3">
-                  <span className="px-2 py-0.5 bg-primary-500/20 text-primary-300 text-xs rounded-full">
-                    {speaker.batch}
-                  </span>
-                  <span className="px-2 py-0.5 bg-white/10 text-white/60 text-xs rounded-full">
-                    {speaker.category}
-                  </span>
-                </div>
-
-                <p className="text-white/50 text-xs leading-relaxed">
-                  {speaker.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <SpeakerCarousel speakers={speakers} />
         </div>
 
         {/* Partners Grid */}

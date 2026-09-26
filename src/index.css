@@ -23,6 +23,15 @@
 }
 
 @layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   .hero-text {
     font-size: clamp(48px, 8vw, 100px);
     font-weight: 300;
