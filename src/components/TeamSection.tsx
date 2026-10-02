@@ -6,6 +6,7 @@ interface TeamMember {
   role: string;
   image?: string;
   linkedin?: string;
+  email?: string;
 }
 
 const getTeamMemberImage = (name: string): string => {
@@ -26,14 +27,14 @@ const getTeamMemberImage = (name: string): string => {
 
 const TeamSection: React.FC = () => {
   const teamMembers: TeamMember[] = [
-    { name: 'Sanjana', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/sanjanasatagopan/' },
-    { name: 'Aaron', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/aaronli16/' },
-    { name: 'William', role: 'Director of EiR', linkedin: 'https://www.linkedin.com/in/williampantel/' },
-    { name: 'Saachi', role: 'Director of EiR', linkedin: 'https://www.linkedin.com/in/saachidhamija/' },
-    { name: 'Hriesha', role: 'Director of Technology and Community', linkedin: 'https://www.linkedin.com/in/hrieshapopat/' },
-    { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/' },
-    { name: 'Danielle', role: 'Director of Marketing' },
-    { name: 'Jordan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/airjlee/' },
+    { name: 'Sanjana', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/sanjanasatagopan/', email: 'sanjana@dubhacks.co' },
+    { name: 'Aaron', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/aaronli16/', email: 'aaron@dubhacks.co' },
+    { name: 'William', role: 'Director of EiR', linkedin: 'https://www.linkedin.com/in/williampantel/', email: 'william@dubhacks.co' },
+    { name: 'Saachi', role: 'Director of EiR', linkedin: 'https://www.linkedin.com/in/saachidhamija/', email: 'saachi@dubhacks.co' },
+    { name: 'Hriesha', role: 'Director of Technology and Community', linkedin: 'https://www.linkedin.com/in/hrieshapopat/', email: 'hriesha@dubhacks.co' },
+    { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/', email: 'areej@dubhacks.co' },
+    { name: 'Danielle', role: 'Director of Marketing', email: 'danielle@dubhacks.co' },
+    { name: 'Jordan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/airjlee/', email: 'jordan@dubhacks.co' },
     { name: 'Anshul', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/anshul-shah1/' },
     { name: 'Sthiti', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/sthiti-patnaik/' }
   ];
@@ -76,6 +77,14 @@ const TeamSection: React.FC = () => {
           </a>
         ) : (
           <div>{content}</div>
+        )}
+        {member.email && (
+          <a
+            href={`mailto:${member.email}`}
+            className="inline-flex items-center min-h-[44px] text-neutral-400 text-sm md:text-xs hover:text-pink transition-colors duration-300"
+          >
+            {member.email}
+          </a>
         )}
       </motion.div>
     );
