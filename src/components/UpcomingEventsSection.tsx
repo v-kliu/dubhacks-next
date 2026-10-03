@@ -16,16 +16,30 @@ interface Event {
 const UpcomingEventsSection: React.FC = () => {
   const events: Event[] = [
     {
+      date: '2026-10-13',
+      displayDate: 'Oct 13',
+      title: 'Batch 6 Info Session',
+      location: 'Allen Center 305',
+      description: 'Learn what DubHacks Next is, what Batch 6 looks like for EiRs and Projects, and how to apply. Bring your questions and meet the team.'
+    },
+    {
       date: '2026-10-19',
       displayDate: 'Oct 19',
       title: 'Batch 6 Applications Open',
       description: 'Applications for EiRs and Projects to join Batch 6 open today. Apply early to be considered in the priority round.'
     },
     {
-      date: '2026-10-26',
-      displayDate: 'Oct 26',
+      date: 'TBA',
+      displayDate: 'TBA',
+      title: 'Online Office Hours',
+      description: 'Drop in virtually to ask the NEXT team about your application, the tracks, or the program. More information coming soon.'
+    },
+    {
+      date: '2026-10-23',
+      displayDate: 'Oct 23',
       title: 'Shark Tank Event',
-      description: 'Pitch your startup Shark Tank style, or come watch fellow founders take the stage. Network with the NEXT community and compete for prizes. Details on time and location coming soon.',
+      location: 'Allen Center 305',
+      description: 'Pitch your startup Shark Tank style, or come watch fellow founders take the stage. Network with the NEXT community and compete for prizes. Time to be announced.',
       highlight: true
     },
     {
