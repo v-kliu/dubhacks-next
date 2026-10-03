@@ -1157,7 +1157,7 @@ BATCH 5
 {
   name: 'Aditi Agarwal',
   batch: 'Batch 5',
-  company: 'Iris',
+  company: 'Nomi',
   linkedin: 'https://www.linkedin.com/in/aditiaagarwal/'
 }
 
