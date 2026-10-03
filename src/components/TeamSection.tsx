@@ -27,7 +27,7 @@ const getTeamMemberImage = (name: string): string => {
 
 const TeamSection: React.FC = () => {
   const teamMembers: TeamMember[] = [
-    { name: 'Sanjana', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/sanjanasatagopan/', email: 'sanjana@dubhacks.co' },
+    { name: 'Sanjana', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/sanjanasatagopan/', email: 'sanjanas@dubhacks.co' },
     { name: 'Aaron', role: 'Director of Projects', linkedin: 'https://www.linkedin.com/in/aaronli16/', email: 'aaron@dubhacks.co' },
     { name: 'William', role: 'Director of EiR', linkedin: 'https://www.linkedin.com/in/williampantel/', email: 'william@dubhacks.co' },
     { name: 'Saachi', role: 'Director of EiR', linkedin: 'https://www.linkedin.com/in/saachidhamija/', email: 'saachi@dubhacks.co' },
