@@ -20,7 +20,8 @@ const UpcomingEventsSection: React.FC = () => {
       displayDate: 'Oct 13',
       title: 'Batch 6 Info Session',
       location: 'Allen Center 305',
-      description: 'Learn what DubHacks Next is, what Batch 6 looks like for EiRs and Projects, and how to apply. Bring your questions and meet the team.'
+      description: 'Learn what DubHacks Next is, what Batch 6 looks like for EiRs and Projects, and how to apply. Bring your questions and meet the team.',
+      highlight: true
     },
     {
       date: '2026-10-19',
