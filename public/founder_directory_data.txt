@@ -1429,7 +1429,7 @@ BATCH 5
 {
   name: 'Taj Khandekar',
   batch: 'Batch 5',
-  company: 'Iris',
+  company: 'Nomi',
   linkedin: 'https://www.linkedin.com/in/tajk/'
 }
 
