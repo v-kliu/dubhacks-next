@@ -5,6 +5,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* On the root element so iOS Safari also refuses to scroll the page sideways */
+    overflow-x: hidden;
   }
   
   body {
@@ -14,7 +16,6 @@
     -moz-osx-font-smoothing: grayscale;
     background: linear-gradient(135deg, #fdf2f8 0%, #ffffff 50%, #fff1f2 100%);
     min-height: 100vh;
-    overflow-x: hidden;
   }
   
   * {
@@ -116,10 +117,10 @@
     border-radius: 2px;
   }
   
+  /* Side columns are the gutters: 16px on phones, 32px+ on tablet and up */
   .content-grid {
     display: grid;
-    grid-template-columns: 1fr min(1200px, 95%) 1fr;
-    gap: 1rem;
+    grid-template-columns: minmax(1rem, 1fr) min(1200px, calc(100% - 2rem)) minmax(1rem, 1fr);
   }
 
   .content-grid > * {
@@ -128,8 +129,7 @@
 
   @media (min-width: 768px) {
     .content-grid {
-      grid-template-columns: 1fr min(1200px, 90%) 1fr;
-      gap: 2rem;
+      grid-template-columns: minmax(2rem, 1fr) min(1200px, 90%) minmax(2rem, 1fr);
     }
   }
   

@@ -43,12 +43,12 @@ const Footer: React.FC = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/50"
+          className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/50 text-center md:text-left"
         >
           <div>
             © 2026 DubHacks Next. All rights reserved.
           </div>
-          <div className="mt-4 md:mt-0">
+          <div className="mt-4 md:mt-0 md:text-right">
             A proud part of DubHacks • University of Washington
           </div>
         </motion.div>

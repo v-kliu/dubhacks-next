@@ -89,7 +89,7 @@ const FounderDirectory: React.FC = () => {
             <h1 className="text-4xl md:text-5xl font-semibold mb-4">
               Founder Directory
             </h1>
-            <p className="text-neutral-400 text-lg whitespace-nowrap">
+            <p className="text-neutral-400 text-lg md:whitespace-nowrap">
               Current and alumni founders who have been part of DubHacks Next.
             </p>
           </motion.div>
@@ -97,7 +97,7 @@ const FounderDirectory: React.FC = () => {
       </div>
 
       {/* Filter Bar */}
-      <div className="sticky top-16 z-20 bg-white border-b border-neutral-200">
+      <div className="sticky top-20 z-20 bg-white border-b border-neutral-200">
         <div className="max-w-6xl mx-auto px-6 py-3">
           <div className="flex items-center gap-2 overflow-x-auto">
             {batches.map((batch) => (

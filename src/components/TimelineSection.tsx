@@ -10,6 +10,8 @@ const TimelineSection: React.FC = () => {
   });
   
   const lineProgress = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  // Drives the horizontal line on laptop and the vertical line on mobile
+  const linePercent = useTransform(lineProgress, (v) => `${v}%`);
 
   const milestones = [
     {
@@ -40,32 +42,35 @@ const TimelineSection: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className="bg-charcoal py-section px-6 md:px-12">
+    <section ref={ref} className="bg-charcoal py-16 md:py-section px-6 md:px-12">
       <div className="max-w-content mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <div className="overline text-pink mb-6">THE JOURNEY</div>
           <h2 className="section-title text-white">16 Weeks. 5 Milestones.</h2>
         </motion.div>
 
         <div className="relative">
-          {/* Background line */}
-          <div className="absolute top-0 left-0 right-0 h-0.5 bg-white/20"></div>
-
-          {/* Animated progress line */}
+          {/* Tablet and up: horizontal line across the top */}
+          <div className="hidden md:block absolute top-0 left-0 right-0 h-0.5 bg-white/20"></div>
           <motion.div
-            className="absolute top-0 left-0 h-0.5 bg-pink z-10"
-            style={{
-              width: useTransform(lineProgress, (v) => `${v}%`)
-            }}
+            className="hidden md:block absolute top-0 left-0 h-0.5 bg-pink z-10"
+            style={{ width: linePercent }}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-0 relative pt-12">
+          {/* Mobile: vertical line down the left edge */}
+          <div className="md:hidden absolute top-0 bottom-0 left-2 w-0.5 bg-white/20"></div>
+          <motion.div
+            className="md:hidden absolute top-0 left-2 w-0.5 bg-pink z-10"
+            style={{ height: linePercent }}
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-0 relative md:pt-12">
             {milestones.map((milestone, index) => (
               <motion.div
                 key={index}
@@ -73,14 +78,14 @@ const TimelineSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="relative text-center"
+                className="relative pl-10 text-left md:pl-0 md:text-center"
               >
-                {/* Bullet point - positioned to be centered on the line */}
+                {/* Bullet point - sits on the vertical line on mobile, centered on the top line on tablet and up */}
                 <div
-                  className="absolute -top-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-charcoal border-pink z-20"
+                  className="absolute top-0 left-2 -translate-x-1/2 md:-top-12 md:left-1/2 md:-translate-y-1/2 w-4 h-4 rounded-full border-2 bg-charcoal border-pink z-20"
                 />
                 
-                <div className="pt-4">
+                <div className="md:pt-4">
                   <div className="overline text-pink mb-3">{milestone.week}</div>
                   <h3 className="text-xl font-light text-white mb-3">{milestone.title}</h3>
                   <p className="text-white/70 text-sm leading-relaxed">{milestone.description}</p>

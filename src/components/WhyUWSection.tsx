@@ -22,24 +22,24 @@ const WhyUWSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white py-section px-6 md:px-12">
+    <section className="bg-white py-16 md:py-section px-6 md:px-12">
       <div className="max-w-content mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <div className="overline text-pink mb-6">BUILT IN SEATTLE</div>
-          <h2 className="text-5xl md:text-6xl font-light text-neutral-900 mb-8">
-            Pacific Northwest's Premier
-            <br />
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-neutral-900 mb-8">
+            Pacific Northwest's Premier{' '}
+            <br className="hidden md:inline" />
             Student Incubator
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-16">
+        <div className="grid md:grid-cols-3 gap-12 md:gap-16">
           {pillars.map((pillar, index) => (
             <motion.div
               key={index}

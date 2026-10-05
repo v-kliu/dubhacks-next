@@ -11,9 +11,9 @@ const ProgramOverviewSection: React.FC = () => {
   ];
 
   return (
-    <section id="program" className="bg-white py-section px-6 md:px-12">
+    <section id="program" className="bg-white py-16 md:py-section px-6 md:px-12">
       <div className="max-w-content mx-auto">
-        <div className="grid md:grid-cols-5 gap-16 items-center">
+        <div className="grid md:grid-cols-5 gap-10 md:gap-16 items-center">
           <div className="md:col-span-3">
             <div className="mb-8">
               <motion.div
@@ -36,7 +36,7 @@ const ProgramOverviewSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-gray text-body leading-relaxed mb-12"
+              className="text-gray text-body leading-relaxed mb-8 md:mb-12"
             >
               The DubHacks Next program is designed to empower student founders and aspiring entrepreneurs
               with the tools, network, and mindset to bring their ideas to life. Through a mix of workshops,
@@ -69,7 +69,7 @@ const ProgramOverviewSection: React.FC = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-[4/5] border border-pink rounded-lg overflow-hidden">
+              <div className="aspect-[4/3] md:aspect-[4/5] border border-pink rounded-lg overflow-hidden">
                 <img
                   src="/assets/gallery_pictures/triage.jpg"
                   alt="Program participants presenting at Demo Day"

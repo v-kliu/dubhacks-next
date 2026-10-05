@@ -162,7 +162,7 @@ const TracksSection: React.FC = () => {
                       faqSection.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="inline-block text-center border border-neutral-300 text-neutral-700 px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base hover:bg-neutral-100 hover:border-neutral-400 transition-all duration-300 w-full sm:w-auto"
+                  className="inline-block text-center min-h-[44px] border border-neutral-300 text-neutral-700 px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base hover:bg-neutral-100 hover:border-neutral-400 transition-all duration-300 w-full sm:w-auto"
                 >
                   More Questions?
                 </button>

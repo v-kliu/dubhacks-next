@@ -91,27 +91,30 @@ const TeamSection: React.FC = () => {
   };
 
   return (
-    <section id="team" className="bg-white py-section px-6 md:px-12">
+    <section id="team" className="bg-white py-16 md:py-section px-6 md:px-12">
       <div className="max-w-content mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <div className="overline text-pink mb-6">THE TEAM</div>
           <h2 className="section-title text-neutral-900">Run by Students, For Students</h2>
         </motion.div>
 
-        {/* First Row - 5 members */}
-        <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-12">
-          {teamMembers.slice(0, 5).map((member, index) => renderTeamMember(member, index))}
-        </div>
+        {/* On phones both rows flow together two across; on tablet and up they stay as two rows of five */}
+        <div className="flex flex-wrap justify-center gap-8 md:block">
+          {/* First Row - 5 members */}
+          <div className="contents md:flex md:flex-wrap md:justify-center md:gap-12 md:mb-12">
+            {teamMembers.slice(0, 5).map((member, index) => renderTeamMember(member, index))}
+          </div>
 
-        {/* Second Row - 5 members */}
-        <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-          {teamMembers.slice(5).map((member, index) => renderTeamMember(member, index + 5))}
+          {/* Second Row - 5 members */}
+          <div className="contents md:flex md:flex-wrap md:justify-center md:gap-12">
+            {teamMembers.slice(5).map((member, index) => renderTeamMember(member, index + 5))}
+          </div>
         </div>
       </div>
     </section>

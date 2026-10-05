@@ -229,25 +229,25 @@ const SpeakersSection: React.FC = () => {
 
 
   return (
-    <section className="bg-charcoal py-section px-6 md:px-12">
+    <section className="bg-charcoal py-16 md:py-section px-6 md:px-12">
       <div className="max-w-content mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <div className="overline text-pink mb-6">OUR NETWORK</div>
           <h2 className="section-title text-white mb-6">Speakers, Mentors & Partners</h2>
-          <p className="text-white/70 text-lg max-w-3xl mx-auto">
+          <p className="text-white/70 text-base md:text-lg max-w-3xl mx-auto">
             Learn from industry legends, partner with leading organizations, and connect with transformational leaders
             who support our community across every batch.
           </p>
         </motion.div>
 
         {/* Categories */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 md:mb-16">
           {categories.map((category, index) => (
             <motion.div
               key={index}

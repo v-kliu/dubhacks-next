@@ -95,7 +95,7 @@ const StartupDirectory: React.FC = () => {
       </div>
 
       {/* Filter Bar */}
-      <div className="sticky top-16 z-20 bg-white border-b border-neutral-200">
+      <div className="sticky top-20 z-20 bg-white border-b border-neutral-200">
         <div className="max-w-6xl mx-auto px-6 py-3">
           <div className="flex items-center gap-2 overflow-x-auto">
             {batches.map((batch) => (

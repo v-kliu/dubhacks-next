@@ -25,7 +25,7 @@ const StatsSection: React.FC = () => {
             <div className="overline text-primary-600 inline-block px-4 py-2 bg-primary-100/50 rounded-full">BY THE NUMBERS</div>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-16">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -33,9 +33,9 @@ const StatsSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/85 backdrop-blur-md p-6 md:p-8 rounded-2xl border-2 border-primary-200 shadow-md shadow-primary-500/10 card-hover text-center"
+                className="bg-white/85 backdrop-blur-md p-4 sm:p-6 md:p-8 rounded-2xl border-2 border-primary-200 shadow-md shadow-primary-500/10 card-hover text-center"
               >
-                <div className="text-4xl md:text-5xl lg:text-6xl text-primary-600 font-light mb-3 md:mb-4">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-600 font-light mb-3 md:mb-4">
                   {stat.number}
                 </div>
                 <div className="pink-underline-thin mx-auto mb-3 md:mb-4"></div>

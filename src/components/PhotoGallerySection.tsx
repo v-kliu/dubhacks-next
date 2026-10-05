@@ -75,14 +75,14 @@ const PhotoGallerySection: React.FC = () => {
   // }, []);
 
   return (
-    <section className="bg-neutral-50 py-section px-6 md:px-12">
+    <section className="bg-neutral-50 py-16 md:py-section px-6 md:px-12">
       <div className="max-w-content mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <div className="overline text-pink mb-6">MOMENTS</div>
           <h2 className="section-title text-neutral-900">Capturing Our Journey</h2>
@@ -90,7 +90,7 @@ const PhotoGallerySection: React.FC = () => {
 
         <div className="relative">
           {/* Main Gallery */}
-          <div className="relative h-[500px] md:h-[650px] rounded-2xl overflow-hidden bg-white shadow-xl">
+          <div className="relative h-[280px] sm:h-[420px] md:h-[650px] rounded-2xl overflow-hidden bg-white shadow-xl">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -124,8 +124,8 @@ const PhotoGallerySection: React.FC = () => {
                 />
                 
                 {/* Caption Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                  <h3 className="text-white font-medium text-lg">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 md:p-6">
+                  <h3 className="text-white font-medium text-base md:text-lg">
                     {photos[currentIndex].caption}
                   </h3>
                 </div>
@@ -135,7 +135,7 @@ const PhotoGallerySection: React.FC = () => {
             {/* Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300 shadow-lg"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300 shadow-lg"
               aria-label="Previous photo"
             >
               <ChevronLeft className="text-neutral-700" size={24} />
@@ -143,7 +143,7 @@ const PhotoGallerySection: React.FC = () => {
             
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300 shadow-lg"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300 shadow-lg"
               aria-label="Next photo"
             >
               <ChevronRight className="text-neutral-700" size={24} />
@@ -151,18 +151,22 @@ const PhotoGallerySection: React.FC = () => {
           </div>
 
           {/* Thumbnail Navigation */}
-          <div className="flex justify-center mt-8 space-x-3">
+          <div className="flex justify-center mt-4 md:mt-6">
             {photos.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? 'bg-primary-600 scale-125'
-                    : 'bg-neutral-300 hover:bg-primary-400'
-                }`}
+                className="group w-11 h-11 flex items-center justify-center"
                 aria-label={`Go to photo ${index + 1}`}
-              />
+              >
+                <span
+                  className={`block w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? 'bg-primary-600 scale-125'
+                      : 'bg-neutral-300 group-hover:bg-primary-400'
+                  }`}
+                />
+              </button>
             ))}
           </div>
 
