@@ -33,7 +33,7 @@ const TeamSection: React.FC = () => {
     { name: 'Saachi', role: 'Director of EiR', linkedin: 'https://www.linkedin.com/in/saachidhamija/', email: 'saachi@dubhacks.co' },
     { name: 'Hriesha', role: 'Director of Technology and Community', linkedin: 'https://www.linkedin.com/in/hrieshapopat/', email: 'hriesha@dubhacks.co' },
     { name: 'Areej', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/areej-hassann/', email: 'areej@dubhacks.co' },
-    { name: 'Danielle', role: 'Director of Marketing', email: 'danielle@dubhacks.co' },
+    { name: 'Danielle', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/daniellebae06/', email: 'danielle@dubhacks.co' },
     { name: 'Jordan', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/airjlee/', email: 'jordan@dubhacks.co' },
     { name: 'Anshul', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/anshul-shah1/' },
     { name: 'Sthiti', role: 'Advisor', linkedin: 'https://www.linkedin.com/in/sthiti-patnaik/' }
