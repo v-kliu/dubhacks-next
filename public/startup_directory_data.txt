@@ -369,6 +369,7 @@ BATCH 5
   tagline: 'Making music move with you for your exercise',
   description: 'Making music move with you for your exercise.',
   batch: 'Batch 5',
+  website: 'https://heartbeatswaitlist.vercel.app',
   stage: 'MVP',
   founders: ['Hriesha Popat']
 }
@@ -378,6 +379,7 @@ BATCH 5
   tagline: 'Member aggregation and connection platform for alumni',
   description: 'Member aggregation and connection platform for alumni.',
   batch: 'Batch 5',
+  website: 'https://myirisnetwork.com/',
   stage: 'Prototype',
   founders: ['Saachi Dhamija', 'Sthiti Patnaik']
 }
