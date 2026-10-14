@@ -30,12 +30,6 @@ const UpcomingEventsSection: React.FC = () => {
       description: 'Applications for EiRs and Projects to join Batch 6 open today. Apply early to be considered in the priority round.'
     },
     {
-      date: '2026-10-22',
-      displayDate: 'Oct 22–29',
-      title: 'Online Office Hours',
-      description: 'Drop in virtually any day from October 22 to 29 to ask the NEXT team about your application, the tracks, or the program. Times and link coming soon.'
-    },
-    {
       date: '2026-10-23',
       displayDate: 'Oct 23',
       title: 'Shark Tank Event',
