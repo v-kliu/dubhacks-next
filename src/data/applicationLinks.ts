@@ -3,7 +3,7 @@
 
 // Flip to true in the same commit that adds the form URLs below. While false, the site shows
 // the "opens October 19" state with no apply buttons.
-export const APPLICATIONS_OPEN = false;
+export const APPLICATIONS_OPEN = true;
 export const OPEN_DATE = 'October 19';
 export const PRIORITY_DEADLINE = 'October 26';
 export const FINAL_DEADLINE = 'November 2';
@@ -25,7 +25,8 @@ export const trackApplications: TrackApplication[] = [
     title: 'For Explorers',
     description:
       'No startup yet, but you want to build one. Join as an Entrepreneur-in-Residence to learn the ropes, meet potential co-founders, and explore ideas with the Next community.',
-    applyLabel: 'Apply as an EiR'
+    applyLabel: 'Apply as an EiR',
+    applicationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfdDr3Ir_N10yFH4R2kqotbLxvsQobVM9JRGXW-EpOhKWL8gw/viewform'
   },
   {
     id: 'project',
@@ -33,7 +34,8 @@ export const trackApplications: TrackApplication[] = [
     title: 'For Builders',
     description:
       'Already working on something? Bring your team and project into the incubator for goal-setting, mentorship, and a spot at Demo Day.',
-    applyLabel: 'Apply with a Project'
+    applyLabel: 'Apply with a Project',
+    applicationUrl: 'https://forms.gle/4f3kxLXn9TuhstTb9'
   }
 ];
 
