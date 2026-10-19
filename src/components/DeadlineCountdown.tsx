@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { PRIORITY_DEADLINE_AT, FINAL_DEADLINE_AT } from '../data/applicationLinks';
+import { PRIORITY_DEADLINE_AT, FINAL_DEADLINE_AT, FINAL_DEADLINE } from '../data/applicationLinks';
 
 interface Deadline {
   label: string;
   at: number;
+  /** Shown under the tiles so the countdown is not mistaken for the final cut-off */
+  note?: string;
 }
 
 // Counts down to the first of these that is still in the future; renders nothing once both have passed
 const DEADLINES: Deadline[] = [
-  { label: 'Priority deadline', at: Date.parse(PRIORITY_DEADLINE_AT) },
+  {
+    label: 'Priority deadline',
+    at: Date.parse(PRIORITY_DEADLINE_AT),
+    note: `Regular applications stay open until ${FINAL_DEADLINE}.`
+  },
   { label: 'Applications close', at: Date.parse(FINAL_DEADLINE_AT) }
 ];
 
@@ -77,7 +83,7 @@ const DeadlineCountdown: React.FC<DeadlineCountdownProps> = ({ variant, classNam
 
   return (
     <div className={className}>
-      <div className="overline text-white/80 mb-3 md:mb-4">{deadline.label} in</div>
+      <div className="text-lg md:text-2xl font-semibold text-white mb-3 md:mb-4">{deadline.label} in</div>
       <div className="flex justify-center gap-2 sm:gap-3 md:gap-4">
         {tiles.map(([label, value]) => (
           <div
@@ -91,6 +97,7 @@ const DeadlineCountdown: React.FC<DeadlineCountdownProps> = ({ variant, classNam
           </div>
         ))}
       </div>
+      {deadline.note && <p className="mt-3 md:mt-4 text-sm md:text-base text-white/80">{deadline.note}</p>}
     </div>
   );
 };
