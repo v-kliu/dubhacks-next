@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { scrollToSection } from '../utils/scrollToSection';
 import { APPLICATIONS_OPEN, OPEN_DATE } from '../data/applicationLinks';
-import InteractiveGrid from './InteractiveGrid';
+import HeroGrid from './HeroGrid';
 import DeadlineCountdown from './DeadlineCountdown';
 
 const HeroSection: React.FC = () => {
@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50 overflow-hidden">
-      <InteractiveGrid />
+      <HeroGrid />
 
       <div className="content-grid min-h-screen relative z-10">
         <div className="guide-line pl-4 md:pl-8">
@@ -27,6 +27,7 @@ const HeroSection: React.FC = () => {
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <motion.div
+                data-grid-obstacle
                 className="hidden lg:grid grid-cols-1 gap-3 md:gap-6 lg:gap-8 lg:order-2"
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -49,7 +50,10 @@ const HeroSection: React.FC = () => {
               </motion.div>
               
               <div className="space-y-6 md:space-y-8 lg:order-1">
-                <div className="overline text-primary-600 mb-2 inline-block px-4 py-2 bg-primary-100/50 rounded-full">
+                <div
+                  data-grid-obstacle
+                  className="overline text-primary-600 mb-2 inline-block px-4 py-2 bg-primary-100/50 rounded-full"
+                >
                   UNIVERSITY OF WASHINGTON
                 </div>
 
@@ -70,6 +74,7 @@ const HeroSection: React.FC = () => {
                   transition={{ delay: 0.7, duration: 0.5 }}
                 >
                   <a
+                    data-grid-obstacle
                     href="#apply"
                     onClick={(e) => {
                       e.preventDefault();

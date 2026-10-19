@@ -77,6 +77,7 @@ const Navigation: React.FC = () => {
 
   return (
     <motion.nav
+      data-grid-obstacle
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isMobileMenuOpen
           ? 'bg-white/95 backdrop-blur-md border-b border-primary-100'

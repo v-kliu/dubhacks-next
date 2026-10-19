@@ -6,8 +6,8 @@ interface InteractiveGridProps {
 }
 
 // Same cell size and line colour as the static .grid-overlay in index.css
-const SPACING = 60;
-const LINE_COLOR = 'rgba(236, 72, 153, 0.1)';
+export const GRID_SPACING = 60;
+export const GRID_LINE_COLOR = 'rgba(236, 72, 153, 0.1)';
 // Distance between points along each line; smaller bends more smoothly near the cursor
 const SEGMENT = 10;
 // How far from the cursor the lines get pulled, and how hard at the centre
@@ -60,23 +60,23 @@ const InteractiveGrid: React.FC<InteractiveGridProps> = ({ className = '' }) => 
 
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
-      ctx.strokeStyle = LINE_COLOR;
+      ctx.strokeStyle = GRID_LINE_COLOR;
       ctx.lineWidth = 1;
       ctx.beginPath();
 
       // Slide the grid origin by the drift, wrapping so lines always cover the edges.
       // The +0.5 keeps undisturbed 1px lines crisp.
-      const offsetX = (((drift.x % SPACING) + SPACING) % SPACING) + 0.5;
-      const offsetY = (((drift.y % SPACING) + SPACING) % SPACING) + 0.5;
+      const offsetX = (((drift.x % GRID_SPACING) + GRID_SPACING) % GRID_SPACING) + 0.5;
+      const offsetY = (((drift.y % GRID_SPACING) + GRID_SPACING) % GRID_SPACING) + 0.5;
 
-      for (let x = offsetX - SPACING; x <= width + SPACING; x += SPACING) {
+      for (let x = offsetX - GRID_SPACING; x <= width + GRID_SPACING; x += GRID_SPACING) {
         for (let y = 0; y <= height + SEGMENT; y += SEGMENT) {
           const [px, py] = pullToward(x, Math.min(y, height));
           if (y === 0) ctx.moveTo(px, py);
           else ctx.lineTo(px, py);
         }
       }
-      for (let y = offsetY - SPACING; y <= height + SPACING; y += SPACING) {
+      for (let y = offsetY - GRID_SPACING; y <= height + GRID_SPACING; y += GRID_SPACING) {
         for (let x = 0; x <= width + SEGMENT; x += SEGMENT) {
           const [px, py] = pullToward(Math.min(x, width), y);
           if (x === 0) ctx.moveTo(px, py);
