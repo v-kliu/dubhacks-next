@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, ArrowUpRight } from 'lucide-react';
+import { trackApplications, APPLICATIONS_OPEN } from '../data/applicationLinks';
+import { scrollToSection } from '../utils/scrollToSection';
 
 const TracksSection: React.FC = () => {
   const [expandedTrack, setExpandedTrack] = useState<number | null>(null);
 
   const tracks = [
     {
+      id: 'eir' as const,
       title: 'EIR TRACK',
       subtitle: 'For Explorers',
       description: 'Are you a builder interested in technology entrepreneurship? Join Next as an Entrepreneur-in-Residence! This provides you a personalized pathway to guide and support your entrepreneurial journey, ensuring your success.',
@@ -29,11 +32,10 @@ const TracksSection: React.FC = () => {
           'Problem-solvers who take initiative',
           'Excited to meet like-minded people at UW'
         ]
-      },
-      cta: 'Apply to EIR Track',
-      applicationUrl: 'https://forms.gle/tz2FPrjwDtHCB2ke8'
+      }
     },
     {
+      id: 'project' as const,
       title: 'PROJECT TRACK',
       subtitle: 'For Builders',
       description: 'Are you someone with a promising project that you want to take to the next level? Join Next as a project in our incubator! Go through the program alongside other teams of founders.',
@@ -55,9 +57,7 @@ const TracksSection: React.FC = () => {
           'Deeply thinking about both their project\'s engineering and business capabilities',
           'Excited to meet fellow founders at UW!'
         ]
-      },
-      cta: 'Apply to Project Track',
-      applicationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfRb7MkZ8gdDJxxamaDNbfa2YfsZtAvrAiyXWe_AZHSR8_kLw/viewform?usp=header'
+      }
     }
   ];
 
@@ -66,7 +66,7 @@ const TracksSection: React.FC = () => {
   };
 
   return (
-    <section id="tracks" className="bg-charcoal py-12 md:py-section px-4 md:px-6 lg:px-12">
+    <section id="tracks" className="scroll-mt-20 bg-charcoal py-12 md:py-section px-4 md:px-6 lg:px-12">
       <div className="max-w-content mx-auto">
         <div className="text-center mb-8 md:mb-12">
           <motion.div
@@ -82,9 +82,11 @@ const TracksSection: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 relative">
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-pink hidden md:block transform -translate-x-1/2"></div>
 
-          {tracks.map((track, index) => (
+          {tracks.map((track, index) => {
+            const application = trackApplications.find((app) => app.id === track.id);
+            return (
             <motion.div
-              key={index}
+              key={track.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -93,7 +95,7 @@ const TracksSection: React.FC = () => {
             >
               <div className="mb-4 md:mb-6">
                 <div className="overline text-pink mb-2">{track.title}</div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-light text-neutral-900 mb-4">
+                <h3 className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-neutral-900 mb-4">
                   {track.subtitle}
                 </h3>
               </div>
@@ -154,21 +156,28 @@ const TracksSection: React.FC = () => {
                 </AnimatePresence>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <div className="flex flex-wrap gap-3 md:gap-4">
+                {APPLICATIONS_OPEN && application?.applicationUrl && (
+                  <a
+                    href={application.applicationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 min-h-[44px] whitespace-nowrap bg-pink text-white px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base hover:bg-primary-600 transition-all duration-300 w-full sm:w-auto"
+                  >
+                    {application.applyLabel}
+                    <ArrowUpRight size={18} />
+                  </a>
+                )}
                 <button
-                  onClick={() => {
-                    const faqSection = document.getElementById('faq');
-                    if (faqSection) {
-                      faqSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                  className="inline-block text-center min-h-[44px] border border-neutral-300 text-neutral-700 px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base hover:bg-neutral-100 hover:border-neutral-400 transition-all duration-300 w-full sm:w-auto"
+                  onClick={() => scrollToSection('faq')}
+                  className="inline-block text-center min-h-[44px] whitespace-nowrap border border-neutral-300 text-neutral-700 px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base hover:bg-neutral-100 hover:border-neutral-400 transition-all duration-300 w-full sm:w-auto"
                 >
                   More Questions?
                 </button>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

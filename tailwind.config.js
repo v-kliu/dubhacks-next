@@ -51,7 +51,8 @@ module.exports = {
         charcoal: '#111827',
       },
       fontFamily: {
-        sans: ['-apple-system', 'SF Pro Display', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', '-apple-system', 'SF Pro Display', 'Inter', 'system-ui', 'sans-serif'],
+        heading: ['"Instrument Serif"', 'Georgia', 'Times New Roman', 'serif'],
       },
       fontWeight: {
         light: '300',

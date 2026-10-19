@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { APPLICATIONS_OPEN } from '../data/applicationLinks';
 import { Plus, Minus } from 'lucide-react';
 
 const FAQSection: React.FC = () => {
@@ -40,7 +41,9 @@ const FAQSection: React.FC = () => {
     },
     {
       question: 'When are the application deadlines for Batch 6?',
-      answer: 'We will be opening applications for EiRs and Projects to join Batch 6 starting October 19th. Priority applications are due October 26th. Regular applications are due November 2nd.'
+      answer: APPLICATIONS_OPEN
+        ? 'Applications for EiRs and Projects to join Batch 6 are open as of October 19th. Priority applications are due October 26th, and regular applications are due November 2nd. Head to the Apply section to get started.'
+        : 'We will be opening applications for EiRs and Projects to join Batch 6 starting October 19th. Priority applications are due October 26th. Regular applications are due November 2nd.'
     },
     {
       question: '404: Question Not Found',
@@ -56,7 +59,7 @@ const FAQSection: React.FC = () => {
   const rightColumnFaqs = faqs.slice(5, 10);
 
   return (
-    <section id="faq" className="bg-white py-16 px-6 md:px-12">
+    <section id="faq" className="scroll-mt-20 bg-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

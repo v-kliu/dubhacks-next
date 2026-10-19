@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import InteractiveGrid from './InteractiveGrid';
 
 const StatsSection: React.FC = () => {
   const stats = [
@@ -11,9 +12,9 @@ const StatsSection: React.FC = () => {
 
   return (
     <section className="relative bg-gradient-to-r from-primary-50 to-accent-50 py-16">
-      <div className="grid-overlay opacity-30"></div>
-      
-      <div className="content-grid">
+      <InteractiveGrid className="opacity-30" />
+
+      <div className="content-grid relative z-10">
         <div className="guide-line pl-4 md:pl-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -22,10 +22,26 @@ import FounderDirectory from './components/FounderDirectory';
 import SponsorsSection from './components/SponsorsSection';
 import EasterEggPage from './components/EasterEggPage';
 import JoinPage from './components/JoinPage';
+import { scrollToSection } from './utils/scrollToSection';
 
 // Home page component
 const HomePage: React.FC<{ onLoadComplete?: () => void }> = ({ onLoadComplete }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const { hash } = useLocation();
+
+  // Deep links like /#apply: the sections only mount after the loading screen, so the
+  // browser's own hash scroll finds nothing. Jump once the page is rendered, and again
+  // shortly after in case images above the target shift the layout.
+  useEffect(() => {
+    if (isLoading || !hash) return;
+    const id = hash.slice(1);
+    const frame = window.requestAnimationFrame(() => scrollToSection(id, 'instant'));
+    const retry = window.setTimeout(() => scrollToSection(id, 'instant'), 600);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(retry);
+    };
+  }, [isLoading, hash]);
 
   // Fire-and-forget: log visit to Redis + Supabase on every main page load
   useEffect(() => {

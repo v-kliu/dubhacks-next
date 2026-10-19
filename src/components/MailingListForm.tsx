@@ -64,7 +64,7 @@ const MailingListForm: React.FC<MailingListFormProps> = ({ onDone, titleId }) =>
         <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center">
           <CheckCircle size={28} />
         </div>
-        <h3 className="text-2xl font-light text-neutral-900 mb-2">
+        <h3 className="font-heading text-2xl font-light text-neutral-900 mb-2">
           {isDuplicate ? "You're already on the list!" : "You're on the list!"}
         </h3>
         <p className="text-neutral-600 text-sm leading-relaxed mb-6">
@@ -91,7 +91,7 @@ const MailingListForm: React.FC<MailingListFormProps> = ({ onDone, titleId }) =>
         <div className="w-12 h-12 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
           <Mail size={24} />
         </div>
-        <h3 id={titleId} className="text-2xl font-light text-neutral-900">
+        <h3 id={titleId} className="font-heading text-2xl font-light text-neutral-900">
           Join the Mailing List
         </h3>
       </div>

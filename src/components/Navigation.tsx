@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { scrollToSection } from '../utils/scrollToSection';
 
 interface NavItem {
   name: string;
@@ -32,42 +33,13 @@ const Navigation: React.FC = () => {
   }, [location.pathname]);
 
   const goToSection = (href: string) => {
-    // If we're not on the home page, navigate to home first
     if (location.pathname !== '/') {
-      // Store the target section in sessionStorage
-      sessionStorage.setItem('scrollToSection', href);
-      navigate('/');
+      // Not on the home page: go to /#section and let the home page scroll once it has loaded
+      navigate({ pathname: '/', hash: href });
     } else {
-      // If we're already on home page, just scroll
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      scrollToSection(href.replace(/^#/, ''));
     }
   };
-
-  // Check for stored scroll target after navigation
-  useEffect(() => {
-    const scrollTarget = sessionStorage.getItem('scrollToSection');
-    if (scrollTarget && location.pathname === '/') {
-      // Clear the stored value
-      sessionStorage.removeItem('scrollToSection');
-
-      // Wait for page to fully render
-      const scrollToElement = () => {
-        const element = document.querySelector(scrollTarget);
-        if (element) {
-          setTimeout(() => {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }, 300);
-        }
-      };
-
-      // Try multiple times to ensure element is loaded
-      setTimeout(scrollToElement, 100);
-      setTimeout(scrollToElement, 500);
-    }
-  }, [location]);
 
   const navItems: NavItem[] = [
     { name: 'About', href: '#program' },

@@ -91,7 +91,7 @@ const TeamSection: React.FC = () => {
   };
 
   return (
-    <section id="team" className="bg-white py-16 md:py-section px-6 md:px-12">
+    <section id="team" className="scroll-mt-20 bg-white py-16 md:py-section px-6 md:px-12">
       <div className="max-w-content mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

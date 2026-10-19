@@ -11,7 +11,7 @@ const ProgramOverviewSection: React.FC = () => {
   ];
 
   return (
-    <section id="program" className="bg-white py-16 md:py-section px-6 md:px-12">
+    <section id="program" className="scroll-mt-20 bg-white py-16 md:py-section px-6 md:px-12">
       <div className="max-w-content mx-auto">
         <div className="grid md:grid-cols-5 gap-10 md:gap-16 items-center">
           <div className="md:col-span-3">

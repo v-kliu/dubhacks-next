@@ -1,5 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import { scrollToSection } from '../utils/scrollToSection';
+import { APPLICATIONS_OPEN, OPEN_DATE } from '../data/applicationLinks';
+import InteractiveGrid from './InteractiveGrid';
+import DeadlineCountdown from './DeadlineCountdown';
 
 const HeroSection: React.FC = () => {
   const stats = [
@@ -10,9 +15,9 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50 overflow-hidden">
-      <div className="grid-overlay"></div>
+      <InteractiveGrid />
 
-      <div className="content-grid min-h-screen">
+      <div className="content-grid min-h-screen relative z-10">
         <div className="guide-line pl-4 md:pl-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -49,9 +54,8 @@ const HeroSection: React.FC = () => {
                 </div>
 
                 <h1 className="hero-text text-neutral-900 leading-tight">
-                  Building{' '}
-                  <span className="pink-underline text-primary-600">Tomorrow's</span>{' '}
-                  Founders
+                  Building Tomorrow's{' '}
+                  <span className="pink-underline text-primary-600 italic">Founders</span>
                 </h1>
 
                 <p className="text-neutral-600 text-base md:text-lg lg:text-subhead max-w-xl leading-relaxed">
@@ -65,11 +69,26 @@ const HeroSection: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7, duration: 0.5 }}
                 >
-                  <div className="inline-block bg-white/90 backdrop-blur-md border-2 border-primary-200 rounded-xl p-4 md:p-6 shadow-lg shadow-primary-500/10">
-                    <div className="text-sm md:text-base text-primary-600 font-medium text-center">
-                      Applications for Batch 6 open October 19, 2026!
-                    </div>
-                  </div>
+                  <a
+                    href="#apply"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection('apply');
+                    }}
+                    className="group inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 min-h-[44px] bg-white/90 backdrop-blur-md border-2 border-primary-200 rounded-xl p-4 md:p-6 shadow-lg shadow-primary-500/10 hover:border-primary-400 hover:shadow-xl transition-all duration-300"
+                  >
+                    <span className="text-sm md:text-base text-primary-600 font-medium text-center">
+                      {APPLICATIONS_OPEN ? 'Batch 6 applications are open!' : `Batch 6 applications open ${OPEN_DATE}!`}
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-sm md:text-base text-primary-700 font-semibold">
+                      {APPLICATIONS_OPEN ? 'Apply now' : 'Learn more'}
+                      <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                    <DeadlineCountdown
+                      variant="inline"
+                      className="basis-full text-center text-sm text-neutral-600 tabular-nums"
+                    />
+                  </a>
                 </motion.div>
               </div>
             </div>

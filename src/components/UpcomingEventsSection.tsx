@@ -1,17 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Info, Clock, ExternalLink } from 'lucide-react';
+import { Calendar, CalendarPlus, MapPin, Info, Clock, ExternalLink } from 'lucide-react';
+import { googleCalendarLink } from '../utils/googleCalendarLink';
 
 interface Event {
+  /** YYYY-MM-DD */
   date: string;
   displayDate: string;
   title: string;
+  /** Shown on the card, e.g. '2:00 PM – 3:30 PM' */
   time?: string;
+  /** HH:MM 24-hour, for the calendar entry. Omit for an all-day entry (deadlines). */
+  startTime?: string;
+  endTime?: string;
   location?: string;
+  /** Street address appended to the calendar location so it maps correctly */
+  address?: string;
   description: string;
   signUpLink?: string;
+  /** Where the calendar entry points people back to; defaults to the events section */
+  moreInfoUrl?: string;
   highlight?: boolean;
 }
+
+const SITE_URL = 'https://next.dubhacks.co';
+const ALLEN_CENTER_ADDRESS = 'Paul G. Allen Center for Computer Science & Engineering, 185 E Stevens Way NE, Seattle, WA 98195';
+
+const todayKey = (): string => {
+  const now = new Date();
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+};
+
+const calendarLinkFor = (event: Event): string =>
+  googleCalendarLink({
+    title: `DubHacks Next: ${event.title}`,
+    date: event.date,
+    startTime: event.startTime,
+    endTime: event.endTime,
+    location: event.address ? `${event.location}, ${event.address}` : event.location,
+    details: `${event.description}\n\nMore info: ${event.moreInfoUrl ?? `${SITE_URL}/#events`}`
+  });
 
 const UpcomingEventsSection: React.FC = () => {
   const events: Event[] = [
@@ -19,7 +47,11 @@ const UpcomingEventsSection: React.FC = () => {
       date: '2026-10-13',
       displayDate: 'Oct 13',
       title: 'Batch 6 Info Session',
+      time: '10:00 AM',
+      startTime: '10:00',
+      endTime: '11:00',
       location: 'Allen Center 305',
+      address: ALLEN_CENTER_ADDRESS,
       description: 'Learn what DubHacks Next is, what Batch 6 looks like for EiRs and Projects, and how to apply. Bring your questions and meet the team.',
       highlight: true
     },
@@ -27,32 +59,41 @@ const UpcomingEventsSection: React.FC = () => {
       date: '2026-10-19',
       displayDate: 'Oct 19',
       title: 'Batch 6 Applications Open',
-      description: 'Applications for EiRs and Projects to join Batch 6 open today. Apply early to be considered in the priority round.'
+      description: 'Applications for EiRs and Projects to join Batch 6 open today. Apply early to be considered in the priority round.',
+      moreInfoUrl: `${SITE_URL}/#apply`
     },
     {
       date: '2026-10-23',
       displayDate: 'Oct 23',
       title: 'Shark Tank Event',
+      time: '2:00 PM – 3:30 PM',
+      startTime: '14:00',
+      endTime: '15:30',
       location: 'Allen Center 305',
-      description: 'Pitch your startup Shark Tank style, or come watch fellow founders take the stage. Network with the NEXT community and compete for prizes. Time to be announced.',
+      address: ALLEN_CENTER_ADDRESS,
+      description: 'Pitch your startup Shark Tank style, or come watch fellow founders take the stage. Network with the NEXT community and compete for prizes.',
       highlight: true
     },
     {
       date: '2026-10-26',
       displayDate: 'Oct 26',
       title: 'Priority Application Deadline',
-      description: 'Submit your application by October 26th to be reviewed in the priority round.'
+      description: 'Submit your application by October 26th to be reviewed in the priority round.',
+      moreInfoUrl: `${SITE_URL}/#apply`
     },
     {
       date: '2026-11-02',
       displayDate: 'Nov 2',
       title: 'Applications Close',
-      description: 'Final deadline for all Batch 6 EiR and Project applications.'
+      description: 'Final deadline for all Batch 6 EiR and Project applications.',
+      moreInfoUrl: `${SITE_URL}/#apply`
     }
   ];
 
+  const today = todayKey();
+
   return (
-    <section id="events" className="bg-white py-8 md:py-16 px-4 md:px-6 lg:px-12">
+    <section id="events" className="scroll-mt-20 bg-white py-8 md:py-16 px-4 md:px-6 lg:px-12">
       <div className="max-w-content mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -148,16 +189,31 @@ const UpcomingEventsSection: React.FC = () => {
                         </p>
                       </div>
 
-                      {event.signUpLink && (
-                        <a
-                          href={event.signUpLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium rounded-lg transition-colors duration-200"
-                        >
-                          Sign Up Here
-                          <ExternalLink size={16} />
-                        </a>
+                      {(event.signUpLink || event.date >= today) && (
+                        <div className="flex flex-wrap gap-2 md:gap-3">
+                          {event.signUpLink && (
+                            <a
+                              href={event.signUpLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                            >
+                              Sign Up Here
+                              <ExternalLink size={16} />
+                            </a>
+                          )}
+                          {event.date >= today && (
+                            <a
+                              href={calendarLinkFor(event)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 border border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400 text-sm font-medium rounded-lg transition-colors duration-200"
+                            >
+                              <CalendarPlus size={16} />
+                              Add to Calendar
+                            </a>
+                          )}
+                        </div>
                       )}
 
                       {event.highlight && (

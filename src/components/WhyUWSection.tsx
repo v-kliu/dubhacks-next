@@ -53,7 +53,7 @@ const WhyUWSection: React.FC = () => {
                 <pillar.icon size={64} strokeWidth={1} />
               </div>
               
-              <h3 className="text-2xl font-light text-neutral-900 mb-6 pink-underline-thin">
+              <h3 className="font-heading text-2xl font-light text-neutral-900 mb-6 pink-underline-thin">
                 {pillar.title}
               </h3>
               
