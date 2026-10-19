@@ -306,13 +306,6 @@ BATCH 2
   linkedin: 'https://www.linkedin.com/in/srikarchava'
 }
 
-{
-  name: 'Victor Cheng',
-  batch: 'Batch 2',
-  role: 'EiR',
-  linkedin: 'https://www.linkedin.com/in/victor-cheng-89a161180/'
-}
-
 — Projects —
 
 {
